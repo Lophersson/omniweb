@@ -113,14 +113,15 @@
         }
 
         .btn-home {
-            background-color: #f5e905;
-            width: 110px;
-            border: none;
-            border-radius: 15px;
-            padding: 10px 40px 10px 40px;
-            margin: 10px;
-        }
-
+    background-color: #f5e905;
+    width: 110px;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 40px;
+    margin: 10px auto; /* Centrar horizontalmente */
+    display: block; /* Forzar a ocupar todo el ancho disponible en el contenedor */
+    text-align: center;
+}
         /* Estilos de contactos */
         body.contacts {
             margin: 0;
@@ -215,13 +216,12 @@
                     <input type="password" id="password" placeholder="Contraseña">
                     <div style="display: flex; gap: 10px;">
                         <div class="botonera">
-                        <button class="btn-ok" onclick="handleLogin()">✔</button>
-                        <button class="btn-cancel" onclick="handleCancel()">✖</button>
-                        </div>
-                        <br>
-                        <div class="botonera">
+    <button class="btn-ok" onclick="handleLogin()">✔</button>
+    <button class="btn-cancel" onclick="handleCancel()">✖</button>
+</div>
+<div class="botonera">
     <button class="btn-home" onclick="window.location.href='https://lophersson.github.io/OmniWeb/'">🏠</button>
-</div>                      
+</div>                  
                     </div>
                 </div>
             </div>
