@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Semanal - Salud Cardiovascular y Reflujo</title>
+    <style>
+        /* Estilos Generales */
+        body {
+            background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
+            color: #E0E0E0;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* Header */
+        header {
+            padding: 20px;
+            font-size: 2em;
+            font-weight: bold;
+            background-color: #222;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            color: rgb(251, 255, 0);
+        }
+
+        /* Contenedor de Tarjetas */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* Tarjetas */
+        .card {
+            color: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: left;
+            transition: all 0.0s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            background-color: #333333;
+        }
+
+        .card h3 {
+            margin: 10px 0 5px;
+            font-size: 1.3em;
+            color: rgb(246, 255, 0);
+        }
+
+        .card p {
+            font-size: 1em;
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            background-color: #222;
+            color: rgb(246, 255, 0);
+            font-size: 18px;
+            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        footer a {
+            color: rgb(246, 255, 0);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        footer i {
+            font-size: 24px;
+        }
+
+        /* Media Queries */
+        @media (max-width: 600px) {
+            header {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        Menú Semanal - Salud Cardiovascular y Reflujo
+    </header>
+
+    <div class="card-container" id="menu-container">
+        <!-- Los cards se generarán automáticamente con el script -->
+    </div>
+
+    <footer>
+        <a href="https://lophersson.github.io/OmniWeb/">
+            <i class="fas fa-home"></i>
+            <span>&copy; 2025 Humberto Web Creations </span> <span>| Volver al inicio</span>
+        </a>
+    </footer>
+
+    <script>
+        // Menú adaptado para reducir LDL y aliviar el RGE
+        const menu = {
+            "Lunes": [
+                { "comida": "Desayuno", "descripcion": "Avena con manzana cocida y almendras + infusión de jengibre." },
+                { "comida": "Almuerzo", "descripcion": "Pechuga de pollo a la plancha con puré de calabacín y zanahoria." },
+                { "comida": "Cena", "descripcion": "Merluza al horno con arroz integral y espárragos al vapor." }
+            ],
+            "Martes": [
+                { "comida": "Desayuno", "descripcion": "Yogur natural con avena y arándanos." },
+                { "comida": "Almuerzo", "descripcion": "Salmón a la plancha con quinoa y calabacín al vapor." },
+                { "comida": "Cena", "descripcion": "Sopa de zanahoria y batata con pan integral." }
+            ],
+            "Miércoles": [
+                { "comida": "Desayuno", "descripcion": "Pan integral con aguacate y té de manzanilla." },
+                { "comida": "Almuerzo", "descripcion": "Ensalada de lentejas con espinacas y pavo." },
+                { "comida": "Cena", "descripcion": "Puré de calabacín con bacalao al vapor." }
+            ],
+            "Jueves": [
+                { "comida": "Desayuno", "descripcion": "Yogur con semillas de chía y manzana cocida." },
+                { "comida": "Almuerzo", "descripcion": "Pollo al horno con patata cocida y brócoli." },
+                { "comida": "Cena", "descripcion": "Crema de calabaza con tostadas integrales." }
+            ],
+            "Viernes": [
+                { "comida": "Desayuno", "descripcion": "Avena con nueces y leche de almendras." },
+                { "comida": "Almuerzo", "descripcion": "Arroz integral con pechuga de pavo y verduras." },
+                { "comida": "Cena", "descripcion": "Sopa de zanahoria y calabacín con pan integral." }
+            ],
+            "Sábado": [
+                { "comida": "Desayuno", "descripcion": "Tostadas integrales con hummus y pepino." },
+                { "comida": "Almuerzo", "descripcion": "Merluza al horno con batatas y espinacas salteadas." },
+                { "comida": "Cena", "descripcion": "Sopa de lentejas con zanahoria y apio." }
+            ],
+            "Domingo": [
+                { "comida": "Desayuno", "descripcion": "Batido de avena con plátano y leche de almendras." },
+                { "comida": "Almuerzo", "descripcion": "Ensalada de quinoa con pollo y aguacate." },
+                { "comida": "Cena", "descripcion": "Bacalao al horno con calabacines y zanahorias." }
+            ]
+        };
+
+        // Función para generar las tarjetas del menú
+        function generateMenu() {
+            const menuContainer = document.getElementById('menu-container');
+
+            for (const day in menu) {
+                const cardDay = document.createElement('div');
+                cardDay.classList.add('card');
+                cardDay.style.backgroundColor = '#333333';
+
+                let dayContent = `<h3>${day}</h3>`;
+                menu[day].forEach(meal => {
+                    dayContent += `<p><strong>${meal.comida}</strong>: ${meal.descripcion}</p>`;
+                });
+
+                cardDay.innerHTML = dayContent;
+                menuContainer.appendChild(cardDay);
+            }
+        }
+
+        window.onload = generateMenu;
+    </script>
+
+</body>
+</html>

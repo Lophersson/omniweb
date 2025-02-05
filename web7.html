@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Semanal - Salud de la Vesícula Biliar</title>
+    <style>
+        /* Estilos Generales */
+        body {
+            background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
+            color: #E0E0E0;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* Header */
+        header {
+            padding: 20px;
+            font-size: 2em;
+            font-weight: bold;
+            background-color: #222;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            color: rgb(251, 255, 0);
+        }
+
+        /* Contenedor de Tarjetas */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* Tarjetas */
+        .card {
+            color: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: left;
+            transition: all 0.0s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #333333; /* Fondo gris oscuro fijo */
+        }
+
+        .card h3 {
+            margin: 10px 0 5px;
+            font-size: 1.3em;
+            color: rgb(246, 255, 0);
+        }
+
+        .card p {
+            font-size: 1em;
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            background-color: #222;
+            color: rgb(246, 255, 0);
+            font-size: 18px;
+            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        footer a {
+            color: rgb(246, 255, 0);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        footer i {
+            font-size: 24px;
+        }
+
+        /* Media Queries */
+        @media (max-width: 600px) {
+            header {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        Menú Semanal - Salud de la Vesícula Biliar
+    </header>
+
+    <div class="card-container" id="menu-container">
+        <!-- Los cards se generarán automáticamente con el script -->
+    </div>
+
+    <footer>
+        <a href="https://lophersson.github.io/OmniWeb/">
+            <i class="fas fa-home"></i>
+            <span>&copy; 2025 Humberto Web Creations </span> <span>| Volver al inicio</span>
+        </a>
+    </footer>
+
+    <script>
+        // Datos del menú semanal
+        const menu = {
+            "Lunes": [
+                { "comida": "Desayuno", "descripcion": "Avena con manzana y canela, acompañado de té de manzanilla." },
+                { "comida": "Almuerzo", "descripcion": "Merluza al horno con arroz integral y calabacín al vapor." },
+                { "comida": "Cena", "descripcion": "Puré de zanahoria y calabaza con tostadas de pan integral." }
+            ],
+            "Martes": [
+                { "comida": "Desayuno", "descripcion": "Yogur desnatado con frutas y semillas de chía." },
+                { "comida": "Almuerzo", "descripcion": "Pechuga de pollo a la plancha con quinoa y espárragos." },
+                { "comida": "Cena", "descripcion": "Crema de calabacín con pan integral." }
+            ],
+            "Miércoles": [
+                { "comida": "Desayuno", "descripcion": "Batido de plátano con avena y leche vegetal." },
+                { "comida": "Almuerzo", "descripcion": "Pescado blanco al vapor con puré de patata." },
+                { "comida": "Cena", "descripcion": "Ensalada de pepino, tomate y zanahoria con aliño ligero." }
+            ],
+            "Jueves": [
+                { "comida": "Desayuno", "descripcion": "Pan integral con aguacate y té de jengibre." },
+                { "comida": "Almuerzo", "descripcion": "Lentejas con arroz integral y verduras." },
+                { "comida": "Cena", "descripcion": "Sopa de verduras con pan integral tostado." }
+            ],
+            "Viernes": [
+                { "comida": "Desayuno", "descripcion": "Porridge de avena con fresas y almendras." },
+                { "comida": "Almuerzo", "descripcion": "Ensalada de garbanzos con espinacas y zanahoria rallada." },
+                { "comida": "Cena", "descripcion": "Crema de calabaza con pan de centeno." }
+            ],
+            "Sábado": [
+                { "comida": "Desayuno", "descripcion": "Tostadas de pan integral con queso fresco y miel." },
+                { "comida": "Almuerzo", "descripcion": "Salmón al horno con puré de boniato y espárragos." },
+                { "comida": "Cena", "descripcion": "Arroz con verduras y pechuga de pollo." }
+            ],
+            "Domingo": [
+                { "comida": "Desayuno", "descripcion": "Batido de mango, plátano y leche de almendras." },
+                { "comida": "Almuerzo", "descripcion": "Pechuga de pavo con arroz integral y brócoli." },
+                { "comida": "Cena", "descripcion": "Sopa de zanahoria con pan integral tostado." }
+            ],
+            "Alternativa": [
+                { "comida": "Desayuno", "descripcion": "Pan de centeno con aguacate y queso fresco." },
+                { "comida": "Almuerzo", "descripcion": "Ensalada de quinoa con pepino, tomate y atún al natural." },
+                { "comida": "Cena", "descripcion": "Crema de espinacas con pan integral." }
+            ]
+        };
+
+        // Función para generar las tarjetas del menú
+        function generateMenu() {
+            const menuContainer = document.getElementById('menu-container');
+
+            for (const day in menu) {
+                const cardDay = document.createElement('div');
+                cardDay.classList.add('card');
+                cardDay.style.backgroundColor = '#333333';  
+
+                let dayContent = `<h3>${day}</h3>`;
+                menu[day].forEach(meal => {
+                    dayContent += `<p><strong>${meal.comida}</strong>: ${meal.descripcion}</p>`;
+                });
+
+                cardDay.innerHTML = dayContent;
+                menuContainer.appendChild(cardDay);
+            }
+        }
+
+        // Ejecutar la función para generar el menú al cargar la página
+        window.onload = generateMenu;
+    </script>
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
