@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Semanal - Control de Acidez y RGE</title>
+    <style>
+        body {
+            background-color: black;
+            color: #D3D3D3; /* Gris claro */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            font-size: 2em;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: 1fr; /* Una columna */
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #333;
+            color: #D3D3D3;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            text-decoration: none; /* Eliminar subrayado */
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            background-color: #444; /* Cambio de color al pasar el ratón */
+        }
+
+        .card h3 {
+            margin: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #222;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Media Queries para hacerlo responsive */
+        @media (max-width: 600px) {
+            header {
+                font-size: 1.5em; /* Ajustar tamaño de fuente en pantallas pequeñas */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        Menú Semanal - Control de Acidez y RGE
+    </header>
+
+    <div class="card-container">
+        <!-- Lunes -->
+        <a href="#" class="card">
+            <h3>Lunes: Desayuno</h3>
+            <p>Avena con frutas bajas en ácido y té de manzanilla.</p>
+        </a>
+        <a href="#" class="card">
+            <h3>Lunes: Almuerzo</h3>
+            <p>Pechuga de pollo a la plancha con puré de papas.</p>
+        </a>
+        <a href="#" class="card">
+            <h3>Lunes: Cena</h3>
+            <p>Arroz integral con verduras al vapor y pescado blanco.</p>
+        </a>
+
+        <!-- Martes -->
+        <a href="#" class="card">
+            <h3>Martes: Desayuno</h3>
+            <p>Yogur natural con almendras y manzana verde.</p>
+        </a>
+        <a href="#" class="card">
+            <h3>Martes: Almuerzo</h3>
+            <p>Ensalada de espinacas con pollo y aceite de oliva.</p>
+        </a>
+        <a href="#" class="card">
+            <h3>Martes: Cena</h3>
+            <p>Sopa de calabaza con pan integral tostado.</p>
+        </a>
+
+        <!-- Miércoles -->
+        <a href="#" class="card">
+            <h3>Miércoles: Desayuno</h3>
+            <p>Pan integral con aguacate y té de hierbas.</p>
+        </a>
+        <a href="#" class="card">
+            <h3>Miércoles: Almuerzo</h3>
+            <p>Filete de salmón con quinoa y espárragos.</p>
+        </a>
+        <a href="#" class="card">
+            <h3>Miércoles: Cena</h3>
+            <p>Arroz integral con vegetales asados.</p>
+        </a>
+
+        <!-- Jueves -->
+        <a href="#" class="card">
+            <h3>Jueves: Desayuno</h3>
+            <p>Yogur con avena y frutas frescas.</p>
+        </a>
+        <a href="#" class="card">
+            <h3>Jueves: Almuerzo</h3>
+            <p>Ensalada de atún con pepino y tomate.</p>
+        </a>
+        <a href="#" class="card">
+            <h3>Jueves: Cena</h3>
+            <p>Pollo al horno con zanahorias al vapor.</p>
+        </a>
+
+        <!-- Viernes -->
+        <a href="#" class="card">
+            <h3>Viernes: Desayuno</h3>
+            <p>Avena con miel y plátano.</p>
+        </a>
+        <a href="#" class="card">
+            <h3>Viernes: Almuerzo</h3>
+            <p>Arroz integral con pechuga de pollo y brócoli.</p>
+        </a>
+        <a href="#" class="card">
+            <h3>Viernes: Cena</h3>
+            <p>Sopa de zanahoria con pan integral.</p>
+        </a>
+
+        <!-- Sábado -->
+        <a href="#" class="card">
+            <h3>Sábado: Desayuno</h3>
+            <p>Frutas frescas con yogur natural.</p>
+        </a>
+        <a href="#" class="card">
+            <h3>Sábado: Almuerzo</h3>
+            <p>Filete de pescado con ensalada de aguacate.</p>
+        </a>
+        <a href="#" class="card">
+            <h3>Sábado: Cena</h3>
+            <p>Verduras asadas con arroz integral.</p>
+        </a>
+
+        <!-- Domingo -->
+        <a href="#" class="card">
+            <h3>Domingo: Desayuno</h3>
+            <p>Tostadas integrales con aguacate y tomate.</p>
+        </a>
+        <a href="#" class="card">
+            <h3>Domingo: Almuerzo</h3>
+            <p>Pollo asado con batatas y ensalada.</p>
+        </a>
+        <a href="#" class="card">
+            <h3>Domingo: Cena</h3>
+            <p>Sopa de calabaza con pan integral.</p>
+        </a>
+    </div>
+
+    <footer>
+        &copy; 2025 Humberto Web Creations
+    </footer>
+
+</body>
+</html>
