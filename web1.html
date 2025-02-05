@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Semanal - Control de Acidez y RGE</title>
+    <style>
+        /* Estilos Generales */
+        body {
+            background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
+            color: #E0E0E0;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* Header */
+        header {
+            padding: 20px;
+            font-size: 2em;
+            font-weight: bold;
+            background-color: #222;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            color: rgb(251, 255, 0);
+        }
+
+        /* Contenedor de Tarjetas */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* Tarjetas */
+        .card {
+            color: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: left;
+            transition: all 0.0s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            /*cursor: pointer;*/
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #333333; /* Fondo gris oscuro fijo */
+        }
+
+        /*.card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+        }*/
+
+        .card h3 {
+            margin: 10px 0 5px;
+            font-size: 1.3em;
+            color: rgb(246, 255, 0);
+        }
+
+        .card p {
+            font-size: 1em;
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            background-color: #222;
+            color: rgb(246, 255, 0);
+            font-size: 18px;
+            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        footer a {
+            color: rgb(246, 255, 0);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        footer i {
+            font-size: 24px;
+        }
+
+        /* Media Queries */
+        @media (max-width: 600px) {
+            header {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        Menú Semanal - Control de Acidez y RGE
+    </header>
+
+    <div class="card-container" id="menu-container">
+        <!-- Los cards se generarán automáticamente con el script -->
+    </div>
+
+    <footer>
+        <a href="https://lophersson.github.io/OmniWeb/">
+            <i class="fas fa-home"></i>
+            <span>&copy; 2025 Humberto Web Creations </span> <span>| Volver al inicio</span>
+        </a>
+    </footer>
+
+    <script>
+        // Datos del menú semanal
+        const menu = {
+            "Lunes": [
+                { "comida": "Desayuno", "descripcion": "Avena con pera, plátano y mango y un té de manzanilla." },
+                { "comida": "Almuerzo", "descripcion": "Pechuga de pollo a la plancha con puré de patata." },
+                { "comida": "Cena", "descripcion": "Arroz integral con verduras al vapor y merluza." }
+            ],
+            "Martes": [
+                { "comida": "Desayuno", "descripcion": "Yogur natural con almendras y manzana verde." },
+                { "comida": "Almuerzo", "descripcion": "Ensalada de espinacas con pollo y aceite de oliva." },
+                { "comida": "Cena", "descripcion": "Sopa de calabaza con pan integral tostado." }
+            ],
+            "Miércoles": [
+                { "comida": "Desayuno", "descripcion": "Pan integral con aguacate y un té de hierbas." },
+                { "comida": "Almuerzo", "descripcion": "Filete de salmón con quinoa y espárragos." },
+                { "comida": "Cena", "descripcion": "Arroz integral con calabacín, pimiento rojo y cebolla a la plancha." }
+            ],
+            "Jueves": [
+                { "comida": "Desayuno", "descripcion": "Yogur con avena y arándanos." },
+                { "comida": "Almuerzo", "descripcion": "Ensalada de atún con pepino y tomate." },
+                { "comida": "Cena", "descripcion": "Pollo al horno con zanahorias al vapor." }
+            ],
+            "Viernes": [
+                { "comida": "Desayuno", "descripcion": "Avena con miel y plátano." },
+                { "comida": "Almuerzo", "descripcion": "Arroz integral con pechuga de pollo y brócoli." },
+                { "comida": "Cena", "descripcion": "Sopa de zanahoria con pan integral." }
+            ],
+            "Sábado": [
+                { "comida": "Desayuno", "descripcion": "Tostadas integrales con aguacate y huevo revuelto." },
+                { "comida": "Almuerzo", "descripcion": "Pechuga de pavo con batatas asadas y brócoli al vapor." },
+                { "comida": "Cena", "descripcion": "Sopa de lentejas con zanahorias y espinacas." }
+            ],
+            "Domingo": [
+                { "comida": "Desayuno", "descripcion": "Batido de manzana golden con espinacas y avena." },
+                { "comida": "Almuerzo", "descripcion": "Pollo a la plancha con arroz integral y ensalada de tomate." },
+                { "comida": "Cena", "descripcion": "Bacalao al horno con calabacines y zanahorias." }
+            ],
+            "Alternativa": [
+                { "comida": "Desayuno", "descripcion": "Pan de centeno con aguacate, tomates cherry asados y queso fresco." },
+                { "comida": "Almuerzo", "descripcion": "Ensalada de quinoa con atún, pepino y zanahorias ralladas." },
+                { "comida": "Cena", "descripcion": "Crema de espárragos con un toque de limón y pan integral." }
+            ]
+        };
+
+        // Función para generar las tarjetas del menú
+        function generateMenu() {
+            const menuContainer = document.getElementById('menu-container');
+
+            for (const day in menu) {
+                const cardDay = document.createElement('div');
+                cardDay.classList.add('card');
+                // Asignar color fijo
+                cardDay.style.backgroundColor = '#333333';  // Fondo gris oscuro fijo
+
+                let dayContent = `<h3>${day}</h3>`;
+                menu[day].forEach(meal => {
+                    dayContent += `<p><strong>${meal.comida}</strong>: ${meal.descripcion}</p>`;
+                });
+
+                cardDay.innerHTML = dayContent;
+                menuContainer.appendChild(cardDay);
+            }
+        }
+
+        // Ejecutar la función para generar el menú al cargar la página
+        window.onload = generateMenu;
+    </script>
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
