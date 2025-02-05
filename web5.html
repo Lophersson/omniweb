@@ -82,41 +82,36 @@
             font-style: italic;
         }
 
-       .botonera {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    color: #fff;
-    font-size: 16px;
-}
+        .botonera {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+            color: #ffffff;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            align-items: center;
+        }
 
-.btn-ok,
-.btn-cancel,
-.btn-home {
-    width: 110px;
-    border: none;
-    border-radius: 15px;
-    padding: 10px 40px;
-    margin: 10px;
-    cursor: pointer;
-    display: inline-block;
-    text-align: center;
-}
+        .btn-ok {
+            background-color: #28a745;
+            width: 110px;
+            border: none;
+            border-radius: 15px;
+            padding: 10px 40px 10px 40px;
+            margin: 10px;
+        }
 
-.btn-ok {
-    background-color: #28a745;
-}
+        .btn-cancel {
+            background-color: #dc3545;
+            width: 110px;
+            border: none;
+            border-radius: 15px;
+            padding: 10px 40px 10px 40px;
+            margin: 10px;
+        }
 
-.btn-cancel {
-    background-color: #dc3545;
-}
-
-.btn-home {
-    background-color: #f5e905;
-    margin: 10px auto; /* Centrar horizontalmente */
-    display: block; /* Ocupar todo el ancho disponible */
-}
         /* Estilos de contactos */
         body.contacts {
             margin: 0;
@@ -211,25 +206,14 @@
                     <input type="password" id="password" placeholder="Contraseña">
                     <div style="display: flex; gap: 10px;">
                         <div class="botonera">
-    <button class="btn-ok" onclick="handleLogin()">✔</button>
-    <button class="btn-cancel" onclick="handleCancel()">✖</button>
-</div>
-<div class="botonera">
-    <button class="btn-home" onclick="window.location.href='https://lophersson.github.io/OmniWeb/'">🏠</button>
-</div>                  
+                        <button class="btn-ok" onclick="handleLogin()">✔</button>
+                        <button class="btn-cancel" onclick="handleCancel()">✖</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-<!-- Asegúrate de incluir FontAwesome en tu proyecto -->
-<script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
-
-
-<!-- Asegúrate de incluir FontAwesome en tu proyecto -->
-<script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
-
 
     <!-- Sección de Contactos -->
     <div id="contacts" class="container">
@@ -260,7 +244,6 @@
             <button class="letter" data-letter="X">X</button>
             <button class="letter" data-letter="Y">Y</button>
             <button class="letter" data-letter="Z">Z</button>
-            <button class="letter" data-letter="🏠" onclick="window.location.href='https://lophersson.github.io/OmniWeb/'">🏠</button>
         </div>
         <div id="contact-list"></div>
     </div>
@@ -277,7 +260,7 @@
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
 
-        if (username === 'london' && password === 'On1Tw2Thre3') {
+        if (username === 'london' && password === '123456') {
             alert('Usuario y password correctos! Bienvenido!');
             
             // Cambiar estilo para ocultar login
@@ -364,14 +347,5 @@
         });
     }
 </script>
-
-    <script>
-    document.querySelectorAll(".letter").forEach(button => {
-        button.addEventListener("click", () => {
-            window.location.href = "https://lophersson.github.io/OmniWeb/";
-        });
-    });
-</script>
-
 </body>
 </html>
