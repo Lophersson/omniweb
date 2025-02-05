@@ -82,47 +82,40 @@
             font-style: italic;
         }
 
-        .botonera {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            width: 100%;
-            color: #ffffff;
-            color: #fff;
-            font-size: 16px;
-            align-items: center;
-        }
+       .botonera {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    color: #fff;
+    font-size: 16px;
+}
 
-        .btn-ok {
-            background-color: #28a745;
-            width: 110px;
-            border: none;
-            border-radius: 15px;
-            padding: 10px 40px 10px 40px;
-            margin: 10px;
-            cursor: pointer;
-        }
-
-        .btn-cancel {
-            background-color: #dc3545;
-            width: 110px;
-            border: none;
-            border-radius: 15px;
-            padding: 10px 40px 10px 40px;
-            margin: 10px;
-            cursor: pointer;
-        }
-
-        .btn-home {
-    background-color: #f5e905;
+.btn-ok,
+.btn-cancel,
+.btn-home {
     width: 110px;
     border: none;
     border-radius: 15px;
     padding: 10px 40px;
-    margin: 10px auto; /* Centrar horizontalmente */
-    display: block; /* Forzar a ocupar todo el ancho disponible en el contenedor */
+    margin: 10px;
+    cursor: pointer;
+    display: inline-block;
     text-align: center;
-            cursor: pointer;
+}
+
+.btn-ok {
+    background-color: #28a745;
+}
+
+.btn-cancel {
+    background-color: #dc3545;
+}
+
+.btn-home {
+    background-color: #f5e905;
+    margin: 10px auto; /* Centrar horizontalmente */
+    display: block; /* Ocupar todo el ancho disponible */
 }
         /* Estilos de contactos */
         body.contacts {
