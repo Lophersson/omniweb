@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gastos Mensuales</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {
+background-color: #000000;
+color: #ff00aa;
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+align-items: center;
+align-items: center;
+}
+
+header {
+background-image: url('header.png');
+background-size: cover;
+background-position: center;
+padding: 20px;
+text-align: center;
+}
+
+h1 {
+color: #000000;
+margin: 2px 0;
+font-weight: bold;
+font-style: italic;
+font-size: 60px;
+padding: 3px;
+text-shadow: 0 0 3px #fbff81;
+animation: fadeToBlack 2.5s infinite;
+}
+
+h2 {
+color: #000000;
+margin: 2px 0;
+font-weight: bold;
+font-style: italic;
+font-size: 30px;
+padding: 3px;
+text-shadow: 0 0 3px #fbff81;
+animation: fadeToBlack 2.5s infinite;
+margin: 10px;
+}
+
+@keyframes fadeToBlack {
+0%, 100% {
+color: #000000;
+}
+50% {
+color: #eaff00;
+text-shadow: 0 0 5px #fbff81;
+}
+}
+
+.icons {
+text-align: center;
+margin-top: 10px;
+}
+
+.icons a {
+margin-left: 10px;
+display: inline-block;
+width: 30px;
+height: 30px;
+text-align: center;
+line-height: 30px;
+background-color: #000000;
+color: #eaff00;
+border-radius: 50%;
+transition: transform 0.5s ease;
+font-size: 20px;
+text-decoration: none;
+}
+
+.icons a:hover {
+transform: scale(1.5);
+animation: pulse 0.45s infinite;
+color: #000000;
+background-color: #eaff00;
+}
+
+@keyframes pulse {
+0% {
+transform: scale(1);
+}
+50% {
+transform: scale(1.5);
+}
+100% {
+transform: scale(1);
+}
+}
+
+.exterior {
+width: 90%;
+margin: 0 auto;
+padding-top: 10px;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+
+.exterior2 {
+width: 90%;
+height: fit-content;
+margin: 0 auto;
+padding-top: 6px;
+padding-bottom: 6px;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+
+.ficha {
+background-color: #101010;
+padding: 20px;
+margin: 6px;
+border-radius: 10px;
+box-shadow: 0px 0px 10px #ffffff;
+width: calc(20% - 12px);
+height: 310px;
+box-sizing: border-box;
+}
+
+.ficha h3 {
+color: #eaff00;
+margin-top: 0;
+font-weight: bold;
+font-style: italic;
+font-size: 18px;
+}
+
+.neo2 {
+border: none;
+border-radius: 5px;
+padding: 6px;
+font-weight: bold;
+font-style: italic;
+text-align: center;
+font-size: 18px;
+margin: 3px;
+background-color: #2f2f2f;
+color: #c3c3c3;
+width: calc(100% - 16px);
+height: 40px;
+}
+
+.neo3 {
+border: none;
+border-radius: 5px;
+padding: 6px;
+font-weight: bold;
+font-style: italic;
+text-align: center;
+font-size: 18px;
+margin: 3px;
+background-color: #2f2f2f;
+color: #eaff00;
+width: calc(100% - 16px);
+height: 40px;
+}
+
+::placeholder {
+color: #3c3c3c;
+}
+
+.neo2::placeholder {
+color: #626262;
+}
+
+.neo2::-webkit-inner-spin-button,
+.neo2::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 10px; /* Espacio entre los botones */
+}
+
+.button-container a {
+    background-color: #000000;
+    color: #eaff00;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.button-container a:hover {
+    background-color: #eaff00;
+    color: #000000;
+}
+
+
+        .button-container a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #d3d3d3;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .button-container a:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+/* Footer */
+footer {
+    background-color: #eaff00;
+    text-align: center;
+    color: #000000;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 18px;
+    padding: 2px;
+    text-shadow: 0 0 3px #fbff81;
+    animation: fadeToBlack 2.5s infinite;
+    margin: 10px;
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 24px; /* Ajustar el tamaño de h2 */
+        margin: 10px 50;
+    }
+
+    .exterior2 {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .ficha {
+        width: 47%; /* Ajustar el ancho para que haya dos fichas por fila */
+        height: auto; /* Alto automático para adaptarse al contenido */
+    }
+
+    .ficha h3 {
+        font-size: 12px; /* Ajustar el tamaño del texto */
+    }
+
+    .neo2 {
+        font-size: 10px;
+    }
+
+    .neo3 {
+        font-size: 10px;
+    }
+
+    footer {
+        font-size: 3vw;
+    }
+
+}
+</style>
+</head>
+<body>
+<header>
+<h1>Finanzas</h1>
+<div class="icons">
+<a href="https://onedrive.live.com/?id=root&cid=C244D240800218C1" class="fab fa-windows" target="_blank"></a>
+<a href="https://chat.openai.com/" class="fas fa-globe" target="_blank"></a>
+<a href="https://mail.google.com/" class="fab fa-google" target="_blank"></a>
+<a href="https://web.whatsapp.com/" class="fab fa-whatsapp" target="_blank"></a>
+<a href="https://www.instagram.com/" class="fab fa-instagram" target="_blank"></a>
+<a href="https://es.linkedin.com/?src=go-pa&trk=sem-ga_campid.18146679037_asid.140850334975_crid.619061882350_kw.linkedin%20login_d.c_tid.kwd-12704335873_n.g_mt.e_geo.1005479&mcid=6968657504633266178&cid=&gad_source=1&gclsrc=aw.ds" class="fab fa-linkedin" target="_blank"></a>
+<a href="https://github.com/" class="fab fa-github" target="_blank"></a>
+<a href="https://twitter.com/" class="fab fa-twitter" target="_blank"></a>
+<a href="https://www.facebook.com/" class="fab fa-facebook" target="_blank"></a>
+</div>
+</header>
+
+<h2>Gastos Mensuales</h2>
+<div class="exterior2"> <!-- SECTOR 1 -->
+
+    <div class="ficha"> <!-- SECTOR 1 FICHA 1 -->
+        <h3>Vivienda</h3>
+            <input class="neo2" type="number" id="alquiler" placeholder="alquiler" oninput="calcularSuma()">
+            <input class="neo2" type="number" id="electricidad" placeholder="electricidad" oninput="calcularSuma()">
+            <input class="neo2" type="number" id="agua" placeholder="agua" oninput="calcularSuma()">
+            <input class="neo2" type="number" id="teléfono" placeholder="teléfono" oninput="calcularSuma()">
+            <input class="neo2" type="number" id="comida" placeholder="comida" oninput="calcularSuma()">        
+    </div>
+
+    <div class="ficha"> <!-- SECTOR 1 FICHA 2 -->
+        <h3>Coche</h3>
+            <input class="neo2" type="number" id="cuota" placeholder="cuota" oninput="calcularSuma()">
+            <input class="neo2" type="number" id="seguro" placeholder="seguro" oninput="calcularSuma()">
+            <input class="neo2" type="number" id="mantenimiento" placeholder="mantenimiento" oninput="calcularSuma()">
+            <input class="neo2" type="number" id="combustible" placeholder="combustible" oninput="calcularSuma()">
+    </div>
+
+    <div class="ficha"> <!-- SECTOR 1 FICHA 3 -->
+        <h3>Personal</h3>
+        <input class="neo2" type="number" id="vida social" placeholder="vida social" oninput="calcularSuma()">
+        <input class="neo2" type="number" id="ropa" placeholder="ropa" oninput="calcularSuma()">
+        <input class="neo2" type="number" id="calzado" placeholder="calzado" oninput="calcularSuma()">
+        <input class="neo2" type="number" id="hogar" placeholder="hogar" oninput="calcularSuma()">
+        <input class="neo2" type="number" id="otros" placeholder="otros" oninput="calcularSuma()">
+    </div>
+
+    <div class="ficha"> <!-- SECTOR 1 FICHA 4 -->
+        <h3>Familia</h3>
+        <input class="neo2" type="number" id="hija" placeholder="hija" oninput="calcularSuma()">
+        <input class="neo2" type="number" id="viajes" placeholder="viajes" oninput="calcularSuma()">
+        <input class="neo2" type="number" id="ahorros" placeholder="ahorros" oninput="calcularSuma()">
+        <input class="neo2" type="number" id="reta" placeholder="reta" oninput="calcularSuma()">
+        <input class="neo3" type="number" id="total" placeholder="total" readonly>
+    </div>
+</div>
+<br>
+<div class="button-container">
+    <a href="https://lophersson.github.io/omniweb/" target="_blank">Visita OmniWeb</a>
+    <a href="https://lophersson.github.io/lophersson_group/" target="_blank">Visita Lophersson Group</a>
+</div>
+<br>
+<footer>
+    <p>&copy; 2025 OmniWeb. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+function calcularSuma() {
+    // Obtener los valores de los inputs
+    var alquiler = parseFloat(document.getElementById('alquiler').value) || 0;
+    var electricidad = parseFloat(document.getElementById('electricidad').value) || 0;
+    var agua = parseFloat(document.getElementById('agua').value) || 0;
+    var telefono = parseFloat(document.getElementById('teléfono').value) || 0;
+    var comida = parseFloat(document.getElementById('comida').value) || 0;
+    var cuota = parseFloat(document.getElementById('cuota').value) || 0;
+    var seguro = parseFloat(document.getElementById('seguro').value) || 0;
+    var mantenimiento = parseFloat(document.getElementById('mantenimiento').value) || 0;
+    var combustible = parseFloat(document.getElementById('combustible').value) || 0;
+    var vidaSocial = parseFloat(document.getElementById('vida social').value) || 0;
+    var ropa = parseFloat(document.getElementById('ropa').value) || 0;
+    var calzado = parseFloat(document.getElementById('calzado').value) || 0;
+    var hogar = parseFloat(document.getElementById('hogar').value) || 0;
+    var otros = parseFloat(document.getElementById('otros').value) || 0;
+    var hija = parseFloat(document.getElementById('hija').value) || 0;
+    var viajes = parseFloat(document.getElementById('viajes').value) || 0;
+    var ahorros = parseFloat(document.getElementById('ahorros').value) || 0;
+    var reta = parseFloat(document.getElementById('reta').value) || 0;
+
+    // Calcular la suma total
+    var total = alquiler + electricidad + agua + telefono + comida +
+                cuota + seguro + mantenimiento + combustible +
+                vidaSocial + ropa + calzado + hogar + otros +
+                hija + viajes + ahorros + reta;
+
+    // Mostrar el resultado en el campo de total
+    document.getElementById('total').value = total.toFixed(0);
+}
+</script>
+
+</body>
+</html>

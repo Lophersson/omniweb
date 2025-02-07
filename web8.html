@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finanzas</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {
+background-color: #000000;
+color: #ff00aa;
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+align-items: center;
+align-items: center;
+}
+
+header {
+background-image: url('header.png');
+background-size: cover;
+background-position: center;
+padding: 20px;
+text-align: center;
+}
+
+h1 {
+color: #000000;
+margin: 2px 0;
+font-weight: bold;
+font-style: italic;
+font-size: 60px;
+padding: 3px;
+text-shadow: 0 0 3px #fbff81;
+animation: fadeToBlack 2.5s infinite;
+}
+
+@keyframes fadeToBlack {
+0%, 100% {
+color: #000000;
+}
+50% {
+color: #eaff00;
+text-shadow: 0 0 5px #fbff81; /* Corrección de la sintaxis de text-shadow */
+}
+}
+
+.icons {
+text-align: center;
+margin-top: 10px;
+}
+
+.icons a {
+margin-left: 10px;
+display: inline-block;
+width: 30px;
+height: 30px;
+text-align: center;
+line-height: 30px;
+background-color: #000000;
+color: #eaff00;
+border-radius: 50%;
+transition: transform 0.5s ease;
+font-size: 20px;
+text-decoration: none;
+}
+
+.icons a:hover {
+transform: scale(1.5);
+animation: pulse 0.45s infinite;
+color: #000000; /* Color del icono */
+background-color: #eaff00;
+}
+
+@keyframes pulse {
+0% {
+transform: scale(1);
+}
+50% {
+transform: scale(1.5);
+}
+100% {
+transform: scale(1);
+}
+}
+
+.exterior {
+width: 90%;
+margin: 0 auto;
+padding-top: 10px;
+display: flex;
+flex-wrap: wrap; /* Agregado para que las cajas se ajusten al tamaño de la pantalla */
+justify-content: space-between;
+}
+
+.exterior2 {
+width: 90%;
+height: fit-content;
+margin: 0 auto;
+padding-top: 10px;
+padding-bottom: 10px;
+display: flex;
+flex-wrap: wrap; /* Agregado para que las cajas se ajusten al tamaño de la pantalla */
+justify-content: space-between;
+}
+
+.cajaInputs2 {
+background-color: #101010;
+padding: 20px;
+margin: 6px;
+border-radius: 10px;
+box-shadow: 0px 0px 10px #ffffff; /* Reducido el desenfoque de la sombra */
+width: calc(20% - 12px); /* Ajustado el tamaño de las cajas para que haya 5 en una fila */
+height: 500px; /* Reducido el alto de las cajas */
+box-sizing: border-box; /* Incluido el borde y el relleno en el tamaño total */
+}
+
+.cajaInputs2 h2 {
+color: #eaff00;
+margin-top: 0;
+font-weight: bold;
+font-style: italic;
+font-size: 18px;
+}
+
+.cajaInputs3 {
+background-color: #101010;
+padding: 20px;
+margin: 6px;
+border-radius: 10px;
+box-shadow: 0px 0px 10px #ffffff; /* Reducido el desenfoque de la sombra */
+width: calc(20% - 12px); /* Ajustado el tamaño de las cajas para que haya 5 en una fila */
+height: 420px; /* Reducido el alto de las cajas */
+box-sizing: border-box; /* Incluido el borde y el relleno en el tamaño total */
+}
+
+.cajaInputs3 h2 {
+color: #eaff00;
+margin-top: 0;
+font-weight: bold;
+font-style: italic;
+font-size: 18px;
+}
+
+.ficha {
+background-color: #101010;
+padding: 20px;
+margin: 6px;
+border-radius: 10px;
+box-shadow: 0px 0px 10px #ffffff; /* Reducido el desenfoque de la sombra */
+width: calc(20% - 12px); /* Ajustado el tamaño de las cajas para que haya 5 en una fila */
+height: 220px; /* Reducido el alto de las cajas */
+box-sizing: border-box; /* Incluido el borde y el relleno en el tamaño total */
+}
+
+.ficha h2 {
+color: #eaff00;
+margin-top: 0;
+font-weight: bold;
+font-style: italic;
+font-size: 18px;
+}
+
+.neo2 {
+border: none;
+border-radius: 5px;
+padding: 6px;
+font-weight: bold;
+font-style: italic;
+text-align: center;
+font-size: 18px;
+margin: 3px;
+background-color: #2f2f2f;
+color: #c3c3c3;
+width: calc(100% - 16px); /* Ajustado el ancho de los inputs */
+height: 40px;
+}
+
+::placeholder {
+color: #3c3c3c;
+}
+
+.neo2::placeholder {
+color: #626262;
+}
+
+.neo2::-webkit-inner-spin-button,
+.neo2::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+</style>
+
+<style>
+    body {
+    background-color: #000000;
+    color: #ff00aa;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-image: url('header.png');
+    background-size: cover;
+    background-position: center;
+    padding: 5vw; /* Proporcional al ancho de la pantalla */
+    text-align: center;
+}
+
+h1 {
+    color: #000000;
+    margin: 2px 0;
+    font-weight: bold;
+    font-style: italic;
+    font-size: clamp(24px, 8vw, 60px); /* Tamaño de fuente adaptable */
+    padding: 3px;
+    text-shadow: 0 0 3px #fbff81;
+    animation: fadeToBlack 2.5s infinite;
+}
+
+.icons a {
+    width: 6vw;
+    height: 6vw;
+    font-size: 5vw;
+}
+
+/* Contenedor flexible para las fichas */
+.exterior2 {
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Estilo responsivo para las cajas */
+.ficha {
+    background-color: #101010;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #ffffff;
+    width: clamp(150px, 45%, 250px); /* Ajuste dinámico del ancho */
+    height: auto; /* Altura automática */
+    text-align: center;
+}
+
+.ficha h2 {
+    color: #eaff00;
+    font-size: clamp(14px, 4vw, 18px);
+}
+
+/* Estilo para los inputs */
+.neo2 {
+    border: none;
+    border-radius: 5px;
+    padding: 6px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    font-size: clamp(14px, 4vw, 18px);
+    margin: 3px;
+    background-color: #2f2f2f;
+    color: #c3c3c3;
+    width: 100%;
+    height: 40px;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .exterior2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ficha {
+        width: 90%;
+    }
+
+    .icons a {
+        width: 8vw;
+        height: 8vw;
+        font-size: 7vw;
+    }
+}
+
+</style>
+
+</head>
+<body>
+<header>
+<h1>Finanzas</h1>
+<div class="icons">
+<a href="https://onedrive.live.com/?id=root&cid=C244D240800218C1" class="fab fa-windows" target="_blank"></a>
+<a href="https://chat.openai.com/" class="fas fa-globe" target="_blank"></a>
+<a href="https://mail.google.com/" class="fab fa-google" target="_blank"></a>
+<a href="https://web.whatsapp.com/" class="fab fa-whatsapp" target="_blank"></a>
+<a href="https://www.instagram.com/" class="fab fa-instagram" target="_blank"></a>
+<a href="https://es.linkedin.com/?src=go-pa&trk=sem-ga_campid.18146679037_asid.140850334975_crid.619061882350_kw.linkedin%20login_d.c_tid.kwd-12704335873_n.g_mt.e_geo.1005479&mcid=6968657504633266178&cid=&gad_source=1&gclsrc=aw.ds" class="fab fa-linkedin" target="_blank"></a>
+<a href="https://github.com/" class="fab fa-github" target="_blank"></a>
+<a href="https://twitter.com/" class="fab fa-twitter" target="_blank"></a>
+<a href="https://www.facebook.com/" class="fab fa-facebook" target="_blank"></a>
+</div>
+</header>
+
+<h1>Financiación de automóviles</h1>
+<div class="exterior2"> <!-- SECTOR 1 -->
+
+    <div class="ficha"> <!-- SECTOR 1 FICHA 1 -->
+        <h2>Precio</h2>
+            <input class="neo2" type="number" id="preciocoche" placeholder="Precio" oninput="calcularCoche()">
+    </div>
+
+    <div class="ficha"> <!-- SECTOR 1 FICHA 2 -->
+        <h2>A Financiar a 120 meses</h2>
+            <input class="neo2" type="number" id="apertura" placeholder="Comisión de apertura" oninput="calcularCoche()">
+            <input class="neo2" type="number" id="entradacoche" placeholder="Entrada" oninput="calcularCoche()">
+            <input class="neo2" type="number" id="financoche" placeholder="Importe a financiar" readonly>
+    </div>
+
+    <div class="ficha"> <!-- SECTOR 1 FICHA 3 -->
+        <h2>Cuota Mensual</h2>
+            <input class="neo2" type="number" id="cuotacoche" placeholder="Cuota mensual favorable" readonly>
+            <input class="neo2" type="number" id="cuotacoche" placeholder="Cuota mensual costosa" readonly>
+    </div>
+
+    <div class="ficha"> <!-- SECTOR 1 FICHA 4 -->
+        <h2>Total a pagar</h2>
+            <input class="neo2" type="number" id="costecoche" placeholder="Total adeudo favorable" readonly>
+            <input class="neo2" type="number" id="costecoche" placeholder="Total adeudo costoso" readonly>
+    </div>
+</div>
+
+<br>
+<br>
+
+<script>
+function calcularCoche() {
+    let precio = parseFloat(document.getElementById("preciocoche").value) || 0;
+    let apertura = parseFloat(document.getElementById("apertura").value) || 0;
+    let entrada = parseFloat(document.getElementById("entradacoche").value) || 0;
+    
+    // Calcular importe a financiar
+    let importeFinanciar = precio + apertura - entrada;
+    document.getElementById("financoche").value = importeFinanciar.toFixed(0);
+    
+    // Calcular cuota mensual favorable y costosa
+    let cuotaFavorable = importeFinanciar * 0.01;
+    let cuotaCostosa = importeFinanciar * 0.03;
+    document.getElementById("cuotacoche").value = cuotaFavorable.toFixed(0);
+    document.getElementById("cuotacoche").value = cuotaCostosa.toFixed(0);
+    
+    // Calcular total adeudado favorable y costoso
+    let totalFavor = cuotaFavorable * 120;
+    let totalCostoso = cuotaCostosa * 120;
+    document.getElementById("costecoche").value = totalFavor.toFixed(0);
+    document.getElementById("costecoche").value = totalCostoso.toFixed(0);
+}
+</script>
+</body>
+</html>

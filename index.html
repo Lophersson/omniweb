@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OmniWeb</title>
+    <style>
+/* Reset de estilos predeterminados */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fuentes y colores globales */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #000;
+    color: #333;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+/* Ajustes generales */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Barra superior */
+.top-bar {
+    display: flex;
+    justify-content: center;
+    background-color: #1360e5;
+    color: #f0f407;
+    padding: 10px;
+    font-size: 1.2vw; /* Tamaño adaptable */
+    font-weight: bold;
+    gap: 30px;
+}
+
+/* Navegación */
+nav {
+    background-color: #1c1c1c;
+    padding: 10px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: #fff;
+    font-size: 1.5vw; /* Tamaño adaptable */
+    letter-spacing: 0.5px;
+}
+
+nav ul li a:hover {
+    color: #f8c200;
+}
+
+/* Sección Hero */
+.hero {
+    text-align: center;
+    background-color: #333;
+    background-image: url('header.png');
+    color: white;
+    padding: 5vw 10px;
+}
+
+.hero h1 {
+    font-size: 4vw; /* Se reduce en móviles */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 2vw; /* Se reduce en móviles */
+}
+
+/* Contenedor de tarjetas */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(80px, 1fr)); /* Mantiene 4 cards por fila */
+    gap: 5px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow-x: auto; /* Permite desplazamiento en móviles */
+}
+
+/* Cards */
+.card {
+    background-color: #333;
+    color: #D3D3D3;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-width: 80px;
+    font-size: 1.0vw; /* Tamaño adaptable */
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background-color: #444;
+}
+
+/* Footer */
+footer {
+    background-color: #f8c200;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+    margin-top: 50px;
+    font-weight: bold;
+    font-size: 1.5vw;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media Queries para móviles */
+@media (max-width: 768px) {
+    .top-bar {
+        font-size: 3vw; /* Aumenta en pantallas pequeñas */
+        gap: 20px;
+    }
+
+    nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+    nav ul {
+        display: flex;
+        flex-wrap: nowrap; /* Evita que los elementos se envuelvan en múltiples líneas */
+        overflow-x: auto; /* Permite desplazamiento horizontal si es necesario */
+        justify-content: center;
+        padding: 10px 0;
+        white-space: nowrap; /* Evita que los enlaces se dividan en varias líneas */
+    }
+
+    nav ul li {
+        margin: 0 3px; /* Espaciado entre los enlaces */
+    }
+
+    nav ul li a {
+        color: #fff;
+        font-size: 2.4vw; /* Tamaño adaptable */
+        letter-spacing: 0.5px;
+        display: inline-block;
+        padding: 5px 10px;
+    }
+
+    .hero h1 {
+        font-size: 6vw;
+    }
+
+    .hero p {
+        font-size: 3vw;
+    }
+
+    .card-container {
+        grid-template-columns: repeat(4, 1fr); /* Mantiene 4 por fila */
+    }
+
+    .card {
+        font-size: 2.0vw;
+        height: auto;
+    }
+
+    .card:hover {
+    transform: scale(1.05);
+    background-color: #444;
+}
+
+    footer {
+        font-size: 3vw;
+    }
+}
+</style>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <span>Ferrol</span>
+            <span>-</span>
+            <span>OmniWeb</span>
+            <span>-</span>
+            <span>Febrero 2025</span>
+        </div>
+        <!--<div class="search-bar">
+            <input type="text" placeholder="Buscar productos">
+        </div>-->
+        <nav>
+            <ul>
+                <li><a href="https://lophersson.github.io/omniweb/web1.html">Menús Semanales</a></li>
+                <li><a href="https://lophersson.github.io/omniweb/web8.html">Finanzas</a></li>
+                <li><a href="https://lophersson.github.io/omniweb/web9.html">Los Mejores Coches de 2025</a></li>
+                <li><a href="https://lophersson.github.io/omniweb/web10.html">Moda</a></li>
+                <!--<li><a href="#">Calzado</a></li>
+                <li><a href="#">Consejos</a></li>
+                <li><a href="#">Curiosidades</a></li>
+                <li><a href="#" class="highlight">Curiosidades</a></li>-->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>Bienvenido a OmniWeb</h1>
+            <p>Web de contenido generalista</p>
+        </section>
+    </main>
+
+    <div class="card-container">
+        <a href="https://lophersson.github.io/omniweb/web1.html" class="card">
+            <h3>Menú Semanal</h3>
+        </a>
+        <a href="https://lophersson.github.io/omniweb/web2.html"class="card">
+            <h3>Alimentos</h3>
+        </a>
+        <a href="https://lophersson.github.io/omniweb/web3.html"class="card">
+            <h3>Consejos</h3>
+        </a>
+        <a href="https://lophersson.github.io/omniweb/web4.html"class="card">
+            <h3>Vida Sana</h3>
+        </a>
+        <a href="https://lophersson.github.io/omniweb/web5.html" class="card">
+            <h3>Agenda Privada</h3>
+        </a>
+        <a href="https://lophersson.github.io/omniweb/web6.html" class="card">
+            <h3>Menú LDL y RGE</h3>
+        </a>
+        <a href="https://lophersson.github.io/omniweb/web7.html" class="card">
+            <h3>Menú Control Vesícula Biliar</h3>
+        </a>
+        <a href="https://lophersson.github.io/omniweb/web8.html" class="card">
+            <h3>Financiación coches</h3>
+        </a>
+        <a href="https://lophersson.github.io/omniweb/web9.html" class="card">
+            <h3>Coches 2025</h3>
+        </a>
+        <a href="https://lophersson.github.io/omniweb/web10.html" class="card">
+            <h3>Moda</h3>
+        </a>
+        <a href="https://lophersson.github.io/omniweb/web11.html" class="card">
+            <h3>web11</h3>
+        </a>
+        <a href="https://lophersson.github.io/omniweb/web12.html" class="card">
+            <h3>web12</h3>
+        </a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 OmniWeb. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        // Aquí puedes agregar algún código JS si lo necesitas
+        // Ejemplo: un cambio de color de fondo en la barra de búsqueda al enfocarla
+        document.querySelector('.search-bar input').addEventListener('focus', function() {
+            this.style.backgroundColor = '#e0f7fa';
+        });
+        document.querySelector('.search-bar input').addEventListener('blur', function() {
+            this.style.backgroundColor = '';
+        });
+    </script>
+</body>
+</html>

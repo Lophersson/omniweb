@@ -1,0 +1,224 @@
+<!--<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>praise</title>
+		<!--<link type="text/css" href="estilos2.css" rel="stylesheet"/>-->
+        <!--<link href="https://fonts.cdnfonts.com/css/do-futuristic" rel="stylesheet">-->
+        <!--<link href="https://fonts.cdnfonts.com/css/predikat-oneday" rel="stylesheet">-->
+        <link href="https://fonts.cdnfonts.com/css/boldka-script" rel="stylesheet">
+		 <link rel="icon" type="image/x-icon" href="imagenes/favicon.png">
+		 <style>
+		 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to right, #8e44ad, #3498db, #e74c3c);
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cabecera {
+    text-align: center;
+    font-size: 22pt;
+    letter-spacing: 5px;
+    word-spacing: 10px;
+    border-bottom: none;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    width: 100%;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.cabecera img {
+    margin-top: 24px;
+    width: 240px;
+    height: 240px;
+}
+
+/*@import url('https://fonts.cdnfonts.com/css/koliko');*/
+/*@import url('https://fonts.cdnfonts.com/css/superficious');*/
+/*@import url('https://fonts.cdnfonts.com/css/do-futuristic');*/
+/*@import url('https://fonts.cdnfonts.com/css/predikat-oneday');*/
+@import url('https://fonts.cdnfonts.com/css/boldka-script');                
+
+.tituloFormulario {
+    text-align: center;
+    font-size: 160px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: 'Boldka Script', sans-serif;
+    /*font-family: 'DO Futuristic', sans-serif;*/
+    /*font-family: 'Superficious', sans-serif;*/
+    /*font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;*/
+    font-style: italic;
+    font-weight: lighter;
+    color: transparent;
+    /*background: linear-gradient(to right, #0000ff, #8a2be2, #ff69b4);Azul a Morado a Rosa */
+    /*background: linear-gradient(to right, #ffff00, #00ff00, #0000ff);*/
+    background: linear-gradient(to right, #ffff00, #00ff0f);
+    -webkit-background-clip: text; /* Aplicamos el degradado solo al área del texto */
+    background-clip: text; /* Propiedad estándar */
+    /*max-width: 100%;*/
+    /*height: auto;*/
+    animation: 0.5s linear infinite hue-rotate
+}
+
+@keyframes hue-rotate {
+    0% {
+        filter: hue-rotate()
+    }
+
+    to {
+        filter: hue-rotate(-360deg)
+    }
+}
+
+h2 {
+        text-align: center;
+        font-size: 36px;
+    margin-top: 2px;
+    margin-bottom: 12px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    /*font-family: 'Superficious', sans-serif;*/
+    color: #ffffff;
+    font-weight: lighter;
+    }
+
+.formularioCancion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    background: linear-gradient(to bottom, #9b59b6, #3498db, #ff69b4); /* Degradado de morado a azul a rosa */
+    border-radius: 10px; /* Bordes redondeados para el formulario */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra ligera para resaltar el formulario */    
+    border: solid 2px #f8fd6a;
+    margin-top: 2px;    
+}
+
+.formularioCancion div {
+    margin-bottom: 10px;
+}
+
+input {
+    width: 400px;
+    padding: 10px;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.botonAccion {
+    background: linear-gradient(to right, #4a90e2, #7b68ee, #ff69b4);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.botonAccion:hover {
+    background: linear-gradient(to right, #7b68ee, #4a90e2, #ff69b4);
+}
+
+.error {
+    color: white;
+    font-style: italic;
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.divRegistro {
+        text-align: center;
+        margin-top: 20px; /* Ajusta el espacio superior según sea necesario */
+    }
+
+    .divRegistro a {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #9b59b6; /* Color de fondo del botón (tono morado) */
+        color: #fff; /* Color del texto del botón */
+        text-decoration: none;
+        border-radius: 5px; /* Bordes redondeados para el botón */
+        transition: background-color 0.3s; /* Efecto de transición en el cambio de color de fondo */
+    }
+
+    .divRegistro a:hover {
+        background-color: #8e44ad; /* Color de fondo del botón al pasar el ratón (tono morado más oscuro) */
+    }
+    
+    .button {
+    background: linear-gradient(to right, #4a90e2, #7b68ee, #ff69b4);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+		 </style>
+	</head>
+	<body>
+	<div class="cabecera">
+    <!--<img src="https://assets-global.website-files.com/5f57e2e83e3ea74219e9f4c3/5fe31ed28d8b2bce4bef9143_empty%20banner-01.png" alt="Descripción de la imagen">-->
+    
+    <!--<img src="https://png.pngtree.com/thumb_back/fw800/background/20230720/pngtree-vibrant-candies-arrangement-on-a-bubblegum-pink-backdrop-created-in-3d-image_3720021.jpg" alt="Descripción de la imagen">-->
+    
+    <!--<img src="https://img.freepik.com/premium-photo/future-soundscapes-girl-listening-tomorrow-s-music_984027-19091.jpg" alt="Descripción de la imagen">-->
+    
+    <!--<img src="https://img.freepik.com/premium-photo/future-soundscapes-girl-listening-tomorrow-s-music_984027-19205.jpg" alt="Descripción de la imagen">-->
+    
+    <!--https://img.freepik.com/premium-photo/future-soundscapes-girl-listening-tomorrow-s-music_984027-19685.jpg-->
+
+</div>
+<h1 class="tituloFormulario">praise</h1>
+<!--<link href="https://fonts.cdnfonts.com/css/koliko" rel="stylesheet">-->
+                                                
+<link href="https://fonts.cdnfonts.com/css/superficious" rel="stylesheet">
+<form action="IniciarSesion" method="post" class="formularioCancion">
+        <h2>Inicia Sesión</h2>
+        <div>
+            <!--<% String nombreUsuario = request.getParameter("nombreUsuario"); %>
+            <% if(nombreUsuario == null) { %>
+            <% nombreUsuario = ""; %>
+            <% } %>-->
+            <input type="text" name="nombreUsuario" id="txtNombreUsuario" placeholder="Nombre de usuario" /*value="<%=nombreUsuario%/>"*//> 
+        </div>
+        <div>
+            <input type="password" name="clave" id="txtClave" placeholder="Clave"/> 
+        </div>
+        <div>
+            <input type="submit" value="Iniciar Sesión" class="button"/>
+            <!--<input type="submit" class="botonAccion" value="Iniciar Sesión"/>-->
+        </div>
+        <!--<% String mensaje = (String)request.getAttribute("error"); %>
+        <% if (mensaje != null) { %>-->
+        <div>
+            <!--<span class="error"><%=mensaje %></span>-->    
+        </div>
+        <!--<% } %>-->
+    </form>
+		
+		<div class="divRegistro">
+			¿Eres nuevo? <a href="registro.jsp">Regístrate!</a>
+		</div>
+        <!--https://www.cdnfonts.com/boldka-script.font-->
+	</body>
+</html>
