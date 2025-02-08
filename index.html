@@ -1162,26 +1162,31 @@ const Restaurants = () => {
                 desc: "Los mejores menús para tí",
                 id: 1,
                 image: "https://koro.imgix.net/media/70/28/d0/1675270717/Tofu-Bowl.jpg?w=3000&auto=format,compress&fit=max&cs=srgb",
-                title: "Menús"
+                title: "Menús",
+                url: "https://lophersson.github.io/omniweb/web1.html"
             }, {
                 desc: "La mejor moda masculina de hoy",
                 id: 2,
                 image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhcch6uss7Nm7PpaRsuHzGxYwBV966skH2kLr8kW11JLMS6crqD2sB1tELIOCIeA3xTBKru5T0hUQ716fck_Anm7yv7cUfmtlW9H4lL6s2c7cxX_KMR5VFUEyrSbZR1R1PyGyz00wtVWyw/s1600/Roch+Barbot+Models+Mango.jpg",
-                title: "Moda"
+                title: "Moda",
+                url: "https://lophersson.github.io/omniweb/web2.html"
             }, {
                 desc: "Controla tus finanzas personales",
                 id: 3,
                 image: "https://agg.org.gt/wp-content/uploads/2019/02/Finanzas-Portada-1200x675.png",
-                title: "Finanzas"
+                title: "Finanzas",
+                url: "https://lophersson.github.io/omniweb/web3.html"
             }, {
                 desc: "Elige el mejor coche para ti",
                 id: 4,
                 image: "https://www.mercedes-benz.es/content/dam/hq/passengercars/cars/eqe/suv-x294-pi/overview/exterior/08-2024/images/mercedes-benz-eqe-suv-x294-exterior-hotspot-start-3302x1858-08-2024.jpg/1730655891095.jpg",
-                title: "Coches"
+                title: "Coches",
+                url: "https://lophersson.github.io/omniweb/web4.html"
             }].map((restaurant) => {
             const styles = {
                 backgroundImage: `url(${restaurant.image})`
             };
+             
             return (React.createElement("div", { key: restaurant.id, className: "restaurant-card background-image", style: styles },
                 React.createElement("div", { className: "restaurant-card-content" },
                     React.createElement("div", { className: "restaurant-card-content-items" },
