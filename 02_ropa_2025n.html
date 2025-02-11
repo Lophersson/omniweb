@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>miRopa</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 90vh;
+            background-color: #000000; /* Fondo negro */
+            color: #26619c; /* Texto en azul lapislázuli */
+        }
+        .header-title {
+            width: 96%;
+            text-align: center;
+            margin-top: 8px;
+            margin-bottom: 4px;
+            padding: 4px;
+            background-color: #1b263b; /* Azul oscuro apagado */
+            border-radius: 8px;
+        }
+        .header-title h1 {
+            margin: 0;
+            color: #66a2de; /* Azulado para el título */
+            font-weight: bold;
+            font-style: italic;
+            font-size: 18px;
+            padding-top: 4px;
+            margin-top: 4px;
+        }
+        .container {
+            width: 98%;
+            max-width: 480px;
+            background-color: #2e4057; /* Azul clásico apagado */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            box-sizing: border-box;
+            align-items: center;
+            text-align: center;
+            align-content: center;
+        }
+        h2 {
+            text-align: center;
+            color: #66a2de; /* Azul lapislázuli */
+            font-weight: bold;
+            font-style: italic;
+            font-size: 18px;
+            padding: 1px;
+            margin: 2px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+        th, td {
+            border: 0px solid #ddd;
+            padding: 2px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-style: italic;
+            font-size: 10px;
+        }
+        th {
+            background-color: #1b263b; /* Cabecera de campos: Azul oscuro apagado */
+            color: #949494; /* Texto cabecera: Blanco grisáceo */
+            text-align: center;
+        }
+        td {
+            text-align: right;
+            color: #66a2de; /* Importes en azulado */
+        }
+        td:first-child {
+            text-align: left;
+            color: #66a2de; /* Texto de conceptos en azul lapislázuli */
+        }
+        tr:nth-child(even) {
+            background-color: #3e536b; /* Filas pares: Azul apagado intermedio */
+        }
+        .total-row {
+            font-weight: bold;
+            background-color: #1b263b; /* Total: Azul oscuro apagado */
+            margin-top: 8px;
+        }
+        .total-row td {
+            font-weight: bold;
+            background-color: #1b263b;
+            color: #949494; /* Texto del total en grisáceo */
+            border-radius: 8px;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header-title">
+    <h1>presupuestos</h1>
+</div>
+    
+<div class="container">
+    <h2>24 de enero de 2025 - 7:21</h2>
+        
+    <table id="tabla-calculos">
+        <thead>
+            <tr>
+                <th>concepto</th>
+                <th>a pagar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>jack & jones liam x2</td><td>60,00 €</td></tr>
+            <tr><td>bermudas beige</td><td>18,00 €</td></tr>
+            <tr><td>chino beige skinny lefties</td><td>18,00 €</td></tr>
+            <tr><td>cargo beige lefties</td><td>16,00 €</td></tr>
+            <tr><td>polo blanco</td><td>13,00 €</td></tr>
+            <tr><td>polo navy</td><td>13,00 €</td></tr>
+            <tr><td>vaquero blanco lefties</td><td>12,00 €</td></tr>
+            <tr><td>pantalón cargo verde lefties</td><td>16,00 €</td></tr>
+            <tr><td>pantalón cargo azul/negro lefties</td><td>16,00 €</td></tr>
+            <tr><td>polo fucshia</td><td>16,00 €</td></tr>
+            <tr><td>vaquero verde lefties/billy mango</td><td>12,00 €</td></tr>
+            <tr><td>polo verde manzana gran smith</td><td>16,00 €</td></tr>
+            <tr><td>dos camisetas lefties mc</td><td>8,00 €</td></tr>
+            <tr><td>bermudas celeste</td><td>15,00 €</td></tr>
+            <tr><td>tres camisetas mcorta lefties</td><td>12,00 €</td></tr>
+            <tr><td>cinturón trenzado azul, rojo y blanco decathlon</td><td>6,00 €</td></tr>
+            <tr><td>gorro verde lefties - 3,99 €</td><td>0,00 €</td></tr>
+            <tr><td>dos camisas oxford celeste mango - 71,98 €</td><td>0,00 €</td></tr>
+            <tr><td>abrigo camel kiabi talla M - 50,00 €</td><td>0,00 €</td></tr>
+            <tr><td>sudadera azul, camiseta negra y bufanda lefties - 18,06 €</td><td>0,00 €</td></tr>
+            <tr><td>vestido rojo Ana Patricia Springfield - 8,99 €</td><td>0,00 €</td></tr>
+            <tr><td>abrigo cuello beige Lefties Ana Patricia - 4,99 €</td><td>0,00 €</td></tr>
+            <tr><td>cazadora aviador marrón borreguillo - 80e - 44,99 €</td><td>0,00 €</td></tr>
+            <tr><td>polo rosa clarito cortefiel - 16e - 3,99 €</td><td>0,00 €</td></tr>
+            <tr><td>otros</td><td>6,01 €</td></tr>
+        </tbody>
+    </table>
+    
+    <table>
+        <tbody>
+            <tr class="total-row">
+                <td>Total</td>
+                <td id="total-a-pagar"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+    
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const rows = document.querySelectorAll('#tabla-calculos tbody tr:not(.total-row)');
+        let total = 0;
+
+        rows.forEach(row => {
+            const amountCell = row.cells[1];
+            if (amountCell) {
+                const amountText = amountCell.textContent.trim();
+                const amount = parseFloat(amountText.replace(' €', '').replace(',', '.'));
+                if (!isNaN(amount)) {
+                    total += amount;
+                }
+            }
+        });
+
+        document.getElementById('total-a-pagar').textContent = `${total.toFixed(2).replace('.', ',')} €`;
+
+        ordenarPorImporte(); // Llama a la función de ordenamiento automáticamente al cargar
+    });
+
+    function ordenarPorImporte() {
+        const tbody = document.querySelector('#tabla-calculos tbody');
+        const rowsArray = Array.from(tbody.querySelectorAll('tr:not(.total-row)'));
+
+        rowsArray.sort((a, b) => {
+            const importeA = parseFloat(a.cells[1].textContent.replace(' €', '').replace(',', '.')) || 0;
+            const importeB = parseFloat(b.cells[1].textContent.replace(' €', '').replace(',', '.')) || 0;
+            return importeB - importeA; // Orden descendente
+        });
+
+        rowsArray.forEach(row => tbody.appendChild(row));
+    }
+</script>
+            
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>otros Octubre 2024</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 90vh;
+            background-color: #000000; /* Fondo negro */
+            color: #26619c; /* Texto en azul lapislázuli */
+        }
+        .header-title {
+            width: 95%;
+            text-align: center;
+            margin-top: 8px;
+            margin-bottom: 4px;
+            padding-top: 4px;
+            padding-bottom: 4px;
+            background-color: #1b263b; /* Azul oscuro apagado */
+            border-radius: 8px;
+        }
+        .header-title h1 {
+            margin: 0;
+            color: #66a2de; /* Azulado para el título */
+            font-weight: bold;
+            font-style: italic;
+            font-size: 18px;
+            padding-top: 4px;
+            margin-top: 4px;
+            padding-bottom: 4px;
+        }
+        .container {
+            width: 95%;
+            max-width: 480px;
+            background-color: #2e4057; /* Azul clásico apagado */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 12px;
+            box-sizing: border-box;
+            align-items: center;
+            text-align: center;
+            align-content: center;
+        }
+        h2 {
+            text-align: center;
+            color: #66a2de; /* Azul lapislázuli */
+            font-weight: bold;
+            font-style: italic;
+            font-size: 18px;
+            padding: 1px;
+            margin: 2px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+        th, td {
+            border: 0px solid #ddd;
+            padding: 2px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-style: italic;
+            font-size: 13px;
+        }
+        th {
+            background-color: #1b263b; /* Cabecera de campos: Azul oscuro apagado */
+            color: #949494; /* Texto cabecera: Blanco grisáceo */
+            text-align: center;
+        }
+        td {
+            text-align: right;
+            color: #66a2de; /* Importes en azulado */
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+        td:first-child {
+            text-align: left;
+            color: #66a2de; /* Texto de conceptos en azul lapislázuli */
+        }
+        tr:nth-child(even) {
+            background-color: #3e536b; /* Filas pares: Azul apagado intermedio */
+        }
+        .total-row {
+            font-weight: bold;
+            background-color: #1b263b; /* Total: Azul oscuro apagado */
+            margin-top: 8px;
+        }
+        .total-row td {
+            font-weight: bold;
+            background-color: #1b263b;
+            color: #949494; /* Texto del total en grisáceo */
+            border-radius: 8px;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-title">
+        <h1>Presupuestos</h1>
+    </div>
+    
+    <div class="container">
+        <h2>Noviembre 2024</h2>
+        
+        <table id="tabla-calculos">
+            <thead>
+                <tr>
+                    <th>Concepto</th>
+                    <th>A Pagar</th>
+                </tr>
+            </thead>
+            <tbody id="data-rows">
+                 <tr>
+  <td>entregas #2</td>
+  <td>880,00 €</td>
+</tr>
+<tr>
+  <td>smartwatch IgotIt</td>
+  <td>74,00 €</td>
+</tr>
+<tr>
+  <td>edp 50ml - 29nov24 - black friday IgotIt</td>
+  <td>48,00 €</td>
+</tr>
+<tr>
+  <td>agenda 2025 - Oct_2024 IgotIt</td>
+  <td>16,00 €</td>
+</tr>
+<tr>
+  <td>sorteos selae 10,00 €</td>
+  <td>0,00 €</td>
+</tr>
+<tr>
+  <td>otros 20,00 €</td>
+  <td>4,40 €</td>
+</tr>
+<tr>
+  <td>rituals foaming shower gel IgotIt</td>
+  <td>10,00 €</td>
+</tr>
+<tr>
+  <td>cine 8,00 €</td>
+  <td>0,00 €</td>
+</tr>
+<tr>
+  <td>revistas</td>
+  <td>4,00 €</td>
+</tr>
+<tr>
+  <td>ambientador coche 3,00 €</td>
+  <td>0,00 €</td>
+</tr>
+<tr>
+  <td>vasos azules n⁰3 y n⁰4 JYSK 3,00 €</td>
+  <td>0,00 €</td>
+</tr>
+<tr>
+  <td>lavandería app IgotIt</td>
+  <td>2,00 €</td>
+</tr>
+<tr>
+  <td>ambientador casa - ver lista hogar</td>
+  <td>0,00 €</td>
+</tr>
+                <tr>
+  <td>oud vibrant leather 100ml - 20,00 €</td>
+  <td>0,00 €</td>
+</tr>
+<tr>
+  <td>farmacia - 3,20e</td>
+  <td>1,60 €</td>
+</tr>
+<tr>
+  <td>cuidado personal - 6e</td>
+  <td>0,00 €</td>
+</tr>
+<tr>
+  <td>gel manos 500ml zara home - bf - DESCARTADO!</td>
+  <td>0,00 €</td>
+</tr>
+<tr>
+  <td>caravan eroski - 10e</td>
+  <td>0,00 €</td>
+</tr>
+<tr>
+  <td>champú H&S 300ml x2 - 6,00 € - COMPRADO!</td>
+  <td>0,00 €</td>
+</tr>
+<tr>
+  <td>gel de baño magno x2 - 7,40e</td>
+  <td>0,00 €</td>
+</tr>
+<tr>
+  <td>once 11 nov. 2024 - COMPRADO!</td>
+  <td>0,00 €</td>
+</tr>
+<tr>
+  <td>caja tés JYSK 7e - COMPRADO!</td>
+  <td>0,00 €</td>
+</tr>
+            </tbody>
+            <tfoot>
+                <tr class="total-row">
+                    <td>Total</td>
+                    <td id="total-a-pagar"></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const rows = document.querySelectorAll('#tabla-calculos tbody tr');
+        let total = 0;
+
+        rows.forEach(row => {
+            const amountCell = row.cells[1];
+            if (amountCell) {
+                const amountText = amountCell.textContent.trim();
+                // Eliminar el símbolo de euro y las comas, luego convertir a número
+                const amount = parseFloat(amountText.replace('€', '').replace('.', '').replace(',', '.'));
+                if (!isNaN(amount)) {
+                    total += amount;
+                }
+            }
+        });
+
+        // Mostrar el total en la celda correspondiente
+        document.getElementById('total-a-pagar').textContent = `${total.toFixed(2)} €`;
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const rows =document.querySelectorAll('#data-rows tr');
+        const tbody = document.getElementById('data-rows');
+
+        // Separar las filas que tienen "IgotIt" y las que no
+        const rowsIgotIt = [];
+        const rowsOthers = [];
+
+        rows.forEach(row => {
+            const conceptCell = row.cells[0];
+            const amountCell = row.cells[1];
+            if (amountCell && conceptCell) {
+                const amountText = amountCell.textContent.trim();
+                const amount = parseFloat(amountText.replace('€', '').replace('.', '').replace(',', '.'));
+                const concept = conceptCell.textContent.toLowerCase();
+
+                if (concept.includes('igotit')) {
+                    rowsIgotIt.push({ row, amount });
+                } else {
+                    rowsOthers.push({ row, amount });
+                }
+            }
+        });
+
+        // Función para ordenar de mayor a menor importe
+        const sortByAmount = (a, b) => b.amount - a.amount;
+
+        // Ordenar las filas
+        rowsIgotIt.sort(sortByAmount);
+        rowsOthers.sort(sortByAmount);
+
+        // Borrar las filas actuales, excepto el total
+        while (tbody.firstChild) {
+            tbody.removeChild(tbody.firstChild);
+        }
+
+        // Insertar las filas ordenadas
+        rowsIgotIt.forEach(({ row }) => tbody.appendChild(row));
+        rowsOthers.forEach(({ row }) => tbody.appendChild(row));
+
+        // Calcular el total después de ordenar
+        let total = 0;
+        [...rowsIgotIt, ...rowsOthers].forEach(({ amount }) => {
+            if (!isNaN(amount)) {
+                total += amount;
+            }
+        });
+
+        // Mostrar el total
+        document.getElementById('total-a-pagar').textContent = `${total.toFixed(2)} €`;
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactos</title>
+    <style>
+        body {
+            background-color: black;
+            color: #B0B0B0;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header h1 {
+            text-align: center;
+            padding: 10px;
+            font-size: 50px;
+            color: white;
+            font-style: italic;
+            font-weigth: 800;
+            margin: 20px 0px 0px 0px;
+        }
+
+        footer {
+            text-align: center;
+            font-style: italic;
+            padding: 10px;
+            font-size: 1em;
+            color: white;
+            background-color: #333;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #contact-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0px 0px 0px;
+        }
+
+        .contact-card {
+            background-color: #f0f0f0;
+            margin: 10px;
+            padding: 15px;
+            width: 80%;
+            text-align: center;
+            font-style: italic;
+            font-weight: 800;
+            color: #7A7A7A;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(4px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-card:active {
+            transform: translateY(6px);
+        }
+
+        .contact-card a {
+            color: inherit;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Contactos</h1>
+    </header>
+
+    <div id="contact-list"></div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <footer>Contactos Diciembre 2024</footer>
+
+    <script>
+        const contactos = [
+            { name: 'b01_Papa Alfredo', phone: '696006166' },
+            { name: 'b03_Vero Breijo Freire', phone: '638135644' },
+            { name: 'b02_Nydia Sanchez Tejo', phone: '630319381' },
+            { name: 'c01_Myriam (Argentina)', phone: '+5491154866213' },
+            { name: 'b04_Marta Veiga', phone: '+34626140796' },
+            { name: 'c03_Ana Gomez Varela', phone: '+34628045725' },
+            { name: 'c04_Maria Rodriguez', phone: '+34626516029' },
+            { name: 'c02_Elena Blue Eyes', phone: '648664912' },
+            { name: 'c05_Ana Vela', phone: '678415937' },
+            { name: 'd02_Jimmy', phone: '+34722382770' },
+            { name: 'd03_Nora', phone: '+34631075208' },
+            { name: 'd01_Miguel Valdoviño', phone: '689306263' },
+            { name: 'e01_Isabel', phone: '+34676579157' },
+            { name: 'e02_Tamara Da Silva', phone: '637353593' },
+            { name: 'z01_Hospital Juan Cardona', phone: '981312500' },
+            { name: 'z02_Dimolk Peugeot Gil', phone: '637914965' },
+            { name: 'efbs1_Alfonso Profesor', phone: '+34675553639' },
+            { name: 'efbs2_Cesar', phone: '+34638863501' },
+            { name: 'efbs2_Fabian', phone: '+34696111228' },
+            { name: 'efbs2_Gabriel', phone: '+34665849419' },
+            { name: 'efbs2_Leo', phone: '+34663170693' },
+            { name: 'efbs2_Mauro', phone: '+34607194419' },
+            { name: 'efbs2_Pablo Freire', phone: '+34633376236' },
+            { name: 'efbs2_Pol', phone: '+34699674216' },
+            { name: 'efbs2_Yaiza', phone: '+34622613963' },
+            { name: 'efbs2_Guillermo', phone: '+34617126211' },
+            { name: 'Humberto', phone: '+34658868490' },
+            { name: 'cs_Liliana', phone: '653965099' },
+            { name: 'cs_Felix', phone: '610489401' },
+            { name: 'cs_Blanca', phone: '675535647' },
+            { name: 'cs_Alberto', phone: '673090145' },
+            { name: 'cs_Maria Angeles', phone: '+34659571288' },
+            { name: 'cs_Miguel', phone: '+34608387168' },
+            { name: 'cs_Alex', phone: '+34610305285' },
+            { name: 'cs_Gus', phone: '+34699858150' },
+            { name: 'cs_Andres', phone: '636359449' },
+            { name: 'cs_Mario', phone: '+34658441647' },
+            { name: 'cs_Carlos', phone: '698129283' },
+            { name: 'cs_Pablo Profesor', phone: '639791410' },
+            { name: 'cs_MLiliana', phone: '654358764' },
+            { name: 'efbs1_Emilia Pereiro Pereiro', phone: '+34658424628' },
+            { name: 'efbs1_Marian', phone: '+34623104650' },
+            { name: 'efbs1_Alejandra', phone: '+34611428570' },
+            { name: 'efbs1_Indalecio', phone: '+34659075235' },
+            { name: 'efbs1_Dani Maques', phone: '+34664500403' },
+            { name: 'efbs1_David Regal', phone: '+34698164343' },
+            { name: 'efbs1_Loli', phone: '+34669079862' },
+            { name: 'efbs1_Manel', phone: '+34633771979' },
+            { name: 'y03_Sheyla Caranza', phone: '600252068' },
+            { name: 'y02_Susana Miño', phone: '656258957' },
+            { name: 'y01_Cristina Garcia Garcia', phone: '671029816' },
+            { name: 'y04_Lucia Arteixo', phone: '+34628204828' },
+            { name: 'y05_Mama Angee', phone: '625276127' },
+        ];
+
+        contactos.sort((a, b) => a.name.localeCompare(b.name));
+
+        const contactListContainer = document.getElementById("contact-list");
+        contactos.forEach(contact => {
+            const card = document.createElement("div");
+            card.classList.add("contact-card");
+            card.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 80%)`;
+            card.innerHTML = `
+                <a href="tel:${contact.phone}">
+                    <p>${contact.name}</p>
+                </a>
+            `;
+            contactListContainer.appendChild(card);
+        });
+    </script>
+</body>
+</html>

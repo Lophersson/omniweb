@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto a Voz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #757575;
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            color: yellow;
+            font-style: italic;
+            font-size: 22px;
+            margin: 10px 0;
+        }
+
+        .text-to-speech {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        textarea {
+            width: 360px;
+            height: 330px;
+            font-size: 32px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #f1f8e9;
+            color: #000;
+            font-weight: bold;
+            font-style: italic;
+            font-family: Tahoma;
+        }
+
+        .button-row {
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+        }
+
+        button {
+            width: 180px;
+            height: 55px;
+            font-size: 18px;
+            font-weight: bold;
+            font-style: italic;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #cce0ff;
+            transition: opacity 0.3s ease;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Estoy en reposo vocal durante unos días por una operación en la cuerda vocal derecha</h1>
+
+    <div class="text-to-speech">
+        <textarea id="customText" placeholder="Escribe aquí el texto para reproducir..."></textarea>
+        <div class="button-row">
+            <button onclick="reproducirTexto()">Reproducir</button>
+            <button onclick="borrarTexto()">Borrar</button>
+        </div>
+    </div>
+
+    <script>
+        function leerFrase(frase) {
+            const mensaje = new SpeechSynthesisUtterance(frase);
+            mensaje.lang = 'es-ES';
+            const voces = window.speechSynthesis.getVoices();
+            const voz = voces.find(v => v.lang === 'es-ES');
+            if (voz) mensaje.voice = voz;
+            window.speechSynthesis.speak(mensaje);
+        }
+
+        function reproducirTexto() {
+            const texto = document.getElementById('customText').value.trim();
+            if (texto) {
+                leerFrase(texto);
+            } else {
+                alert('Por favor, escribe algo en el cuadro de texto.');
+            }
+        }
+
+        function borrarTexto() {
+            document.getElementById('customText').value = '';
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #calendar {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #calendar table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        #calendar th, #calendar td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        .selected {
+            background-color: #ffeb3b;
+        }
+        .today {
+            background-color: #4caf50;
+            color: white;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .nav-buttons button {
+            font-size: 20px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="calendar">
+        <div class="nav-buttons">
+            <button id="prevMonth">&#9664;</button>
+            <h2 id="monthYear"></h2>
+            <button id="nextMonth">&#9654;</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Lun</th>
+                    <th>Mar</th>
+                    <th>Mié</th>
+                    <th>Jue</th>
+                    <th>Vie</th>
+                    <th>Sáb</th>
+                    <th>Dom</th>
+                </tr>
+            </thead>
+            <tbody id="days"></tbody>
+        </table>
+    </div>
+
+    <script>
+        const today = new Date();
+        let currentMonth = today.getMonth();
+        let currentYear = today.getFullYear();
+        const currentDate = today.getDate();
+
+        const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+        const daysInMonth = (month, year) => new Date(year, month + 1, 0).getDate();
+        
+        // Adjusted: Now Sunday is the last day of the week
+        const firstDayOfMonth = (month, year) => {
+            const dayOfWeek = new Date(year, month, 1).getDay();
+            return dayOfWeek === 0 ? 6 : dayOfWeek - 1;  // Sunday (0) becomes 6, so it's last
+        };
+
+        function updateCalendar() {
+            const monthYear = document.getElementById("monthYear");
+            const daysTable = document.getElementById("days");
+
+            monthYear.textContent = `${monthNames[currentMonth]} ${currentYear}`;
+
+            const totalDays = daysInMonth(currentMonth, currentYear);
+            const firstDay = firstDayOfMonth(currentMonth, currentYear);
+
+            let dayHTML = "";
+            for (let i = 0; i < firstDay; i++) {
+                dayHTML += "<td></td>";
+            }
+
+            for (let day = 1; day <= totalDays; day++) {
+                const isToday = day === currentDate && currentMonth === today.getMonth() && currentYear === today.getFullYear();
+                const isSelected = isToday ? "selected today" : "";
+
+                dayHTML += `<td class="${isSelected}" onclick="selectDay(${day})">${day}</td>`;
+
+                if ((firstDay + day) % 7 === 0) {
+                    dayHTML += "</tr><tr>";
+                }
+            }
+
+            // Adjust the last row if not complete
+            if ((firstDay + totalDays) % 7 !== 0) {
+                dayHTML += "<td colspan='" + (7 - (firstDay + totalDays) % 7) + "'></td>";
+            }
+
+            daysTable.innerHTML = "<tr>" + dayHTML + "</tr>";
+        }
+
+        function selectDay(day) {
+            const selectedDays = document.querySelectorAll(".selected");
+            selectedDays.forEach(day => day.classList.remove("selected"));
+
+            const dayElements = document.querySelectorAll("td");
+            dayElements.forEach(cell => {
+                if (cell.textContent == day) {
+                    cell.classList.add("selected");
+                }
+            });
+        }
+
+        document.getElementById("prevMonth").addEventListener("click", () => {
+            currentMonth--;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            }
+            updateCalendar();
+        });
+
+        document.getElementById("nextMonth").addEventListener("click", () => {
+            currentMonth++;
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            updateCalendar();
+        });
+
+        updateCalendar();
+    </script>
+
+</body>
+</html>

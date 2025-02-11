@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presupuestos</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #e0e0e0;
+            padding-bottom: 20px;
+        }
+        .header-title {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
+            padding: 5px;
+            background-color: #f4e8d1;
+        }
+        .header-title h1 {
+            margin: 0;
+            color: #333;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 18px;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #f9f6f0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 0;
+            color: #333;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 18px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+        th, td {
+            padding: 2px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-style: italic;
+            font-size: 15px;
+        }
+        th {
+            background-color: #f4e8d1;
+            color: #333;
+            text-align: center;
+        }
+        td {
+            text-align: right;
+        }
+        td:first-child {
+            text-align: left;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .total-row {
+            font-weight: bold;
+            background-color: #f4e8d1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-title">
+        <h1>23 de Octubre de 2024</h1>
+    </div>
+    
+    <div class="container">
+        <h1>Limpieza del Hogar</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>CONCEPTO</th>
+                    <th>IMPORTE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Detergente lavadora</td>
+                    <td>4,50 €</td>
+                </tr>
+                <tr>
+                    <td>Fregasuelos</td>
+                    <td>8,00 €</td>
+                </tr>
+                <tr>
+                    <td>Fairy vajilla</td>
+                    <td>3,00 €</td>
+                </tr>
+                <tr>
+                    <td>Papel de cocina</td>
+                    <td>3,00 €</td>
+                </tr>
+                
+                <tr>
+                    <td>Esponja vajilla</td>
+                    <td>4,00 €</td>
+                </tr>
+                <tr>
+                    <td>Bayeta amarilla</td>
+                    <td>4,00 €</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>0,00 €</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>0,00 €</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>0,00 €</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>0,00 €</td>
+                </tr>
+                <tr>
+                    <td>otros</td>
+                    <td>21,50 €</td>
+                </tr>
+                <tr class="total-row">
+                    <td>Total año</td>
+                    <td id="total-anual-1">0,00 €</td>
+                </tr>
+                <tr class="total-row">
+                    <td>Por mes</td>
+                    <td id="total-mensual-1">0,00 €</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container">
+        <h1>total</h1>
+        <table>
+            <thead>
+                <tr class="total-row">
+                    <td>Total año</td>
+                    <td id="total-anual-2">0,00 €</td>
+                </tr>
+                <tr class="total-row">
+                    <td>Por mes</td>
+                    <td id="total-mensual-2">0,00 €</td>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function calcularTotalYMensual() {
+            const tablas = document.querySelectorAll('.container table');
+            let granTotalAnual = 0;
+
+            tablas.forEach((tabla, index) => {
+                let totalAnual = 0;
+                const filas = tabla.querySelectorAll('tbody tr:not(.total-row)');
+
+                filas.forEach(fila => {
+                    const importeText = fila.querySelector('td:last-child').textContent.trim();
+                    const importe = parseFloat(importeText.replace('€', '').replace(',', '.'));
+
+                    totalAnual += importe;
+                });
+
+                const totalMensual = totalAnual / 12;
+
+                document.getElementById(`total-anual-${index + 1}`).textContent = totalAnual.toFixed(2) + ' €';
+                document.getElementById(`total-mensual-${index + 1}`).textContent = totalMensual.toFixed(2) + ' €';
+
+                granTotalAnual += totalAnual;
+            });
+
+            const granTotalMensual = granTotalAnual / 12;
+
+            document.getElementById('total-anual-2').textContent = granTotalAnual.toFixed(2) + ' €';
+            document.getElementById('total-mensual-2').textContent = granTotalMensual.toFixed(2) + ' €';
+        }
+
+        window.onload = calcularTotalYMensual;
+    </script>
+
+</body>
+</html>

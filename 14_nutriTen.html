@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Calorías</title>
+    <style>
+        body {
+            background-color: #333333;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-style: italic;
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            font-style: italic;
+            font-weight: 700;
+            margin-top: 20px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            font-style: italic;
+            font-weight: 600;
+            margin-top: 10px;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .container {
+            width: 350px;
+            padding: 10px;
+            background-color: #444444;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .input-group {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
+        }
+
+        select {
+            width: 65%;
+            padding: 6px;
+            border-radius: 10px;
+            border: none;
+            font-style: italic;
+            font-weight: 600;
+            font-size: 12px;
+        }
+    
+        input {
+            width: 35%;
+            padding: 6px;
+            border-radius: 10px;
+            border: none;
+            font-style: italic;
+            font-weight: 600;
+            font-size: 12px;
+            text-align: right;
+        }
+
+        .output {
+            margin-top: 14px;
+            font-size: 12px;
+            font-weight: bold;
+            align-items: left;
+            text-align: left;
+        }
+
+        .output2 {
+            margin-top: 10px;
+            font-size: 12px;
+            font-weight: bold;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Calorías</h1>
+        <h2>Selecciona el alimento y los gramos que has ingerido</h2>
+        <form id="caloriasForm">
+            <!-- Se generarán dinámicamente los desplegables y entradas de gramos -->
+        </form>
+
+        <div class="output">
+            <p>Total calorías - máx. 1500 kcal: <span id="totalCalorias">0</span> kcal - <span id="porcentajeCalorias">0</span>%</p>
+            <p>Grasas saturadas - máx. 15 g: <span id="totalGrasas">0</span> g - <span id="porcentajeGrasas">0</span>%</p>
+            <p>Azúcares - máx. 20 g: <span id="totalAzucares">0</span> g - <span id="porcentajeAzucares">0</span>%</p>
+        </div>
+      
+      <!--<div class="output2">
+            <p>Calorías máximas al día: 1.500 kcal</p>
+            <p>Grasas Saturadas máximas al día: 15 g</p>
+            <p>Azúcares máximas al día: 20 g</p>
+        </div>-->
+    </div>
+
+    <script>
+        const nutricionPor100g = {
+            danacol: { calorias: 55, grasas: 1.0, azucares: 4.5 },
+            actimel: { calorias: 45, grasas: 0.3, azucares: 8 },
+            manzana: { calorias: 52, grasas: 0.0, azucares: 10 },
+            banana: { calorias: 89, grasas: 0.1, azucares: 12 },
+            arroz: { calorias: 130, grasas: 0.3, azucares: 0.1 },
+            pollo: { calorias: 239, grasas: 1.5, azucares: 0 },
+            pavo: { calorias: 189, grasas: 1.0, azucares: 0 },
+            leche_desnatada: { calorias: 34, grasas: 0.2, azucares: 4.8 },
+            pan_integral: { calorias: 247, grasas: 0.8, azucares: 4 },
+            azucar_moreno: { calorias: 380, grasas: 0, azucares: 99 },
+            chocolate_negro: { calorias: 534, grasas: 19, azucares: 46 },
+            queso_azul: { calorias: 354, grasas: 21, azucares: 0 },
+            lacon: { calorias: 160, grasas: 4, azucares: 0 },
+            jamon_curado: { calorias: 241, grasas: 7, azucares: 0 },
+            colacao_negro: { calorias: 347, grasas: 4, azucares: 4 },
+            leche_almendras: { calorias: 29, grasas: 0.2, azucares: 0 },
+            miel: { calorias: 304, grasas: 0, azucares: 82 },
+            filete_ternera: { calorias: 250, grasas: 4, azucares: 0 },
+            avena: { calorias: 347, grasas: 1.2, azucares: 0.5 },
+            ketchup: { calorias: 102, grasas: 0.1, azucares: 22 },
+            mayonesa: { calorias: 640, grasas: 10, azucares: 0 },
+            galletas_maria: { calorias: 412, grasas: 1.6, azucares: 24 },
+            patata_cocida: { calorias: 87, grasas: 0.0, azucares: 0.8 },
+zanahoria_cocida: { calorias: 35, grasas: 0.1, azucares: 4.7 },
+hojas_espinaca_cruda: { calorias: 23, grasas: 0.1, azucares: 0.4 },
+tomate: { calorias: 18, grasas: 0.0, azucares: 2.6 },
+apio: { calorias: 16, grasas: 0.1, azucares: 1.3 },
+cebolla: { calorias: 40, grasas: 0.1, azucares: 4.2 },
+ajo: { calorias: 149, grasas: 0.1, azucares: 1.0 },
+limon: { calorias: 29, grasas: 0.0, azucares: 2.5 },
+salmon: { calorias: 206, grasas: 3.2, azucares: 0.0 },
+sardinas: { calorias: 208, grasas: 1.5, azucares: 0.0 },
+          naranja: { calorias: 47, grasas: 0.1, azucares: 9.4 },
+kiwi: { calorias: 61, grasas: 0.5, azucares: 8.9 },
+chirimoya: { calorias: 75, grasas: 0.7, azucares: 13.5 },
+pera: { calorias: 57, grasas: 0.1, azucares: 9.8 },
+almendras: { calorias: 579, grasas: 4.6, azucares: 4.4 },
+avellanas: { calorias: 628, grasas: 4.5, azucares: 4.9 },
+pistachos: { calorias: 562, grasas: 5.6, azucares: 7.7 },
+        };
+
+        const alimentos = Object.keys(nutricionPor100g);
+
+        function generarCamposDeEntrada(cantidad) {
+            const form = document.getElementById("caloriasForm");
+            form.innerHTML = "";
+
+            for (let i = 1; i <= cantidad; i++) {
+                const inputGroup = document.createElement("div");
+                inputGroup.className = "input-group";
+
+                const select = document.createElement("select");
+                select.id = "alimento" + i;
+                select.onchange = calcularCalorias;
+                select.innerHTML = `<option value="">Seleccionar alimento</option>`;
+                
+                alimentos.forEach(alimento => {
+                    const option = document.createElement("option");
+                    option.value = alimento;
+                    option.textContent = alimento.replace(/_/g, " ");
+                    select.appendChild(option);
+                });
+                
+                const input = document.createElement("input");
+                input.type = "number";
+                input.id = "gramos" + i;
+                input.placeholder = "Gramos";
+                input.oninput = calcularCalorias;
+                
+                inputGroup.appendChild(select);
+                inputGroup.appendChild(input);
+                form.appendChild(inputGroup);
+            }
+        }
+
+        function calcularCalorias() {
+            let totalCalorias = 0;
+            let totalGrasas = 0;
+            let totalAzucares = 0;
+
+            const maxCalorias = 1500;
+            const maxGrasas = 15;
+            const maxAzucares = 20;
+            
+            for (let i = 1; i <= 10; i++) {
+                const alimento = document.getElementById("alimento" + i).value;
+                const gramos = parseFloat(document.getElementById("gramos" + i).value);
+
+                if (alimento && gramos > 0) {
+                    const infoNutricional = nutricionPor100g[alimento];
+                    totalCalorias += (infoNutricional.calorias * gramos) / 100;
+                    totalGrasas += (infoNutricional.grasas * gramos) / 100;
+                    totalAzucares += (infoNutricional.azucares * gramos) / 100;
+                }
+            }
+
+            const porcentajeCalorias = ((totalCalorias / maxCalorias) * 100).toFixed(2);
+            const porcentajeGrasas = ((totalGrasas / maxGrasas) * 100).toFixed(2);
+            const porcentajeAzucares = ((totalAzucares / maxAzucares) * 100).toFixed(2);
+
+            document.getElementById("totalCalorias").textContent = totalCalorias.toFixed(2);
+            document.getElementById("porcentajeCalorias").textContent = porcentajeCalorias;
+            aplicarColor(porcentajeCalorias, "porcentajeCalorias");
+
+            document.getElementById("totalGrasas").textContent = totalGrasas.toFixed(2);
+            document.getElementById("porcentajeGrasas").textContent = porcentajeGrasas;
+            aplicarColor(porcentajeGrasas, "porcentajeGrasas");
+
+            document.getElementById("totalAzucares").textContent = totalAzucares.toFixed(2);
+            document.getElementById("porcentajeAzucares").textContent = porcentajeAzucares;
+            aplicarColor(porcentajeAzucares, "porcentajeAzucares");
+        }
+              function aplicarColor(porcentaje, elementoId) {
+            const elemento = document.getElementById(elementoId);
+            if (porcentaje <= 25) {
+                elemento.style.color = "#ADFF2F";
+            } else if (porcentaje > 25 && porcentaje <= 33) {
+                elemento.style.color = "#FFFF00";
+            } else if (porcentaje > 33 && porcentaje <= 40) {
+                elemento.style.color = "#FF3D00";
+            } else if (porcentaje > 40) {
+                elemento.style.color = "#FF0000";
+            }
+        }
+
+        // Generar campos de entrada para 10 alimentos
+        generarCamposDeEntrada(10);
+    </script>
+</body>
+</html>
