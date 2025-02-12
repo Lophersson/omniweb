@@ -1,164 +1,2056 @@
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en" >
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabla de Conceptos e Importes</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,300&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Roboto Condensed', sans-serif;
-        }
+  <meta charset="UTF-8">
+  
 
-        body {
-            background: url('https://raw.githubusercontent.com/Lophersson/omniweb/refs/heads/main/619.jpg') no-repeat center center/cover;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start; /* Asegura que el contenido está alineado en la parte superior */
-            height: 100vh;
-            color: white;
-        }
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
 
-        .tabla-container {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px;
-            border-radius: 15px;
-            text-align: center;
-            width: 400px; /* Ancho mayor */
-            backdrop-filter: blur(5px);
-            margin-top: 1px; /* Ajuste para estar más cerca de la parte superior */
-        }
+    <meta name="apple-mobile-web-app-title" content="CodePen">
 
-        h1 {
-            font-style: italic;
-            font-size: 1.6rem;
-            text-shadow: -3px 3px 5px gray;
-            margin-bottom: 15px;
-        }
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111" />
 
-        th, td {
-            padding: 0px 2px; /* Menor padding para reducir altura de las filas */
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            text-align: center;
-        }
 
-        th {
-            background: rgba(255, 255, 255, 0.3);
-        }
 
-        .total-row {
-            font-weight: bold;
-            background: rgba(255, 255, 255, 0.3);
-        }
+  
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
 
-        td:first-child {
-            text-align: left; /* Alineación izquierda para los conceptos */
-        }
 
-        td:last-child {
-            text-align: right; /* Alineación derecha para los importes */
-        }
+  <title>CodePen - A Pen by Humayon Mirza</title>
 
-        input {
-            width: 100%;
-            padding: 0px; /* Menor padding para reducir altura de los inputs */
-            margin: 2px 0;
-            border: none;
-            border-radius: 5px;
-            text-align: right;
-            font-size: 1rem;
-            background: transparent;
-            color: white;
-        }
+    <link rel="canonical" href="https://codepen.io/xtragoblin/pen/mOwXdw">
+  
+  
+  
+  
+<style>
+header {
+  background-color: #000000;
+}
 
-        input:focus {
-            outline: none;
-            background: rgba(255, 255, 255, 0.3);
-        }
 
-        .footer-contenedor {
-            position: absolute;
-            bottom: 10px;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px;
-            border-radius: 15px;
-            text-align: center;
-            width: 400px;
-            backdrop-filter: blur(5px);
-            font-size: 0.7rem;
-            margin-bottom: 0px;
-        }
-    </style>
+/*logo positioning/styling*/
+
+.logo {
+  position: absolute;
+  left: 0;
+  margin-left: 2.5rem;
+  margin-top: 0;
+  cursor: pointer;
+}
+
+.logo img:hover {
+  transform: scale(1.15, 1.15);
+}
+
+.logo img {
+  padding-top: 1.1rem;
+  height: 1.8rem;
+}
+
+
+/*navbar styling*/
+
+nav {
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  height: 3.5rem;
+  background-color: #000000;
+  left: 0;
+  box-shadow: 0 2px 7px rgba(2, 1, 1, 0.9);
+  color: #000000;
+  z-index: 100;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+
+/* animation of nav links below*/
+
+nav ul li:hover {
+  transform: scale(1.1, 1.1);
+  font-weight: bold;
+}
+
+nav ul li a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -0.5rem;
+  left: 0;
+  background-color: #ffffff;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+nav ul li a {
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+nav ul li a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+
+/*Styling for page content starts here*/
+
+html {
+  background-color: #212121;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+.content {
+  background-color: #303030;
+  padding-bottom: 0rem;
+  display: block;
+}
+
+
+/*Top banner content styling*/
+
+.banner-top {
+  background-color: #212121;
+  background-size: cover;
+  padding-bottom: 5rem;
+  padding-top: 2.5rem;
+  box-shadow: 1px 2px 4px;
+}
+
+.banner-top h2 {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  font-size: 5.5rem;
+  margin: 0;
+  padding-top: 5rem;
+  padding-bottom: 1rem;
+  color: #ffffff;
+  font-weight: 100;
+}
+
+
+/*content on the bottom of the page (table styling)*/
+
+.bottom-banner table {
+  width: 100%;
+  padding-top: 0.25rem;
+}
+
+.bottom-banner table tr {
+  box-shadow: 1px 2px 5px;
+}
+
+.bottom-banner table tr th {
+  padding-bottom: 4rem;
+  padding-top: 4rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.25rem;
+  text-align: left;
+  font-weight: 400;
+  padding-left: 2.5rem;
+  color: #ffffff;
+}
+
+.bottom-banner table tr td {
+  color: #ffffff;
+  font-family: 'Noto Sans', 'Roboto', sans-serif;
+  font-style: italic;
+  text-align: center;
+  width: 16%;
+}
+
+#value1,
+#value2,
+#value3,
+#value4 {
+  text-align: center;
+}
+
+
+/*footer content and styling*/
+
+.footer {
+  background-color: #000000;
+  background-size: cover;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 1rem 0 1rem 0;
+  box-shadow: 0px -2px 7px rgba(2, 1, 1, 0.9)
+}
+
+.footer p {
+  font-size: 75%;
+  font-family: 'Noto Sans', 'Roboto', sans-serif;
+  color: #ffffff;
+  text-align: center;
+}
+
+
+/* Styling for the pop-ups*/
+
+.popUp {
+  /*Right column pop-up div*/
+  display: none;
+  width: 13%;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  margin-left: 2%;
+  margin-top: -0.5%;
+  position: absolute;
+}
+
+.amount {
+  /*Left column pop-up div*/
+  display: none;
+  width: 13%;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  margin-left: 2%;
+  margin-top: -0.5%;
+  position: absolute;
+}
+
+.percent {
+  /*text to show percentage pop-up*/
+  text-align: center;
+  padding: 0.5rem;
+  border: thin solid white;
+  font-size: 1.5em;
+  font-style: normal;
+}
+
+.percent:hover {
+  background-color: indianred;
+  cursor: pointer;
+  transition: all 0.065s ease-in-out 0s;
+}
+
+.value {
+  /*text to show percentage pop-up*/
+  text-align: center;
+  padding: 0.5rem;
+  border: thin solid white;
+  font-size: 1.5em;
+  font-style: normal;
+}
+
+.value:hover {
+  background-color: indianred;
+  cursor: pointer;
+  transition: all 0.065s ease-in-out 0s;
+}
+
+button {
+  /*Done button*/
+  display: inline-block;
+  float: right;
+  width: 30%;
+  padding-right: 0%;
+  padding-left: 0%;
+  text-align: center;
+  z-index: 5;
+  border: none;
+  border-radius: 6px;
+}
+
+button:hover {
+  box-shadow: 2px 3px 3px rgba(2, 2, 2, 0.91);
+}
+
+input {
+  /*input for popups*/
+  text-align: center;
+  position: absolute;
+  width: 67%;
+  left: 0%;
+  margin-left: 1%;
+  float: left;
+  border: none;
+  border-radius: 6px;
+}
+
+input:hover {
+  box-shadow: 2px 3px 3px rgba(2, 2, 2, 0.91);
+}
+
+select {
+  /*Dropdown menu*/
+  text-align: center;
+  position: absolute;
+  width: 67%;
+  left: 0%;
+  margin-left: 2%;
+  float: left;
+  border: none;
+  border-radius: 6px;
+}
+
+select:hover {
+  box-shadow: 2px 3px 3px rgba(2, 2, 2, 0.91);
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.rowDrop {
+  display: none;
+  width: 100%;
+  background-color: #424242;
+}
+
+.rowText {
+  padding: 0 0.2em 0 0.2em;
+}
+
+.rowText:hover {
+  background-color: #ff3d00;
+  border-radius: 0.1em;
+  cursor: pointer;
+  transition: all 0.2s linear 0s;
+}
+
+.title:hover .rowText {
+  border-bottom: #ff5722 0.065em solid;
+}
+
+.title:hover .percent {
+  border: solid indianred 0.1em;
+  transition: all 0.2s linear 0s
+}
+
+.title:hover .value {
+  border: solid indianred 0.1em;
+  transition: all 0.2s linear 0s
+}
+
+
+/*------------------BUDGET OVERVIEW----------------*/
+
+#overviewTitle {
+  margin-top: 1em;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+#topContainer {
+  display: block;
+  margin-bottom: 2rem;
+  margin-left: 2%;
+  height: 20em;
+  background-color: #303030;
+  width: 96%;
+  border-radius: 1em;
+  border: solid indianred 0.2em;
+}
+
+#trends {
+  float: left;
+  display: inline-block;
+  font-family: 'Noto Sans', 'Roboto', sans-serif;
+  font-style: normal;
+  font-size: 1.25rem;
+  color: white;
+  margin-left: 9rem;
+  margin-top: 9rem;
+}
+
+#graph {
+  float: right;
+  display: inline-block;
+  color: white;
+  margin-right: 9rem;
+  margin-top: 9rem;
+}
+
+#bottomContainer {
+  background-color: #303030;
+  font-family: 'Noto Sans', 'Roboto', sans-serif;
+  font-style: normal;
+  width: 96%;
+  margin-left: 2%;
+  border-radius: 1em;
+  height: 9rem;
+  margin-bottom: 2rem;
+  border: solid indianred 0.2em;
+}
+
+#tips {
+  float: left;
+  padding-left: 10%;
+  padding-top: 4rem;
+  font-size: 1.25rem;
+}
+
+#rightContainer {
+  float: right;
+  width: 70%;
+  margin-right: 3rem;
+  margin-top: 1.5rem;
+  font-style: normal;
+  font-family: 'Noto Sans', 'Roboto', sans-serif;
+}
+
+#feedback {
+  padding-bottom: 1.5rem;
+  border-bottom: indianred;
+  border-bottom-width: 0.1em;
+  border-bottom-style: solid;
+  padding-left: 7rem;
+  padding-right: 7rem;
+}
+
+#resources a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  padding: 0.25rem;
+  text-align: right;
+  margin-top: 1.5em;
+  border: thin solid white;
+}
+
+#resources a:hover {
+  box-shadow: 0px 3px 4px rgba(2, 2, 2, 0.91);
+}
+
+
+/*------------------PRIORITY BUDGET----------------*/
+
+#priorityContainer {
+  height: 100%;
+}
+
+#priorityParentDiv {
+  height: 6rem;
+}
+
+#priorityTitle {
+  float: left;
+  margin-top: 2rem;
+  margin-left: 4%;
+  font-size: 2rem;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+}
+
+#priorityButton {
+  float: right;
+  margin-top: 2.5rem;
+  margin-right: 7%;
+  width: 18%;
+  height: 25%;
+}
+
+#priorityButton:hover {
+  box-shadow: 0px 3px 4px rgba(2, 2, 2, 0.91)
+}
+
+
+/*------------------LEISURE BUDGET----------------*/
+
+#leisureContainer {
+  height: 100%;
+}
+
+#leisureParentDiv {
+  height: 6rem;
+}
+
+#leisureTitle {
+  float: left;
+  margin-top: 2rem;
+  margin-left: 4%;
+  font-size: 2rem;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+}
+
+#leisureButton {
+  float: right;
+  margin-top: 2.5rem;
+  margin-right: 7%;
+  width: 18%;
+  height: 25%;
+}
+
+#leisureButton:hover {
+  box-shadow: 0px 3px 4px rgba(2, 2, 2, 0.91)
+}
+
+
+/*------------------EMERGENCY BUDGET----------------*/
+
+#emergencyContainer {
+  height: 7rem;
+  margin-left: 25%;
+  margin-right: 25%;
+  background-color: #303030;
+  margin-bottom: 1.5rem;
+  border-radius: 1em;
+  border: solid indianred 0.2em;
+}
+
+#emergencyTitle {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+}
+
+#emergencyAmount {
+  display: inline-block;
+  width: 100%;
+  padding-top: 2.5rem;
+  font-family: 'Noto Sans', 'Roboto', sans-serif;
+  font-style: normal;
+  font-size: xx-large;
+  cursor: pointer;
+}
+
+#emergencyButton:hover {
+  box-shadow: 0px 3px 4px rgba(2, 2, 2, 0.91)
+}
+
+#percentReply {
+  font-style: normal;
+  font-family: 'Noto Sans', 'Roboto', sans-serif;
+  font-size: large;
+  margin-bottom: 1rem;
+}
+
+#goalPopup {
+  display: none;
+  width: 8rem;
+  position: relative;
+  margin-left: 53%;
+  padding-top: 1.3rem;
+}
+
+#goalPopup input {
+  width: 70%;
+}
+
+#goalPopup button {
+  width: 25%;
+}
+
+
+/*---------MODAL-------------*/
+
+.open {
+  display: block;
+}
+
+.close {
+  display: none;
+}
+
+#modal-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+#modal-overlay-2 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+#modal-content {
+  width: 50%;
+  height: auto;
+  background-color: #f9fafb;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: auto;
+}
+
+#modal-content-2 {
+  width: 50%;
+  height: auto;
+  background-color: #f9fafb;
+  position: relative;
+  top: 50%;
+  transform: translateY(0%);
+  margin: auto;
+}
+
+#priorityModalContent {
+  z-index: 100;
+  opacity: 0;
+  background-color: #e0E0e0;
+}
+
+#leisureModalContent {
+  z-index: 100;
+  opacity: 0;
+  background-color: #e0E0e0;
+}
+
+#priorityHead {
+  color: #424242;
+  background-color: #e0e1e1;
+  height: 25%;
+  border-bottom: solid thin lightgrey;
+}
+
+#leisureHead {
+  color: #424242;
+  background-color: #e0e1e1;
+  height: 25%;
+  border-bottom: solid thin lightgrey;
+}
+
+#priorityHead button {
+  border-radius: 50%;
+  background-color: indianred;
+  width: 1em;
+  height: 1em;
+  margin: 0.5em;
+  cursor: pointer;
+}
+
+#leisureHead button {
+  border-radius: 50%;
+  background-color: indianred;
+  width: 1em;
+  height: 1em;
+  margin: 0.5em;
+  cursor: pointer;
+}
+
+#priorityHead div {
+  color: #424242;
+  font-size: xx-large;
+  padding: 1em;
+  font-style: normal;
+}
+
+#leisureHead div {
+  color: #424242;
+  font-size: xx-large;
+  padding: 1em;
+  font-style: normal;
+}
+
+form h4 {
+  margin-top: 0em;
+}
+
+#priorityFoot {
+  margin-top: 5%;
+}
+
+#leisureFoot {
+  margin-top: 5%;
+}
+
+#priorityItemName {
+  display: block;
+  text-align: center;
+  font-family: 'Noto Sans', 'Roboto', sans-serif;
+  border: solid thin lightgrey;
+  padding: 0.5em 0 0.5em 0;
+  position: relative;
+}
+
+#leisureItemName {
+  display: block;
+  text-align: center;
+  font-family: 'Noto Sans', 'Roboto', sans-serif;
+  border: solid thin lightgrey;
+  padding: 0.5em 0 0.5em 0;
+  position: relative;
+}
+
+#priorityItemAmount {
+  display: block;
+  text-align: center;
+  font-family: 'Noto Sans', 'Roboto', sans-serif;
+  border: solid thin lightgrey;
+  padding: 0.5em 0 0.5em 0;
+  position: relative;
+}
+
+#leisureItemCurrentAmount {
+  display: block;
+  text-align: center;
+  font-family: 'Noto Sans', 'Roboto', sans-serif;
+  border: solid thin lightgrey;
+  padding: 0.5em 0 0.5em 0;
+  position: relative;
+}
+
+#priorityItemDate {
+  display: block;
+  text-align: center;
+  font-family: 'Noto Sans', 'Roboto', sans-serif;
+  border: solid thin lightgrey;
+  padding: 0.5em 0 0.5em 0;
+  position: relative;
+}
+
+#leisureItemGoal {
+  display: block;
+  text-align: center;
+  font-family: 'Noto Sans', 'Roboto', sans-serif;
+  border: solid thin lightgrey;
+  padding: 0.5em 0 0.5em 0;
+  position: relative;
+}
+
+#priorityItemName,
+#priorityItemAmount,
+#priorityItemDate {
+  width: 50%;
+  margin: 0 5% 2.5em 10%;
+}
+
+#leisureItemName,
+#leisureItemCurrentAmount,
+#leisureItemGoal {
+  width: 50%;
+  margin: 0 5% 2.5em 10%;
+}
+
+.submit {
+  display: block;
+  float: none;
+  position: relative;
+  text-align: center;
+  font-family: 'Noto Sans', 'Roboto', sans-serif;
+  width: 35%;
+  height: 1.9rem;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-top: 1.5%;
+  margin-bottom: 3%;
+  cursor: pointer;
+  border: none;
+  background-color: #424242;
+  color: #ffffff;
+}
+
+form {
+  padding-bottom: 1em;
+}
+
+form fieldset {
+  width: auto;
+  text-align: left;
+  color: #424242;
+  height: 9em;
+  margin: 0 2em;
+  font-style: normal;
+}
+
+input[type="radio"] {
+  display: inline-block;
+  text-align: right;
+  font-family: 'Noto Sans', 'Roboto', sans-serif;
+  border: solid thin black;
+  padding: 0.5em 0 0.5em 0;
+  position: relative;
+  margin: 0 0.5em 0em 0%;
+  width: 2em;
+  cursor: pointer;
+}
+
+input[type="radio"]:hover {
+  box-shadow: unset;
+}
+
+label {
+  color: #424242;
+  display: block;
+  bottom: 4px;
+}
+
+
+/*-------------NEW DIV-----------------------*/
+
+.newPriorityItem {
+  background-color: #303030;
+  position: relative;
+  display: block;
+  border-radius: 0.3em;
+  margin: 1em 1em 1em 1em;
+  width: 96.6%;
+  color: #e0e1e1;
+  text-align: left;
+  border: solid indianred 0.15em;
+}
+
+.newLeisureItem {
+  background-color: #303030;
+  position: relative;
+  display: block;
+  border-radius: 0.3em;
+  margin: 1em 1em 1em 1em;
+  width: 96.6%;
+  color: #e0e1e1;
+  text-align: left;
+  border: solid indianred 0.15em;
+}
+
+.rightItemDiv {
+  display: inline-block;
+  float: none;
+  width: 25%;
+  text-align: center;
+  position: relative;
+  transform: translateY(20%);
+}
+
+.priorityAmount {
+  float: none;
+  display: inline-block;
+  font-size: 1.5em;
+  font-style: normal;
+  width: 49%;
+  border-right: #909090 solid 0.6px;
+  margin: 0.6em 0 0.6em 0em;
+  border-left: #909090 solid 0.01em;
+  text-align: center;
+}
+
+.leisureAmount {
+  float: none;
+  display: inline-block;
+  font-size: 1.5em;
+  font-style: normal;
+  width: 49%;
+  border-right: #909090 solid 0.6px;
+  margin: 0.6em 0 0.6em 0em;
+  border-left: #909090 solid 0.01em;
+  text-align: center;
+}
+
+.priorityName {
+  display: inline-block;
+  font-size: 2em;
+  text-align: center;
+  width: 25%;
+  font-style: normal;
+}
+
+.leisureName {
+  display: inline-block;
+  font-size: 2em;
+  text-align: center;
+  width: 25%;
+  font-style: normal;
+}
+
+.priorityLevel {
+  display: block;
+  margin: unset;
+  padding: 0 1em 0 1em;
+  font-size: 1.2em;
+  font-style: normal;
+  border-radius: 0.3em;
+}
+
+.leisureLevel {
+  display: inline-block;
+  margin: 0 0 0 0;
+  font-size: 1.2em;
+  font-style: normal;
+  border-radius: 0.3em;
+  width: 25%;
+  text-align: center;
+}
+
+.priorityDate {
+  display: block;
+  margin: unset;
+  padding: 0 1em 0 1em;
+  font-size: 1em;
+  font-style: normal;
+}
+
+#remainder {
+  position: relative;
+  display: none;
+  width: 22%;
+  float: right;
+  margin-right: 2.3em;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  font-style: normal;
+  font-size: 1.2em;
+  border-radius: 0.3em;
+  color: #e0e1e1;
+  background-color: #303030;
+  border: solid indianred 0.15em;
+}
+
+#leisureRemainder {
+  position: relative;
+  display: none;
+  width: 22%;
+  float: right;
+  margin-right: 2.3em;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  font-style: normal;
+  font-size: 1.2em;
+  border-radius: 0.3em;
+  color: #e0e1e1;
+  background-color: #303030;
+  border: solid indianred 0.15em;
+}
+.itemButton {
+  background-color: indianred;
+  height: 1em;
+  float: none !important;
+  width: 1em;
+  position: absolute;
+  top: -7px;
+  right: -7px;
+}
+.numberDiv{
+	display:inline-block;
+}
+.amountDiv{
+	display:inline-block;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
 </head>
-<body>
 
-    <div class="tabla-container">
-        <h1>presupuestos 2025</h1>
-        <table id="tablaImportes">
-            <thead>
-                <tr>
-                    <th>Concepto</th>
-                    <th>Importe (€)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>entregas</td><td><input type="text" class="importe" value="700,00"></td></tr>
-                <tr><td>nike killshot 2 azul y amarillo</td><td><input type="text" class="importe" value="95,00"></td></tr>
-                <tr><td>ahorros</td><td><input type="text" class="importe" value="300,00"></td></tr>
-                <tr><td>estor ikea</td><td><input type="text" class="importe" value="40,00"></td></tr>
-                <tr><td>espejo</td><td><input type="text" class="importe" value="1,49"></td></tr>
-                <tr><td>marco espejo</td><td><input type="text" class="importe" value="1,49"></td></tr>
-                <tr><td>bermudas beige</td><td><input type="text" class="importe" value="16,00"></td></tr>
-                <tr><td>cargo beige</td><td><input type="text" class="importe" value="18,00"></td></tr>
-                <tr><td>chino beige</td><td><input type="text" class="importe" value="18,00"></td></tr>
-                <tr><td>polo blanco</td><td><input type="text" class="importe" value="13,00"></td></tr>
-                <tr><td>polo azul</td><td><input type="text" class="importe" value="13,00"></td></tr>
-                <tr><td>vida social</td><td><input type="text" class="importe" value="12,02"></td></tr>
-                <tr><td>residual</td><td><input type="text" class="importe" value="0,70"></td></tr>
-                <tr><td>jack and jones liam x2</td><td><input type="text" class="importe" value="60,00"></td></tr>
-                <tr><td>gasoil 250123</td><td><input type="text" class="importe" value="30,00"></td></tr>
-                <tr class="total-row"><td>Total</td><td id="total"> </td></tr>
-            </tbody>
-        </table>
+<body translate="no">
+  <body>
+  <div class="wrapper">
+    <div class="header">
+      <header>
+        <nav>
+          <div class="logo">
+            <a href="Home%20page.html"><img alt="My Budget Keeper" src="pictures/MBK_white.png"></a>
+          </div>
+
+          <ul>
+            <li>
+              <a href="About%20us.html">About Us</a>
+            </li>
+
+            <li>
+              <a href="tutorial.html">Tutorial</a>
+            </li>
+
+            <li>
+              <a href="my%20budget.html">My Budget</a>
+            </li>
+
+            <li>
+              <a href="settings.html">Settings</a>
+            </li>
+          </ul>
+
+        </nav>
+      </header>
     </div>
 
-    <footer class="footer-contenedor">
-        <p>© 2025 Mis presupuestos | Creado por Humberto López Rodríguez</p>
+    <div class="content">
+      <div class="banner-top">
+        <h2>My Budget</h2>
+      </div>
+
+      <div class="bottom-banner">
+        <table>
+          <!-- ===================================INCOME============================================= -->
+          <tr class='title'>
+            <th><span class="rowText" onclick="expand(0,'income')">Income</span>
+            </th>
+
+            <td id="value1">
+              <div class="amount">
+                <!--DIV USED TO CREATE POP UP-->
+                <button id="button" onclick="hideLeft(0,'income')">Done</button>
+                <input min="0" onchange="changeAmount(this.value, 'income')" placeholder="$" step="any" type="number">
+              </div>
+              <span class="value" id="incomeText" onclick="showLeft(0)">Income</span>
+              <!--TO SHOW AMOUNT DIV AND HIDE POPUP-->
+            </td>
+
+            <td>
+              <div class="popUp">
+                <!--DIV USED TO CREATE POPUP-->
+                <button id="button" onclick="hideRight(0, 'income')">Done</button>
+
+                <select onchange="changePercent(this.value, 'income')">
+                  <!--DROP DOWN TO SELECT MONTH-->
+                  <option disabled hidden="" selected value="">Month</option>
+
+                  <option value="January">January</option>
+
+                  <option value="February">February</option>
+
+                  <option value="March">March</option>
+
+                  <option value="April">April</option>
+
+                  <option value="May">May</option>
+
+                  <option value="June">June</option>
+
+                  <option value="July">July</option>
+
+                  <option value="August">August</option>
+
+                  <option value="September">September</option>
+
+                  <option value="October">October</option>
+
+                  <option value="November">November</option>
+
+                  <option value="December">December</option>
+                </select>
+              </div>
+              <span class="percent" onclick="showRight(0,'income')">Month</span>
+            </td>
+          </tr>
+
+          <!-- ===================INCOME EXPAND (BUDGET OVERVIEW)========================= -->
+          <tr class="rowDrop">
+            <td colspan="3">
+              <div id="budgetOverview">
+                <div id="overviewTitle">
+                  Budget Overview
+                </div>
+
+                <div id="topContainer">
+                  <div id="trends">
+                    Monthly
+                    <br> Trends
+                  </div>
+
+                  <div id="graph">
+                    Graph
+                  </div>
+                </div>
+
+                <div id="bottomContainer">
+                  <div id="tips">
+                    Tips
+                  </div>
+
+                  <div id="rightContainer">
+                    <div id="feedback">
+                      Feedback From Monthly Trends
+                    </div>
+
+                    <div id="resources">
+                      <a href="https://www.reddit.com/r/personalfinance/">Online Resources</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <!--SAME POPUP FEATURE APPLIED BELOW-->
+
+          <!-- ===================================PRIORITY============================================= -->
+          <tr class='title'>
+            <th><span class="rowText" onclick="expand(1,'priority')">Priority</span>
+            </th>
+
+            <td id="value2">
+              <div class="amount">
+                <button id="button" onclick="hideLeft(1, 'priority')">Done</button>
+                <input min="0" onchange="changeAmount(this.value, 'priority')" placeholder="$" step="any" type="number">
+              </div>
+              <span class="value" onclick="showLeft(1)">Amount</span>
+            </td>
+
+            <td>
+              <div class="popUp">
+                <button id="button" onclick="hideRight(1, 'priority')">Done</button>
+                <input max="100" min="0" onchange="changePercent(this.value, 'priority')" placeholder="%" step="any" type="number">
+              </div>
+              <span class="percent" onclick="showRight(1)">Percent</span>
+            </td>
+          </tr>
+
+          <!-- ===================PRIORITY EXPAND (PRIORITY PAGE)========================= -->
+          <tr class="rowDrop">
+            <td colspan="3">
+              <div id="priorityContainer">
+                <div id="priorityParentDiv">
+                  <div id="priorityTitle">
+                    Priority Budget
+                  </div>
+                  <button id="priorityButton" onclick="modal.open('priorityModalContent')">Add Item</button>
+                </div>
+
+                <div class="close" id="priorityModalContent">
+                  <div id="priorityHead">
+                    <button onclick="modal.close('priorityModalContent')"></button>
+
+                    <div>
+                      Priority Item
+                    </div>
+                  </div>
+
+                  <div id='priorityFoot'>
+                    <form>
+                      <input id="priorityItemName" onchange="changeInput('priority', 'itemName', this.value)" placeholder="Item Name*" required="" type="text">
+                      <input id="priorityItemAmount" onchange="changeInput('priority', 'itemAmount', this.value)" placeholder="Amount*" required="" type="number">
+                      <input id="priorityItemDate" onchange="changeInput('priority', 'itemDate', this.value)" placeholder="Due Date" type="text">
+
+                      <fieldset>
+                        <h4>Priority Level</h4>
+                        <label>
+                          <input id="priorityItemLevel1" name="level" onchange="changeInput('priority', 'itemLevel', this.value)" type="radio" value="High">High</label>
+                        <br>
+                        <label>
+                          <input id="priorityItemLevel2" name="level" onchange="changeInput('priority', 'itemLevel', this.value)" type="radio" value="Medium">Medium</label>
+                        <br>
+                        <label>
+                          <input id="priorityItemLevel3" name="level" onchange="changeInput('priority', 'itemLevel', this.value)" type="radio" value="Low">Low</label>
+                        <br>
+                      </fieldset>
+                      <button class="submit" onclick="createNewDiv()" type="button">Submit</button>
+                    </form>
+                  </div>
+                </div>
+
+                <div class="close" id="modal-overlay">
+                  <div id="modal-content">
+                  </div>
+                </div>
+              </div>
+
+              <div id='remainder'>
+                Amount Remaining
+              </div>
+            </td>
+          </tr>
+
+          <!-- ===================================LEISURE============================================= -->
+          <tr class='title'>
+            <th><span class="rowText" onclick="expand(2,'leisure')">Leisure</span>
+            </th>
+
+            <td id="value3">
+              <div class="amount">
+                <button id="button" onclick="hideLeft(2, 'leisure')">Done</button>
+                <input min="0" onchange="changeAmount(this.value, 'leisure')" placeholder="$" step="any" type="number">
+              </div>
+              <span class="value" onclick="showLeft(2)">Amount</span>
+            </td>
+
+            <td>
+              <div class="popUp">
+                <button id="button" onclick="hideRight(2, 'leisure')">Done</button>
+                <input max="100" min="0" onchange="changePercent(this.value, 'leisure')" placeholder="%" step="any" type="number">
+              </div>
+              <span class="percent" onclick="showRight(2)">Percent</span>
+            </td>
+          </tr>
+
+          <!-- ===================LEISURE EXPAND (LEISURE PAGE)========================= -->
+          <tr class="rowDrop">
+            <td colspan="3">
+              <div id="leisureContainer">
+                <div id="leisureParentDiv">
+                  <div id="leisureTitle">
+                    Leisure Budget
+                  </div>
+                  <button id="leisureButton" onclick="modal.open('leisureModalContent', 2)">Add Item</button>
+                </div>
+
+                <div class="close" id="leisureModalContent">
+                  <div id="leisureHead">
+                    <button onclick="modal.close('leisureModalContent', 2)"></button>
+
+                    <div>
+                      Leisure Item
+                    </div>
+                  </div>
+
+                  <div id='leisureFoot'>
+                    <form>
+                      <input id="leisureItemName" onchange="changeInput('leisure', 'itemName', this.value)" placeholder="Item Name*" required="" type="text">
+                      <input id="leisureItemCurrentAmount" onchange="changeInput('leiusre', 'itemAmount', this.value)" placeholder="$Amount*" required="" type="number">
+                      <input id="leisureItemGoal" onchange="changeInput('leisure', 'itemGoal', this.value)" placeholder="$Total*" required="" type="number">
+
+                      <fieldset>
+                        <h4>Leisure Type</h4>
+                        <label>
+                          <input id="leisureItemLevel1" name="level" onchange="changeInput('leisure', 'itemLevel', this.value)" type="radio" value="Saved Up">Saved</label>
+                        <br>
+                        <label>
+                          <input id="leisureItemLevel2" name="level" onchange="changeInput('leisure', 'itemLevel', this.value)" type="radio" value="Spent">Spent</label>
+                        <br>
+                      </fieldset>
+                      <button class="submit" onclick="createNewLeisureDiv()" type="button">Submit</button>
+                    </form>
+                  </div>
+                </div>
+
+                <div class="close" id="modal-overlay-2">
+                  <div id="modal-content-2">
+                  </div>
+                </div>
+              </div>
+
+              <div id='leisureRemainder'>
+                Amount/Budget
+              </div>
+            </td>
+          </tr>
+
+          <!-- ===================================EMERGENCY============================================= -->
+          <tr class='title'>
+            <th><span class="rowText" onclick="expand(3,'emergency')">Emergency</span>
+            </th>
+
+            <td id="value4">
+              <div class="amount">
+                <button id="button" onclick="hideLeft(3, 'emergency')">Done</button>
+                <input min="0" onchange="changeAmount(this.value, 'emergency')" placeholder="$" step="any" type="number">
+              </div>
+              <span class="value" onclick="showLeft(3)">Amount</span>
+            </td>
+
+            <td>
+              <div class="popUp">
+                <button id="button" onclick="hideRight(3, 'emergency')">Done</button>
+                <input max="100" min="0" onchange="changePercent(this.value, 'emergency' )" placeholder="%" step="any" type="number">
+              </div>
+              <span class="percent" onclick="showRight(3)">Percent</span>
+            </td>
+          </tr>
+
+          <!-- ===================EMERGENCY EXPAND (EMERGENCY PAGE)========================= -->
+          <tr class="rowDrop">
+            <td colspan="3">
+              <div id="emergencyFunds">
+                <div id="emergencyTitle">
+                  Emergency Funds
+                </div>
+
+                <div id="emergencyContainer">
+                  <div id="goalPopup">
+                    <button id="button" onclick="hideGoal()">Done</button>
+                    <input min="0" onchange="changeGoal(this.value)" placeholder="$" step="any" type="number">
+                  </div>
+
+                  <div id="emergencyAmount">
+                    <span id="emergencyDropAmount">Amount</span> /<span id="emergencyDropGoal" onclick="showGoal()">Goal</span>
+                  </div>
+                </div>
+
+                <div id="percentReply">
+                  <span id="emergencyDropPercent">This</span>% of your goal is complete!
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+
+    <footer class="footer">
+      <p>© 2016 - My Budget Keeper - Last modified 15/11/2016 - Humayon Mirza</p>
     </footer>
+  </div>
+  <!--REFERENCE: W3schools - https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_popup-->
+</body>
 
-    <script>
-        function actualizarTotal() {
-            let importes = document.querySelectorAll('.importe');
-            let total = 0;
+</html>
+  
+      <script id="rendered-js" >
+/*===================================ABOUT US PAGE============================================*/
+//REFERECNE: W3schools - https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_popup
+function div_show() {
+  document.getElementById('popup').style.display = "block";
 
-            importes.forEach(input => {
-                // Reemplazar coma por punto para la suma y luego volver a mostrarlo con coma
-                let valor = input.value.replace(',', '.');
-                total += parseFloat(valor) || 0;
-            });
+  var x = document.getElementsByClassName('bottom-banner');
+  x[0].style.opacity = '1';
 
-            // Mostrar el total con coma como separador decimal
-            document.getElementById("total").textContent = `${total.toFixed(2).replace('.', ',')} €`;
+  document.getElementById('listText').
+  style.display = 'none';
+}
+
+//Function to Hide Popup and Display Text
+function div_hide() {
+  document.getElementById('popup').style.display = "none";
+
+  var x = document.getElementsByClassName('bottom-banner');
+  x[0].style.display = 'block';
+
+  document.getElementById('listText').
+  style.display = 'block';
+}
+
+/*===================================MY BUDGET PAGE============================================*/
+//REFERENCE: W3schools - https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_popup
+//ONCLICK THE PERCENT TEXT TO DISPLAY POPUP AND HIDE TEXT BENEATH
+function showRight(x) {
+  var popUp = document.getElementsByClassName('popUp');
+  popUp[x].style.display = 'block';
+  var percentText = document.getElementsByClassName('percent');
+  percentText[x].style.display = 'none';
+}
+//ONCLICK THE AMOUNT TEXT TO DISPLAY POPUP AND HIDE TEXT BENEATH
+function showLeft(x) {
+  var amount = document.getElementsByClassName('amount');
+  amount[x].style.display = 'block';
+  var spank = document.getElementsByClassName('value');
+  spank[x].style.display = 'none';
+}
+//FUNCTION FOR ONCLICK 'DONE' BUTTON, PERCENT COLUMN
+function hideRight(x, category) {
+  var popUp = document.getElementsByClassName('popUp');
+  popUp[x].style.display = 'none';
+  var percentText = document.getElementsByClassName('percent');
+  percentText[x].style.display = 'inline';
+  render();
+}
+//FUNCTION FOR ONCLICK 'DONE' BUTTON, AMOUNTS COLUMN
+function hideLeft(x, category) {
+  var amount = document.getElementsByClassName('amount');
+  amount[x].style.display = 'none';
+  var span = document.getElementsByClassName('value');
+  span[x].style.display = 'inline';
+  render();
+}
+
+/*-------------------------------BUDGET OBJECT--------------------------------------------*/
+//BUDGET OBJECT, HOLDS ALL CATEGORIES AND UPDATE STATE METHODS
+var budget = {
+  income: {
+    percent: -1 },
+
+  priority: {
+    itemName: "Item",
+    itemAmount: 0,
+    itemLevel: "Priority Level",
+    itemDate: "Due Date",
+    itemRemainder: 0,
+    remainder: 0 },
+
+  leisure: {
+    itemName: "Item",
+    itemAmount: -1,
+    itemGoal: -1,
+    itemLevel: "Leisure Type",
+    itemRemainder: 0,
+    remainderGoal: 0 },
+
+  emergency: {
+    goal: 1000 },
+
+  categories: ['income', 'priority', 'leisure', 'emergency'],
+  updateState: function (changeType) {
+    if (changeType === 'percent') {
+      budget.updateStateForPercent();
+    } else if (changeType === 'amount') {
+      budget.updateStateForAmount();
+    } else if (changeType === 'goal') {
+      budget.updateStateForGoal();
+    } else if (changeType === 'expand') {
+      budget.updateStateForExpand('priority');
+    }
+  },
+  updateStateForExpand: function (category) {
+    if (category === 'priority') {
+      setRemainder(category, getRemainder(category) + getItemAmount(category));
+      if (getAmount(category) != undefined) {
+        setItemRemainder(category, getAmount(category) - getRemainder(category));
+      } else if (getAmount(category) == undefined) {
+        setItemRemainder(category, getItemRemainder(category) + getItemAmount(category));
+      }
+    }
+  },
+  updateStateForGoal: function () {
+    if (getAmount('emergency') >= getGoal() || getAmount('emergency') >= 1000) {
+      setGoal(getAmount('emergency'));
+    }
+  },
+  updateStateForPercent: function () {
+    budget.categories.forEach(function (category) {
+      if (category === 'priority') {
+        if (getPercent('priority') == undefined && getAmount('income') != undefined && getPercent('leisure') != undefined && getPercent('emergency') != undefined) {//IF MISSING VALUE IS PRIORITY
+          var summationPriority = getPercent('leisure') + getPercent('emergency');
+          setPercent('priority', 100 - summationPriority);
         }
+        if (getAmount('income') != undefined && getPercent(category) != undefined) {//TO FIND THE CORRELATING AMOUNT
+          setAmount(category, (getPercent(category) * getAmount('income') / 100).toFixed(2));
+        }
+      }
+      if (category === 'leisure') {
+        if (getPercent('leisure') == undefined && getAmount('income') != undefined && getPercent('priority') != undefined && getPercent('emergency') != undefined) {//IF MISSING VALUE IS LEISURE
+          var summationLeisure = getPercent('priority') + getPercent('emergency');
+          setPercent('leisure', 100 - summationLeisure);
+        }
+        if (getAmount('income') != undefined && getPercent(category) != undefined) {//TO FIND THE CORRELATING AMOUNT
+          setAmount(category, (getPercent(category) * getAmount('income') / 100).toFixed(2));
+        }
+      }
+      if (category === 'emergency') {
+        if (getPercent('emergency') == undefined && getAmount('income') != undefined && getPercent('priority') != undefined && getPercent('leisure') != undefined) {//IF MISSING VALUE IS EMERGENCY
+          var summationLeisure = getPercent('priority') + getPercent('leisure');
+          setPercent('emergency', 100 - summationLeisure);
+        }
+        if (getAmount('income') != undefined && getPercent(category) != undefined) {//TO FIND THE CORRELATING AMOUNT
+          setAmount(category, (getPercent(category) * getAmount('income') / 100).toFixed(2));
+        }
+      }
+    });
+  },
+  updateStateForAmount: function () {
+    budget.categories.forEach(function (category) {
+      if (category === 'income') {
+        if (getAmount('income') != undefined && getAmount('priority') == undefined && getAmount('leisure') == undefined && getAmount('emergency') == undefined) {// TO SET DEFAULT
+          setAmount('priority', (getAmount('income') / 3).toFixed(2));
+          setAmount('leisure', (getAmount('income') / 3).toFixed(2));
+          setAmount('emergency', (getAmount('income') / 3).toFixed(2));
+          setPercent('priority', (getAmount('income') / 3 / getAmount('income') * 100).toFixed(2));
+          setPercent('leisure', (getAmount('income') / 3 / getAmount('income') * 100).toFixed(2));
+          setPercent('emergency', (getAmount('income') / 3 / getAmount('income') * 100).toFixed(2));
+        }
+        var totalIncome = function () {//IF MISSING VALUE IS INCOME
+          if (getAmount('priority') != undefined, getAmount('leisure') != undefined, getAmount('emergency') != undefined) {
+            return parseInt(getAmount('priority')) + parseInt(getAmount('leisure')) + parseInt(getAmount('emergency'));
+          }
+        };
+        if ((getAmount('income') == undefined || getAmount('income') < totalIncome()) && getAmount('priority') != undefined && getAmount('leisure') != undefined && getAmount('emergency') != undefined) {
+          setAmount('income', totalIncome());
+        }
+      }
+      if (category === 'priority') {
+        if (getAmount('priority') == undefined && getAmount('income') != undefined && getAmount('leisure') != undefined && getAmount('emergency') != undefined) {//IF MISSING VALUE IS PRIORITY
+          var summationPriority = getAmount('leisure') + getAmount('emergency');
+          setAmount('priority', getAmount('income') - summationPriority);
+        }
+        if (getAmount('income') != undefined && getAmount(category) != undefined) {//TO FIND THE CORRELATING PERCENTAGE
+          setPercent(category, (getAmount(category) / getAmount('income') * 100).toFixed(2));
+        }
+      }
+      if (category === 'leisure') {
+        if (getAmount('leisure') == undefined && getAmount('income') != undefined && getAmount('priority') != undefined && getAmount('emergency') != undefined) {//IF MISSING VALUE IS LEISURE
+          var summationLeisure = getAmount('priority') + getAmount('emergency');
+          setAmount('leisure', getAmount('income') - summationLeisure);
+        }
+        if (getAmount('income') != undefined && getAmount(category) != undefined) {//TO FIND THE CORRELATING PERCENTAGE
+          setPercent(category, (getAmount(category) / getAmount('income') * 100).toFixed(2));
+        }
+      }
+      if (category === 'emergency') {
+        if (getAmount('emergency') == undefined && getAmount('income') != undefined && getAmount('priority') != undefined && getAmount('leisure') != undefined) {//IF MISSING VALUE IS EMERGENCY
+          var summationEmergency = getAmount('priority') + getAmount('leisure');
+          setAmount('emergency', getAmount('income') - summationEmergency);
+        }
+        if (getAmount('income') != undefined && getAmount(category) != undefined) {//TO FIND THE CORRELATING PERCENTAGE
+          setPercent(category, (getAmount(category) / getAmount('income') * 100).toFixed(2));
+        }
+        if (getAmount('emergency') >= getGoal() || getAmount('emergency') >= 1000) {
+          setGoal(getAmount('emergency'));
+        }
+      }
+    });
+  } };
 
-        // Añadir evento para actualizar el total cuando cambie un importe
-        document.querySelectorAll('.importe').forEach(input => {
-            input.addEventListener('input', actualizarTotal);
-        });
 
-        // Inicializar el total al cargar la página
-        actualizarTotal();
+/*------------------CATEGORY AT AMOUNT-------------------*/
+// CATEGORIES APPROPRIATELY ASSIGNED AN AMOUNT ON CHANGE
+function changeAmount(value, category) {
+  budget[category].amount = +value;
+  budget.updateState('amount');
+  budget.updateState('goal');
+  budget.updateState('expand');
+  renderPriorityItemRemainder(getItemRemainder('priority'));
+}
+
+//GETTING THE AMOUNT FROM THE SPECIFIED CATEGORY
+var getAmount = function (category) {
+  return budget[category].amount;
+};
+
+//SETTING THE AMOUNT FOR THE GIVEN CATEGORY
+var setAmount = function (category, value) {
+  budget[category].amount = value;
+};
+
+/*------------------CATEGORY AT PERCENT-------------------*/
+// CATEGORIES APPROPRIATELY ASSIGNED A PERCENTAGE ON CHANGE
+function changePercent(value, category) {
+  if (category !== 'income') {
+    budget[category].percent = +value;
+    budget.updateState('percent');
+  } else {
+    budget[category].percent = value;
+  }
+}
+//GETTING THE PERCENT FROM THE SPECIFIED CATEGORY
+var getPercent = function (category) {
+  return budget[category].percent;
+};
+
+//SETTING THE PERCENT FOR THE GIVEN CATEGORY
+var setPercent = function (category, value) {
+  budget[category].percent = value;
+};
+/*------------------CATEGORY EXPAND-------------------*/
+//TO EXPAND THE CATEGORY BY CLICKING ON THE TEXT
+function expand(index, category) {
+  var displayRow = document.getElementsByClassName('rowDrop');
+  if (displayRow[index].style.display == 'none' || displayRow[index].style.display == '') {
+    displayRow[index].style.display = 'table-row';
+  } else {
+    displayRow[index].style.display = 'none';
+  }
+}
+
+/*------------------EMERGENCY EXPAND-------------------*/
+// EMERGENCY APPROPRIATELY ASSIGNED A GOAL AMOUNT ON CHANGE
+function changeGoal(value) {
+  budget.emergency.goal = value;
+  budget.updateState('goal');
+}
+
+//GETS THE GOAL AMOUNT
+function getGoal() {
+  return budget.emergency.goal;
+}
+
+//GETS THE GOAL AMOUNTS PERCENTAGE OF THE EMERGENCY AMOUNT
+function getGoalPercent() {
+  if (typeof getAmount('emergency') !== "NaN" && typeof getAmount('emergency') !== "undefined") {
+    return (getAmount('emergency') / getGoal() * 100).toFixed(0);
+  }
+}
+//SETS THE EMERGENCY GOAL AMOUNT
+var setGoal = function (value) {
+  budget.emergency.goal = value;
+};
+
+//SETS THE EMERGENCY GOAL PERCENT
+var setGoalPercent = function (value) {
+  budget.emergency.goalPercent = value;
+};
+
+//ON CLICK - TO SHOW THE EMERGENCY GOAL AMOUNT POPUP
+function showGoal() {
+  var goalPopup = document.getElementById("goalPopup");
+  var emergencyGoalText = document.getElementById("emergencyAmount");
+  if (goalPopup.style.display == "none" || goalPopup.style.display == "") {
+    goalPopup.style.display = "block";
+    emergencyGoalText.style.paddingTop = "0rem";
+  } else {
+    hideGoal();
+  }
+}
+//ON CLICK - TO HIDE THE EMERGENCY GOAL AMOUNT POPUP
+function hideGoal() {
+  var goalPopup = document.getElementById("goalPopup");
+  var emergencyGoalText = document.getElementById("emergencyAmount");
+  goalPopup.style.display = "none";
+  emergencyGoalText.style.paddingTop = "2.5rem";
+  render();
+}
+
+/*------------------PRIORITY/LEISURE EXPAND-------------------*/
+//TO ASSIGN THE APPROPRIATE CATEGORY OBJECT PROPERTIES WITH A VALUE
+function changeInput(category, type, value) {
+  if (type === 'itemAmount' || type === 'itemGoal') {
+    budget[category][type] = parseInt(value);
+  } else {
+    budget[category][type] = value;
+  }
+}
+//=================================PRIORITY EXPAND RENDER FUNCTION=====================================
+var renderPriorityItem = function (itemName, itemAmount, itemLevel, itemDate, itemRemainder) {
+  if (typeof itemName !== "NaN" && typeof itemName !== "undefined" && itemName !== 'Item') {
+    var name = document.createElement('div');
+    name.innerHTML = itemName;
+    name.className = "priorityName";
+  }
+  if (typeof itemAmount !== "NaN" && typeof itemAmount !== "undefined" && itemAmount != 0) {
+    var amount = document.createElement('div');
+    amount.innerHTML = itemAmount;
+    amount.className = "priorityAmount";
+  }
+  if (typeof itemDate !== "NaN" && typeof itemDate !== "undefined") {
+    var date = document.createElement('div');
+    date.innerHTML = itemDate;
+    date.className = "priorityDate";
+  }
+  if (typeof itemLevel !== "NaN" && typeof itemLevel !== "undefined") {
+    var level = document.createElement('div');
+    level.innerHTML = itemLevel;
+    if (itemLevel == 'High') {
+      level.style.color = "red";
+    } else if (itemLevel == 'Medium') {
+      level.style.color = "orange";
+    } else if (itemLevel == 'Low') {
+      level.style.color = "green";
+    }
+  }
+  if (typeof itemDate !== "NaN" && typeof itemDate !== "undefined" && typeof itemLevel !== "NaN" && typeof itemLevel !== "undefined") {
+    var rightContainer = document.createElement('div');
+    rightContainer.appendChild(level);
+    rightContainer.appendChild(amount);
+    rightContainer.className = "rightItemDiv";
+  }
+  var button = document.createElement('button');
+  button.className = 'itemButton';
+  button.onclick = function () {
+    div.style.display = 'none';
+    console.log('itemAmount: ' + itemAmount);
+    if (getAmount('priority') == undefined) {
+      setItemRemainder('priority', getItemRemainder('priority') - itemAmount);
+    }
+    if (getAmount('priority') != undefined) {
+      setItemRemainder('priority', getItemRemainder('priority') + itemAmount);
+      console.log(getRemainder('priority'));
+    }
+    renderPriorityItemRemainder(getItemRemainder('priority'));
+  };
+
+  if (itemName != 'Item' && itemAmount != 0) {
+    var div = document.createElement('div');
+    var location = document.getElementById('priorityContainer');
+    div.className = "newPriorityItem";
+    div.appendChild(name);
+    div.appendChild(amount);
+    div.appendChild(rightContainer);
+    div.appendChild(button);
+    location.appendChild(div);
+  }
+  renderPriorityItemRemainder(getItemRemainder('priority'));
+};
+
+//====================REMAINDER RENDER ================
+var renderPriorityItemRemainder = function (itemRemainder) {
+  if (typeof itemRemainder !== "NaN" && typeof itemRemainder !== "undefined") {
+    var remainder = document.getElementById('remainder');
+
+    if (getAmount('priority') == undefined && itemRemainder != 0) {
+      remainder.innerHTML = "Total: $" + itemRemainder;
+      remainder.style.display = "block";
+    } else if (getAmount('priority') != undefined && itemRemainder != getAmount('priority')) {
+      remainder.innerHTML = "$" + itemRemainder + " Remaining";
+      remainder.style.display = "block";
+    } else {
+      remainder.style.display = "none";
+    }
+  }
+};
+//=================CREATE NEW DIV========================
+function createNewDiv() {
+  if (getItemAmount('priority') != 0 && getItemName('priority') != "Item") {
+    budget.updateState('expand');
+    renderPriorityItem(getItemName('priority'), getItemAmount('priority'),
+    getItemLevel('priority'), getItemDate('priority'), getItemRemainder('priority'));
+    //CLOSING THE MODAL
+    modal.close('priorityModalContent');
+    //RESETING THE OBJECT VALUES
+    setItemAmount('priority', 0);
+    setItemName('priority', "Item");
+    setItemLevel('priority', "Priority Level");
+    setItemDate('priority', "Due Date");
+  } else if (getItemAmount('priority') == 0 && getItemName('priority') == "Item") {
+    alert("Please enter a Name and an Amount for your Item");
+  } else if (getItemAmount('priority') == 0) {
+    alert("Please enter an Amount for your Item");
+  } else if (getItemName('priority') == "Item") {
+    alert("Please enter a Name for your Item");
+  }
+}
+
+/*------------------ITEM NAME-------------------*/
+//THE ONCHANGE FUNCTION CALLED FOR THE PRIORITY MODAL[NAME]
+function changePriorityName(value) {
+  budget.priority.itemName = value;
+}
+
+//THE ONCHANGE FUNCTION CALLED FOR THE LEISURE MODAL[NAME]
+function changeLeisureName(value) {
+  budget.leisure.itemName = value;
+}
+
+//TO CALL THE ITEMS NAME
+function getItemName(category) {
+  return budget[category].itemName;
+}
+
+//TO SET THE ITEMS NAME
+function setItemName(category, value) {
+  budget[category].itemName = value;
+}
+
+/*------------------ITEM AMOUNT-------------------*/
+//THE ONCHANGE FUNCTION CALLED FOR THE PRIORITY MODAL[AMOUNT]
+//function changePriorityAmount(value) {
+//  budget.priority.itemAmount = value;
+//}
+
+//THE ONCHANGE FUNCTION CALLED FOR THE LEISURE MODAL[AMOUNT]
+function changeLeisureAmount(value) {
+  budget.leisure.itemAmount = value;
+}
+
+//TO CALL THE ITEMS AMOUNT
+function getItemAmount(category) {
+  return budget[category].itemAmount;
+}
+
+//TO SET THE ITEMS AMOUNT
+function setItemAmount(category, value) {
+  budget[category].itemAmount = value;
+}
+
+/*------------------ITEM GOAL-------------------*/
+//THE ONCHANGE FUNCTION CALLED FOR THE LEISYRE MODAL[GOAL AMOUNT]
+function changeLeisureGoal(value) {
+  budget.leisure.itemGoal = value;
+}
+//TO CALL THE ITEMS GOAL AMOUNT
+function getItemGoal(category) {
+  return budget[category].itemGoal;
+}
+//TO SET THE ITEMS GOAL AMOUNT
+function setItemGoal(category, value) {
+  budget[category].itemGoal = value;
+}
+
+/*------------------ITEM DATE-------------------*/
+//THE ONCHANGE FUNCTION CALLED FOR THE PRIORITY MODAL[DATE]
+function changePriorityDate(value) {
+  budget.priority.itemDate = value;
+}
+
+//TO CALL THE ITEMS DATE
+function getItemDate(category) {
+  return budget[category].itemDate;
+}
+
+//TO SET THE ITEMS DATE
+function setItemDate(category, value) {
+  budget[category].itemDate = value;
+}
+
+/*------------------ITEM LEVEL-------------------*/
+//THE ONCHANGE FUNCTION CALLED FOR THE PRIORITY MODAL[LEVEL]
+function changePriorityLevel(value) {
+  budget.priority.itemLevel = value;
+}
+
+//THE ONCHANGE FUNCTION CALLED FOR THE LEISURE MODAL[LEVEL]
+function changeLeisureLevel(value) {
+  budget.leisure.itemLevel = value;
+}
+
+//TO CALL THE ITEMS LEVEL
+function getItemLevel(category) {
+  return budget[category].itemLevel;
+}
+
+//TO SET THE ITEMS LEVEL
+function setItemLevel(category, value) {
+  budget[category].itemLevel = value;
+}
+
+/*------------------REMAINDER-------------------*/
+//TO CALL THE ITEMS REMAINDER
+function getItemRemainder(category) {
+  return budget[category].itemRemainder;
+}
+//TO SET THE ITEMS REMAINDER
+function setItemRemainder(category, value) {
+  budget[category].itemRemainder = value;
+}
+function getRemainder(category) {
+  return budget[category].remainder;
+}
+//TO SET THE ITEMS REMAINDER
+function setRemainder(category, value) {
+  budget[category].remainder = value;
+}
+//TO CALL THE ITEMS REMAINDER GOAL
+function getRemainderGoal(category) {
+  return budget[category].remainderGoal;
+}
+//TO SET THE ITEMS REMAINDER GOAL
+function setRemainderGoal(category, value) {
+  budget[category].remainderGoal = value;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------AMOUNTS-------------------------*/
+//SETS THE VALUE EQUAL TO THE AMOUNT FOR THE INCOME
+function renderIncomeAmount(amount) {
+  if (typeof amount !== "NaN" && typeof amount !== "undefined") {
+    var els = document.getElementsByClassName('value');
+    els[0].innerHTML = "$" + amount;
+  }
+}
+
+function renderPriorityAmount(amount) {
+  if (typeof amount !== "NaN" && typeof amount !== "undefined") {
+    var els = document.getElementsByClassName('value');
+    els[1].innerHTML = "$" + amount;
+  }
+}
+
+function renderLeisureAmount(amount) {
+  if (typeof amount !== "NaN" && typeof amount !== "undefined") {
+    var els = document.getElementsByClassName('value');
+    els[2].innerHTML = "$" + amount;
+  }
+}
+
+function renderEmergencyAmount(amount) {
+  if (typeof amount !== "NaN" && typeof amount !== "undefined") {
+    var els = document.getElementsByClassName('value');
+    els[3].innerHTML = "$" + amount;
+  }
+}
+/*---------------------PERCENTAGES----------------------*/
+//SETS THE VALUE EQUAL TO THE PERCENTAGE FOR THE INCOME
+function renderIncomePercent(percent) {
+  if (typeof percent !== "undefined" && percent !== -1) {
+    var year = new Date();
+    var els = document.getElementsByClassName('percent');
+    els[0].innerHTML = percent + " " + year.getFullYear();
+  }
+}
+
+function renderPriorityPercent(percent) {
+  if (typeof percent !== "undefined" && typeof percent !== "NaN") {
+    var els = document.getElementsByClassName('percent');
+    els[1].innerHTML = percent + "%";
+  }
+}
+
+function renderLeisurePercent(percent) {
+  if (typeof percent !== "undefined" && typeof percent !== "NaN") {
+    var els = document.getElementsByClassName('percent');
+    els[2].innerHTML = percent + "%";
+  }
+}
+
+function renderEmergencyPercent(percent) {
+  if (typeof percent !== "undefined" && typeof percent !== "NaN") {
+    var els = document.getElementsByClassName('percent');
+    els[3].innerHTML = percent + "%";
+  }
+}
+/*---------------------EMERGENCY----------------------*/
+//RENDERS DOM APPROPRIATELY FOR EMERGENCY EXPAND
+function renderEmergencyGoal(amount) {
+  if (typeof amount !== "undefined" && typeof amount !== "NaN") {
+    var els = document.getElementById('emergencyDropGoal');
+    els.innerHTML = '$' + amount;
+  }
+}
+
+function renderEmergencyDropAmount(amount) {
+  if (typeof amount !== "undefined" && typeof amount !== "NaN") {
+    var els = document.getElementById('emergencyDropAmount');
+    els.innerHTML = '$' + amount;
+  }
+}
+
+function renderEmergencyDropPercent(percent) {
+  if (typeof percent !== "undefined" && typeof percent !== "NaN") {
+    var els = document.getElementById('emergencyDropPercent');
+    els.innerHTML = percent;
+  }
+}
+/*---------------------RENDER----------------------*/
+//TAKES THE APPROPRIATE VALUES FOR THE CATEGORIES AND RENDERS THEM
+function render() {
+  var incomeAmount = getAmount('income');
+  var priorityAmount = getAmount('priority');
+  var leisureAmount = getAmount('leisure');
+  var emergencyAmount = getAmount('emergency');
+  var incomePercent = getPercent('income');
+  var priorityPercent = getPercent('priority');
+  var leisurePercent = getPercent('leisure');
+  var emergencyPercent = getPercent('emergency');
+  var emergencyGoal = getGoal();
+  var emergencyDropPercent = getGoalPercent();
+  renderIncomeAmount(incomeAmount);
+  renderPriorityAmount(priorityAmount);
+  renderLeisureAmount(leisureAmount);
+  renderEmergencyAmount(emergencyAmount);
+  renderIncomePercent(incomePercent);
+  renderPriorityPercent(priorityPercent);
+  renderLeisurePercent(leisurePercent);
+  renderEmergencyPercent(emergencyPercent);
+  renderEmergencyGoal(emergencyGoal);
+  renderEmergencyDropAmount(emergencyAmount);
+  renderEmergencyDropPercent(emergencyDropPercent);
+}
+
+/*---------------------------MODAL----------------------------*/
+//GETS THE ID FOR THE PRIORITY MODAL
+function modalEl() {
+  return document.getElementById('modal-overlay');
+}
+
+//GETS THE ID FOR THE LEISURE MODAL
+function modalEl2() {
+  return document.getElementById('modal-overlay-2');
+}
+
+//SHOWS THE PRIORITY MODAL BY GIVING IT A CLASS NAME
+function showOverlay() {
+  return modalEl().className = "open";
+};
+
+//SHOWS THE LEISURE MODAL BY GIVING IT A CLASS NAME
+function showOverlay2() {
+  return modalEl2().className = "open";
+};
+
+//HIDES THE PRIORITY MODAL BY GIVING IT A CLASS NAME
+function hideOverlay() {
+  return modalEl().className = 'close';
+}
+
+//HIDES THE LEISURE MODAL BY GIVING IT A CLASS NAME
+function hideOverlay2() {
+  return modalEl2().className = 'close';
+}
+
+//RENDERS THE INNER HTML OF THE PRIORITY MODAL
+function setModalHtml(el) {
+  var modalContent = document.getElementById('modal-content');
+  modalContent.innerHTML = el.innerHTML;
+}
+
+//RENDERS THE INNER HTML OF THE LEISURE MODAL
+function setModalHtml2(el) {
+  var modalContent = document.getElementById('modal-content-2');
+  modalContent.innerHTML = el.innerHTML;
+}
+
+/*-------MODAL OBJECT WITH THE METHODS TO HIDE AND SHOW THE APPROPRIATE MODAL--------*/
+var modal = {
+  open: function (domId, number) {
+    var el = document.getElementById(domId);
+    if (!el) {
+      throw new Error('no element found with provided selector: ' + domId);
+    }
+    if (number == '2') {
+      showOverlay2();
+      setModalHtml2(el);
+    } else {
+      showOverlay();
+      setModalHtml(el);
+    }
+  },
+  close: function (domId, number) {
+    if (number == '2') {
+      hideOverlay2();
+    } else {
+      hideOverlay();
+    }
+  } };
+//# sourceURL=pen.js
     </script>
 
+  
 </body>
+
 </html>
