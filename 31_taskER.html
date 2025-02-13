@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasker</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7eae4;
+            color: #333;
+            font-style: italic;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #d08370;
+            font-size: 26px;
+        }
+        .category {
+            margin: 20px;
+            padding: 15px;
+            background-color: #f2d9c4;
+            border-radius: 8px;
+        }
+        .category h2 {
+            color: #d08370;
+            font-size: 20px;
+        }
+        .product-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .product-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 7px;
+            color: #555;
+            list-style-type: none;
+        }
+  
+  li {
+  list-style-type: '😛 ';
+}
+        .selected-products {
+            background-color: #fde4d4;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px;
+        }
+        .generate-pdf {
+            margin-top: 20px;
+            background-color: #d08370;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        footer {
+            text-align: center;
+            align-items: center;
+            padding: 10px;
+            background-color: #d08370;
+            color: white;
+            font-size: 12px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Tareas</h1>
+
+    <!-- Categorías con productos -->
+    <div class="category">
+        <h2>Tareas por hacer</h2>
+        <ul class="product-list">
+  <li class="product-item">dormir<input type="checkbox" onclick="toggleProduct(this, 'dormir')"></li>
+  <li class="product-item">gestiones con la administración<input type="checkbox" onclick="toggleProduct(this, 'administración')"></li>
+  <li class="product-item">afeitarse<input type="checkbox" onclick="toggleProduct(this, 'afeitarse')"></li>
+  <li class="product-item">asistir al médico<input type="checkbox" onclick="toggleProduct(this, 'asistir al médico')"></li>
+  <li class="product-item">asuntos con el banco<input type="checkbox" onclick="toggleProduct(this, 'bancos')"></li>
+  <li class="product-item">bricolaje en el hogar<input type="checkbox" onclick="toggleProduct(this, 'bricolaje en el hogar')"></li>
+  <li class="product-item">buscar en casa lo que se necesite<input type="checkbox" onclick="toggleProduct(this, 'buscar en casa lo que se necesite')"></li>
+  <li class="product-item">cambiar las sábanas<input type="checkbox" onclick="toggleProduct(this, 'cambiar las sábanas')"></li>
+  <li class="product-item">cafeterías<input type="checkbox" onclick="toggleProduct(this, 'cafeterías')"></li>
+  <li class="product-item">cenar<input type="checkbox" onclick="toggleProduct(this, 'cenar')"></li>
+  <li class="product-item">cine<input type="checkbox" onclick="toggleProduct(this, 'cine')"></li>
+  <li class="product-item">comprar comida<input type="checkbox" onclick="toggleProduct(this, 'comprar comida')"></li>
+  <li class="product-item">comprar productos de higiene<input type="checkbox" onclick="toggleProduct(this, 'comprar productos de higiene')"></li>
+  <li class="product-item">comprar productos de limpieza<input type="checkbox" onclick="toggleProduct(this, 'comprar productos de limpieza')"></li>
+  <li class="product-item">comer<input type="checkbox" onclick="toggleProduct(this, 'comer')"></li>
+  <li class="product-item">cortar las uñas<input type="checkbox" onclick="toggleProduct(this, 'cortar las uñas')"></li>
+  <li class="product-item">cultura<input type="checkbox" onclick="toggleProduct(this, 'cultura')"></li>
+  <li class="product-item">desayunar<input type="checkbox" onclick="toggleProduct(this, 'desayunar')"></li>
+  <li class="product-item">dormir<input type="checkbox" onclick="toggleProduct(this, 'dormir')"></li>
+  <li class="product-item">ducharse<input type="checkbox" onclick="toggleProduct(this, 'ducharse')"></li>
+  <li class="product-item">ejercicio físico<input type="checkbox" onclick="toggleProduct(this, 'ejercicio físico')"></li>
+  <li class="product-item">fregar la vajilla<input type="checkbox" onclick="toggleProduct(this, 'fregar la vajilla')"></li>
+  <li class="product-item">archivos de sdcards al disco duro<input type="checkbox" onclick="toggleProduct(this, 'guardar archivos de los pendrives y sdcards al disco duro')"></li>
+  <li class="product-item">archivos de los pendrives al disco duro<input type="checkbox" onclick="toggleProduct(this, 'guardar archivos de los pendrives y sdcards al disco duro')"></li>
+  <li class="product-item">guardar archivos del portátil al disco duro<input type="checkbox" onclick="toggleProduct(this, 'guardar archivos del portátil al disco duro')"></li>
+  <li class="product-item">hacer la comida<input type="checkbox" onclick="toggleProduct(this, 'hacer la comida')"></li>
+  <li class="product-item">lavar el pelo<input type="checkbox" onclick="toggleProduct(this, 'lavar el pelo')"></li>
+  <li class="product-item">llevar las cuentas al día<input type="checkbox" onclick="toggleProduct(this, 'llevar las cuentas al día')"></li>
+  <li class="product-item">limpiar el coche<input type="checkbox" onclick="toggleProduct(this, 'limpiar el coche')"></li>
+  <li class="product-item">limpiar la cocina<input type="checkbox" onclick="toggleProduct(this, 'limpiar la cocina')"></li>
+  <li class="product-item">limpiar los suelos<input type="checkbox" onclick="toggleProduct(this, 'limpiar los suelos')"></li>
+  <li class="product-item">ordenar la ropa<input type="checkbox" onclick="toggleProduct(this, 'ordenar la ropa')"></li>
+  <li class="product-item">ordenar los cajones<input type="checkbox" onclick="toggleProduct(this, 'ordenar los cajones')"></li>
+  <li class="product-item">organizar las tareas en la agenda<input type="checkbox" onclick="toggleProduct(this, 'organizar las tareas en la agenda')"></li>
+  <li class="product-item">archivos de las nubes al portátil<input type="checkbox" onclick="toggleProduct(this, 'pasar archivos de las nubes al portátil')"></li>
+  <li class="product-item">archivos del móvil al portátil<input type="checkbox" onclick="toggleProduct(this, 'pasar archivos del móvil al portátil')"></li>
+  <li class="product-item">planchar ropa<input type="checkbox" onclick="toggleProduct(this, 'planchar ropa')"></li>
+  <li class="product-item">poner la lavadora<input type="checkbox" onclick="toggleProduct(this, 'poner la lavadora')"></li>
+  <li class="product-item">reparaciones de hogar<input type="checkbox" onclick="toggleProduct(this, 'reparaciones de hogar')"></li>
+  <li class="product-item">restaurantes<input type="checkbox" onclick="toggleProduct(this, 'restaurantes')"></li>
+  <li class="product-item">tender la ropa<input type="checkbox" onclick="toggleProduct(this, 'tender la ropa')"></li>
+  <li class="product-item">tener los presupuestos al día<input type="checkbox" onclick="toggleProduct(this, 'tener los presupuestos al día')"></li>
+  <li class="product-item">tiendas de ropa<input type="checkbox" onclick="toggleProduct(this, 'tiendas de ropa')"></li>
+  <li class="product-item">quedar con amigos<input type="checkbox" onclick="toggleProduct(this, 'vida social amigos')"></li>
+            </ul>
+    </div>
+    <!-- Repite la estructura anterior para las otras categorías -->
+
+    <!-- Div para mostrar productos seleccionados -->
+    <div class="selected-products">
+        <h2>Tareas por hacer</h2>
+        <ul id="selectedProductsList"></ul>
+        <button class="generate-pdf" onclick="generatePDF()">Imprimir en PDF</button>
+    </div>
+  <br>
+  <br>
+  <br>
+
+    <footer>
+        © 2024 Tareas. Todos los derechos reservados.
+    </footer>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script>
+    const selectedProducts = [];
+
+    function toggleProduct(checkbox, productName) {
+        if (checkbox.checked) {
+            selectedProducts.push(productName);
+        } else {
+            const index = selectedProducts.indexOf(productName);
+            if (index !== -1) {
+                selectedProducts.splice(index, 1);
+            }
+        }
+        displaySelectedProducts();
+    }
+
+    function displaySelectedProducts() {
+        const selectedProductsList = document.getElementById('selectedProductsList');
+        selectedProductsList.innerHTML = '';
+        selectedProducts.forEach(product => {
+            const li = document.createElement('li');
+            li.textContent = product;
+            selectedProductsList.appendChild(li);
+        });
+    }
+
+    function generatePDF() {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+
+        // Configuración del título
+        doc.setFont("Courier", "bold");
+        doc.setFontSize(26);
+        doc.text(20, 20, "Lista de Productos Seleccionados:");
+
+        // Cambiar el tamaño de la fuente para los productos
+        doc.setFontSize(22);
+        selectedProducts.forEach((product, index) => {
+            // Agregar el texto de cada producto en una nueva línea
+            doc.text(20, 40 + (index * 10), `${index + 1}. ${product}`);
+        });
+
+        // Guardar el PDF
+        doc.save('myMarketList.pdf');
+    }
+</script>
+</body>
+</html
