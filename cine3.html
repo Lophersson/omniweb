@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrusel de Videos</title>
+  <style>
+    /* Asegura que el body ocupe toda la altura de la ventana */
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Estilo general */
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* El contenido principal ocupa el espacio restante */
+    main {
+      flex: 1;
+    }
+
+    /* Estilo del footer */
+    footer {
+      text-align: center;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      padding: 20px 0;
+      background-color: #333;
+      color: white;
+    }
+
+    /* Título */
+    header {
+      text-align: center;
+      padding: 20px;
+      font-size: 2rem;
+      border-bottom: 2px solid #fff;
+    }
+
+    /* Contenedor del carrusel */
+    .carousel-container {
+      overflow: hidden;
+      width: 100%; /* El ancho del contenedor se ajusta al 100% de la pantalla */
+    }
+
+    /* Contenedor de los videos */
+    .carousel {
+      display: flex;
+      animation: scroll-carousel 20s linear infinite;
+    }
+
+    /* Animación para el desplazamiento continuo */
+    @keyframes scroll-carousel {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* Ajuste de los iframe dentro del carrusel */
+    .carousel iframe {
+      margin-right: 10px; /* Espacio entre los videos */
+      flex-shrink: 0; /* Evita que los videos se encojan */
+      width: 100%;
+      max-width: 450px; /* Ancho máximo para pantallas grandes */
+      height: 250px; /* Altura fija proporcional */
+    }
+
+    /* Media query para móviles */
+    @media (max-width: 768px) {
+      .carousel iframe {
+        max-width: 100%; /* Ajusta el ancho de los videos al 100% del contenedor */
+        height: auto; /* Mantiene la proporción del video */
+      }
+
+      /* Asegura que los videos se muestren bien en pantallas pequeñas */
+      header {
+        font-size: 1.5rem; /* Ajusta el tamaño del título */
+      }
+      
+      footer {
+        padding: 15px 0; /* Ajusta el padding del footer */
+      }
+    }
+
+    @media (max-width: 480px) {
+      /* Ajustes adicionales para pantallas más pequeñas */
+      header {
+        font-size: 1.2rem;
+      }
+
+      footer {
+        padding: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Título -->
+  <header>
+    <h1>Lophersson Videos</h1>
+  </header>
+
+  <!-- Carrusel de Videos -->
+  <div class="carousel-container">
+    <div class="carousel">
+      <iframe src="https://www.youtube.com/embed/gnEeWVIlyQg" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/vuzX_y4qT0I?start_radio=1" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/NgoDwIpU40I?t=8s" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/ZBW0mIaQpFo" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/W0p9jThOHEU" frameborder="0" allowfullscreen></iframe>
+      
+      <!-- Duplicamos los videos para mantener el desplazamiento fluido -->
+      <iframe src="https://www.youtube.com/embed/gnEeWVIlyQg" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/vuzX_y4qT0I?start_radio=1" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/NgoDwIpU40I?t=8s" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/ZBW0mIaQpFo" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/W0p9jThOHEU" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- Flechas de navegación -->
+  <div class="arrow left-arrow" onclick="moveCarousel(-1)">&#10094;</div>
+  <div class="arrow right-arrow" onclick="moveCarousel(1)">&#10095;</div>
+
+  <footer>
+    <p>&copy; 2025 Cine Lophersson. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    let currentIndex = 0;
+
+    function moveCarousel(direction) {
+      const carousel = document.querySelector('.carousel');
+      const items = document.querySelectorAll('.carousel iframe');
+      const totalItems = items.length;
+
+      currentIndex = (currentIndex + direction + totalItems) % totalItems;
+
+      const offset = -(currentIndex * (items[0].offsetWidth + 10)); // Calcula el desplazamiento
+
+      carousel.style.transform = `translateX(${offset}px)`;
+    }
+
+    // Mover automáticamente cada 4 segundos
+    setInterval(() => {
+      moveCarousel(1);
+    }, 4000);
+  </script>
+
+</body>
+</html>
