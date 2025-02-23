@@ -63,15 +63,15 @@
             text-align: center;
             width: 320px;
             backdrop-filter: blur(5px);
-            margin-top: 100px;
+            margin-top: 40px;
         }
 
         input {
-            width: 70%;
+            width: 90%;
             padding: 8px;
-            margin: 3px 0;
+            margin: 2px 0;
             border: none;
-            border-radius: 5px;
+            border-radius: 15px;
             text-align: center;
             font-size: 1.1rem;
             font-weigth: bold;
@@ -107,8 +107,8 @@
     <div class="contenedor">
         <h1>Calculadora de Renta</h1>
         <input type="text" id="patrimonioBruto" placeholder="Patrimonio Bruto" oninput="formatearPatrimonioBruto()">
-        <input type="number" id="incrementoAnual" placeholder="% Incremento Anual" oninput="calcularValores()">
-        <input type="number" id="años" placeholder="Duración en Años" oninput="calcularValores()">
+       <input type="number" id="incrementoAnual" placeholder="% Incremento Anual" value="1.8" oninput="calcularValores()">
+<input type="number" id="años" placeholder="Duración en Años" value="30" oninput="calcularValores()">
         <input type="text" id="patrimonioTotal" placeholder="Patrimonio Total" readonly>
         <input type="text" id="rentaAnual" placeholder="Renta Anual" readonly>
         <input type="text" id="rentaMesPrimerAño" placeholder="Renta Mensual Primer Año" readonly>
