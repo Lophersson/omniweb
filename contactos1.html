@@ -64,6 +64,7 @@ transform: scale(1.05);
 
 .main {
 width: 100%;
+height: 100%;
 display: flex;
 justify-content: center;
 flex-wrap: wrap;
@@ -72,7 +73,7 @@ padding-bottom: 30px;
 }
 
 .container {
-height: 300px; /* Ajustamos la altura */
+height: 250px; /* Ajustamos la altura */
 width: 250px; /* Ajustamos el ancho */
 box-shadow: 0 10px 20px black;
 background-size: cover;
@@ -172,12 +173,12 @@ display: none;
 <button onclick="filterCards('a')">Confianza Alta</button>
 <button onclick="filterCards('b')">Confianza Media</button>
 <button onclick="filterCards('c')">Confianza Baja</button>
-<button onclick="filterCards('d')">Familia</button>
-<button onclick="filterCards('e')">Curso Ciberseguridad</button>
-<button onclick="filterCards('f')">EFBS Mañanas</button>
-<button onclick="filterCards('g')">EFBS Tardes</button>
-<button onclick="filterCards('h')">Apps Contactos</button>
-<button onclick="filterCards('i')">Residuales</button>
+<button onclick="filterCards('fam')">Familia</button>
+<button onclick="filterCards('seg')">Curso Ciberseguridad</button>
+<button onclick="filterCards('efbsm')">EFBS Mañanas</button>
+<button onclick="filterCards('efbst')">EFBS Tardes</button>
+<button onclick="filterCards('app')">Apps Contactos</button>
+<button onclick="filterCards('res')">Residuales</button>
 <!-- Añadir más botones según sea necesario -->
 </div>
 </header>
@@ -185,88 +186,57 @@ display: none;
 <div class="main" id="contact-list">
 <!-- Tarjetas de contacto -->
 <div class="contact-card">
-<div class="container h">
+<div class="container fam">
 <div class="gradient">
 <div class="content">
-<h2>Anet <br> Beiro</h2>
-<p>12/05/1978</p>
-<p>Agente de viajes</p>
-<p>A Coruña</p>
-<p>+34 604 00 31 96</p>
-<br>
-<p class="details">I am a travel agent.</p>
-<div class="icons">
-<a href="tel:+34604003196">
-<i class="fa fa-phone" aria-hidden="true"></i>
-</a>
-<a href="https://wa.me/34604003196" target="_blank">
-<i class="fa fa-whatsapp" aria-hidden="true"></i>
-</a>
-<a href="https://www.atlantisbyanet.com/" target="_blank">
-<i class="fa fa-link" aria-hidden="true"></i>
-</a>
-<a href="https://www.instagram.com/atlantis_byanet/" target="_blank">
-<i class="fa fa-instagram" aria-hidden="true"></i>
-</a>
-<i class="fa fa-facebook-square" aria-hidden="true"></i>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container d">
-<div class="gradient">
-<div class="content">
-<h2>Papa <br> Alfredo</h2>
-<p>09/09/1963</p>
-<p>Jubilado</p>
-<p>Ferrol</p>
+<h2>Papa <br>Alfredo</h2>
 <p>696006166</p>
+<p>981313065</p>
 <br>
-<p class="details">Químico</p>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:696006166">
-<i class="fa fa-phone" aria-hidden="true"></i>
-</a>
-<a href="https://web.whatsapp.com/" target="_blank">
-<i class="fa fa-whatsapp" aria-hidden="true"></i>
-</a>
-<a href="-" target="_blank">
-<i class="fa fa-link" aria-hidden="true"></i>
-</a>
-<a href="-" target="_blank">
-<i class="fa fa-instagram" aria-hidden="true"></i>
-</a>
-<i class="fa fa-facebook-square" aria-hidden="true"></i>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container a">
+<div class="container c">
 <div class="gradient">
 <div class="content">
-<h2>Vero <br> Breijo Freire</h2>
-<p>18/03/1978</p>
-<p>Administrativa</p>
-<p>Arteixo</p>
-<p>638135644</p>
+<h2>Myriam <br>Argentina</h2>
+<p>+5491154866213</p>
+<p>25/01/1979</p>
 <br>
-<p class="details">Funcionaria del Concello de Arteixo.</p>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:638135644">
-<i class="fa fa-phone" aria-hidden="true"></i>
-</a>
-<a href="https://wa.me/638135644" target="_blank">
-<i class="fa fa-whatsapp" aria-hidden="true"></i>
-</a>
-<a href="-" target="_blank">
-<i class="fa fa-link" aria-hidden="true"></i>
-</a>
-<a href="https://www.instagram.com/" target="_blank">
-<i class="fa fa-instagram" aria-hidden="true"></i>
-</a>
-<i class="fa fa-facebook-square" aria-hidden="true"></i>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="container res">
+<div class="gradient">
+<div class="content">
+<h2>Maria <br>Rodriguez</h2>
+<p>626516029</p>
+<br>
+<p class="details">añadir detalles</p>
+<div class="icons">
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
@@ -276,26 +246,35 @@ display: none;
 <div class="gradient">
 <div class="content">
 <h2>Nydia <br>Sanchez Tejo</h2>
-<p>12/04/1978</p>
-<p>Profesora</p>
-<p>Arteixo</p>
-<p>630319381</p>
+<p>630319381
+<p>12/04/1978
+<p>CEIP Arteixo</p>
 <br>
-<p class="details">Profesora en colegio de Arteixo.</p>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:630319381">
-<i class="fa fa-phone" aria-hidden="true"></i>
-</a>
-<a href="https://wa.me/630319381" target="_blank">
-<i class="fa fa-whatsapp" aria-hidden="true"></i>
-</a>
-<a href="-" target="_blank">
-<i class="fa fa-link" aria-hidden="true"></i>
-</a>
-<a href="https://www.instagram.com/" target="_blank">
-<i class="fa fa-instagram" aria-hidden="true"></i>
-</a>
-<i class="fa fa-facebook-square" aria-hidden="true"></i>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="container c">
+<div class="gradient">
+<div class="content">
+<h2>Cristina <br>Garcia</h2>
+<p>671029816</p>
+<br>
+<p class="details">añadir detalles</p>
+<div class="icons">
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
@@ -304,445 +283,35 @@ display: none;
 <div class="container b">
 <div class="gradient">
 <div class="content">
-<h2>Myriam <br>(Argentina)</h2>
-<p></p>
-<p></p>
-<p></p>
-<p>+5491154866213</p>
+<h2>Elena <br>Blue Eyes</h2>
+<p>648664912</p>
 <br>
-<p class="details"></p>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+5491154866213">
-<i class="fa fa-phone" aria-hidden="true"></i>
-</a>
-<a href="https://wa.me/+5491154866213" target="_blank">
-<i class="fa fa-whatsapp" aria-hidden="true"></i>
-</a>
-<a href="-" target="_blank">
-<i class="fa fa-link" aria-hidden="true"></i>
-</a>
-<a href="-" target="_blank">
-<i class="fa fa-instagram" aria-hidden="true"></i>
-</a>
-<i class="fa fa-facebook-square" aria-hidden="true"></i>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container b">
+<div class="container a">
 <div class="gradient">
 <div class="content">
 <h2>Marta <br>Veiga</h2>
-<p></p>
-<p></p>
-<p></p>
-<p>626140796</p>
-<br>
-<p class="details"></p>
-<div class="icons">
-<a href="tel:+34626140796">
-<i class="fa fa-phone" aria-hidden="true"></i>
-</a>
-<a href="https://wa.me/+34626140796" target="_blank">
-<i class="fa fa-whatsapp" aria-hidden="true"></i>
-</a>
-<a href="-" target="_blank">
-<i class="fa fa-link" aria-hidden="true"></i>
-</a>
-<a href="-" target="_blank">
-<i class="fa fa-instagram" aria-hidden="true"></i>
-</a>
-<i class="fa fa-facebook-square" aria-hidden="true"></i>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container i">
-<div class="gradient">
-<div class="content">
-<h2>Ana Gomez Varela</h2>
-<p></p>
-<p></p>
-<p></p>
-<p>628045725</p>
-<br>
-<p class="details"></p>
-<div class="icons">
-<a href="tel:+34628045725">
-<i class="fa fa-phone" aria-hidden="true"></i>
-</a>
-<a href="https://wa.me/+34628045725" target="_blank">
-<i class="fa fa-whatsapp" aria-hidden="true"></i>
-</a>
-<a href="-" target="_blank">
-<i class="fa fa-link" aria-hidden="true"></i>
-</a>
-<a href="-" target="_blank">
-<i class="fa fa-instagram" aria-hidden="true"></i>
-</a>
-<i class="fa fa-facebook-square" aria-hidden="true"></i>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container i">
-<div class="gradient">
-<div class="content">
-<h2>Maria Rodriguez</h2>
-<p></p>
-<p></p>
-<p></p>
-<p>626516029</p>
-<br>
-<p class="details"></p>
-<div class="icons">
-<a href="tel:+34626516029">
-<i class="fa fa-phone" aria-hidden="true"></i>
-</a>
-<a href="https://wa.me/+34626516029" target="_blank">
-<i class="fa fa-whatsapp" aria-hidden="true"></i>
-</a>
-<a href="-" target="_blank">
-<i class="fa fa-link" aria-hidden="true"></i>
-</a>
-<a href="-" target="_blank">
-<i class="fa fa-instagram" aria-hidden="true"></i>
-</a>
-<i class="fa fa-facebook-square" aria-hidden="true"></i>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container b">
-<div class="gradient">
-<div class="content">
-<h2>Elena Blue Eyes</h2>
-<p></p>
-<p></p>
-<p></p>
-<p>648664912</p>
-<br>
-<p class="details"></p>
-<div class="icons">
-<a href="tel:648664912">
-<i class="fa fa-phone" aria-hidden="true"></i>
-</a>
-<a href="https://wa.me/648664912" target="_blank">
-<i class="fa fa-whatsapp" aria-hidden="true"></i>
-</a>
-<a href="-" target="_blank">
-<i class="fa fa-link" aria-hidden="true"></i>
-</a>
-<a href="-" target="_blank">
-<i class="fa fa-instagram" aria-hidden="true"></i>
-</a>
-<i class="fa fa-facebook-square" aria-hidden="true"></i>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container b">
-<div class="gradient">
-<div class="content">
-<h2>Ana <br> Vela</h2>
-<p></p>
-<p></p>
-<p></p>
-<p>678415937</p>
-<br>
-<p class="details"></p>
-<div class="icons">
-<a href="tel:678415937">
-<i class="fa fa-phone" aria-hidden="true"></i>
-</a>
-<a href="https://wa.me/678415937" target="_blank">
-<i class="fa fa-whatsapp" aria-hidden="true"></i>
-</a>
-<a href="-" target="_blank">
-<i class="fa fa-link" aria-hidden="true"></i>
-</a>
-<a href="-" target="_blank">
-<i class="fa fa-instagram" aria-hidden="true"></i>
-</a>
-<i class="fa fa-facebook-square" aria-hidden="true"></i>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container c">
-<div class="gradient">
-<div class="content">
-<h2>Jimmy</h2>
-<p></p>
-<p></p>
-<p></p>
-<p>722382770</p>
-<br>
-<p class="details"></p>
-<div class="icons">
-<a href="tel:+34722382770">
-<i class="fa fa-phone" aria-hidden="true"></i>
-</a>
-<a href="https://wa.me/+34722382770" target="_blank">
-<i class="fa fa-whatsapp" aria-hidden="true"></i>
-</a>
-<a href="-" target="_blank">
-<i class="fa fa-link" aria-hidden="true"></i>
-</a>
-<a href="-" target="_blank">
-<i class="fa fa-instagram" aria-hidden="true"></i>
-</a>
-<i class="fa fa-facebook-square" aria-hidden="true"></i>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container c">
-<div class="gradient">
-<div class="content">
-<h2>Nora</h2>
-<p></p>
-<p></p>
-<p></p>
-<p>631075208</p>
-<br>
-<p class="details"></p>
-<div class="icons">
-<a href="tel:+34631075208">
-<i class="fa fa-phone" aria-hidden="true"></i>
-</a>
-<a href="https://wa.me/+34631075208" target="_blank">
-<i class="fa fa-whatsapp" aria-hidden="true"></i>
-</a>
-<a href="-" target="_blank">
-<i class="fa fa-link" aria-hidden="true"></i>
-</a>
-<a href="-" target="_blank">
-<i class="fa fa-instagram" aria-hidden="true"></i>
-</a>
-<i class="fa fa-facebook-square" aria-hidden="true"></i>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container c">
-<div class="gradient">
-<div class="content">
-<h2>Miguel <br> Valdoviño</h2>
-<p></p>
-<p></p>
-<p></p>
-<p>689306263</p>
-<br>
-<p class="details"></p>
-<div class="icons">
-<a href="tel:689306263">
-<i class="fa fa-phone" aria-hidden="true"></i>
-</a>
-<a href="https://wa.me/689306263" target="_blank">
-<i class="fa fa-whatsapp" aria-hidden="true"></i>
-</a>
-<a href="-" target="_blank">
-<i class="fa fa-link" aria-hidden="true"></i>
-</a>
-<a href="-" target="_blank">
-<i class="fa fa-instagram" aria-hidden="true"></i>
-</a>
-<i class="fa fa-facebook-square" aria-hidden="true"></i>
-</div>
-</div>
-</div>
-</div>
-
-<div class="contacts">
-<div class="container d">
-<div class="gradient">
-<div class="content">
-<h2>Papa Alfredo</h2>
-<p>696006166</p>
-<p>981313065</p>
-<br>
-<p class="details">Contacto</p>
-<div class="icons">
-<a href="tel:696006166">
-<i class="fa fa-phone" aria-hidden="true"></i>
-</a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container b">
-<div class="gradient">
-<div class="content">
-<h2>Myriam Argentina</h2>
-<p>+5491154866213</p>
-<p>25/01/1979</p>
-<br>
-<p class="details">Contacto</p>
-<div class="icons">
-<a href="tel:+5491154866213">
-<i class="fa fa-phone" aria-hidden="true"></i>
-</a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container i">
-<div class="gradient">
-<div class="content">
-<h2>Maria Rodriguez</h2>
-<p>626516029</p>
-<br>
-<p class="details">Contacto</p>
-<div class="icons">
-<a href="tel:626516029">
-<i class="fa fa-phone" aria-hidden="true"></i>
-</a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container a">
-<div class="gradient">
-<div class="content">
-<h2>Nydia Sanchez Tejo</h2>
-<p>630319381</p>
-<p>12/04/1978</p>
-<p>CEIP Arteixo</p>
-<br>
-<p class="details"></p>
-<div class="icons">
-<a href="tel:630319381">
-<i class="fa fa-phone" aria-hidden="true"></i>
-</a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container d">
-<div class="gradient">
-<div class="content">
-<h2>Papa Alfredo</h2>
-<p>696006166</p>
-<p>981313065</p>
-<br>
-<p class="details">Contacto</p>
-<div class="icons">
-<a href="tel:696006166">
-<i class="fa fa-phone" aria-hidden="true"></i>
-</a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container b">
-<div class="gradient">
-<div class="content">
-<h2>Myriam Argentina</h2>
-<p>+5491154866213</p>
-<p>25/01/1979</p>
-<br>
-<p class="details"></p>
-<div class="icons">
-<a href="tel:+5491154866213">
-<i class="fa fa-phone" aria-hidden="true"></i>
-</a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container i">
-<div class="gradient">
-<div class="content">
-<h2>Maria Rodriguez</h2>
-<p>626516029</p>
-<br>
-<p class="details"></p>
-<div class="icons">
-<a href="tel:626516029">
-<i class="fa fa-phone" aria-hidden="true"></i>
-</a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container a">
-<div class="gradient">
-<div class="content">
-<h2>Nydia Sanchez Tejo</h2>
-<p>630319381</p>
-<p>CEIP Arteixo</p>
-<p>12/04/1978</p>
-<br>
-<p class="details"></p>
-<div class="icons">
-<a href="tel:630319381">
-<i class="fa fa-phone" aria-hidden="true"></i>
-</a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container i">
-<div class="gradient">
-<div class="content">
-<h2>Cristina Garcia</h2>
-<p>671029816</p>
-<br>
-<p class="details"></p>
-<div class="icons">
-<a href="tel:671029816">
-<i class="fa fa-phone" aria-hidden="true"></i>
-</a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container b">
-<div class="gradient">
-<div class="content">
-<h2>Elena Blue Eyes</h2>
-<p>648664912</p>
-<br>
-<p class="details"></p>
-<div class="icons">
-<a href="tel:648664912">
-<i class="fa fa-phone" aria-hidden="true"></i>
-</a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container b">
-<div class="gradient">
-<div class="content">
-<h2>Marta Veiga</h2>
 <p>626140796</p>
 <p>11/08/1973</p>
 <br>
-<p class="details"></p>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:626140796">
-<i class="fa fa-phone" aria-hidden="true"></i>
-</a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
@@ -754,24 +323,31 @@ display: none;
 <h2>Humberto</h2>
 <p>658868490</p>
 <br>
-<p class="details"></p>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:658868490">
-<i class="fa fa-phone" aria-hidden="true"></i>
-</a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container i">
+<div class="container res">
 <div class="gradient">
 <div class="content">
-<h2> Susana</h2>
+<h2>Susana</h2>
 <p>656258957</p>
 <br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34656258957"><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
@@ -783,605 +359,661 @@ display: none;
 <h2>Tamara <br>Da Silva</h2>
 <p>637353593</p>
 <br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34637353593"><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container c">
+<div class="container res">
 <div class="gradient">
 <div class="content">
 <h2>Isabel</h2>
 <p>676579157</p>
 <br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34676579157"><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container c">
+<div class="container res">
 <div class="gradient">
 <div class="content">
-<h2>Ana <br>Vela Hernandez</h2>
+<h2>Ana Vela <br>Hernandez</h2>
 <p>678415937</p>
 <br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34678415937"><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container i">
+<div class="container res">
 <div class="gradient">
 <div class="content">
-<h2>Mama Angee</h2>
+<h2>Madre <br>de Angee</h2>
 <p>625276127</p>
 <br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34625276127"><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container i">
+<div class="container res">
 <div class="gradient">
 <div class="content">
 <h2>Lucia</h2>
 <p>628204828</p>
 <br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34628204828"><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container i">
+<div class="container res">
 <div class="gradient">
 <div class="content">
-<h2>Ana María <br>Gomez Varela</h2>
+<h2>Ana María<br>Gomez Varela</h2>
 <p>628045725</p>
 <br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34628045725"><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container e">
+<div class="container seg">
 <div class="gradient">
 <div class="content">
 <h2>Liliana</h2>
 <p>653965099</p>
 <br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34653965099"><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container e">
+<div class="container seg">
 <div class="gradient">
 <div class="content">
 <h2>Blanca</h2>
 <p>675535647</p>
 <br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34675535647"><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container e">
+<div class="container seg">
 <div class="gradient">
 <div class="content">
 <h2>Alberto</h2>
 <p>673090145</p>
 <br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34673090145"><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container e">
+<div class="container seg">
 <div class="gradient">
 <div class="content">
-<h2>Maria Angeles</h2>
+<h2>Maria <br>Angeles</h2> 
 <p>659571288</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34659571288"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34659571288" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container e">
+<div class="container seg">
 <div class="gradient">
 <div class="content">
 <h2>Miguel</h2>
 <p>608387168</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34608387168"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34608387168" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container e">
-<div class="gradient">
-<div class="content">
-<h2>Gus</h2>
-<p>699858150</p>
-<div class="icons">
-<a href="tel:+34699858150"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34699858150" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container e">
-<div class="gradient">
-<div class="content">
-<h2>Maria Angeles</h2>
-<p>659571288</p>
-<div class="icons">
-<a href="tel:+34659571288"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34659571288" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container e">
-<div class="gradient">
-<div class="content">
-<h2>Miguel</h2>
-<p>608387168</p>
-<div class="icons">
-<a href="tel:+34608387168"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34608387168" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container e">
+<div class="container seg">
 <div class="gradient">
 <div class="content">
 <h2>Alex</h2>
 <p>610305285</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34610305285"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34610305285" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container e">
+<div class="container seg">
 <div class="gradient">
 <div class="content">
 <h2>Gus</h2>
 <p>699858150</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34699858150"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34699858150" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container e">
+<div class="container seg">
 <div class="gradient">
 <div class="content">
 <h2>Andres</h2>
 <p>636359449</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34636359449"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34636359449" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container e">
+<div class="container seg">
 <div class="gradient">
 <div class="content">
 <h2>Carlos</h2>
 <p>698129283</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34698129283"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34698129283" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container e">
+<div class="container seg">
 <div class="gradient">
 <div class="content">
 <h2>Mario</h2>
 <p>658441647</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34658441647"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34658441647" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container e">
+<div class="container seg">
 <div class="gradient">
 <div class="content">
 <h2>Pablo</h2>
 <p>639791410</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34639791410"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34639791410" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container i">
+<div class="container res">
 <div class="gradient">
 <div class="content">
 <h2>Sheyla</h2>
 <p>600252068</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34600252068"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34600252068" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container e">
+<div class="container efbst">
 <div class="gradient">
 <div class="content">
-<h2>Maria Angeles</h2>
-<p>659571288</p>
+<h2>Pablo <br>Freire</h2>
+<p>633376236</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34659571288"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34659571288" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container e">
-<div class="gradient">
-<div class="content">
-<h2>Miguel</h2>
-<p>608387168</p>
-<div class="icons">
-<a href="tel:+34608387168"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34608387168" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container e">
-<div class="gradient">
-<div class="content">
-<h2>Alex</h2>
-<p>+34 610 30 52 85</p>
-<div class="icons">
-<a href="tel:+34610305285"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34610305285" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container e">
-<div class="gradient">
-<div class="content">
-<h2>Gus</h2>
-<p>+34 699 85 81 50</p>
-<div class="icons">
-<a href="tel:+34699858150"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34699858150" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container g">
-<div class="gradient">
-<div class="content">
-<h2>Pablo Freire</h2>
-<p>+34 633 37 62 36</p>
-<div class="icons">
-<a href="tel:+34633376236"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34633376236" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container f">
+<div class="container efbsm">
 <div class="gradient">
 <div class="content">
 <h2>Alfonso</h2>
-<p>+34 675 55 36 39</p>
+<p>675553639</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34675553639"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34675553639" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container g">
+<div class="container efbst">
 <div class="gradient">
 <div class="content">
-<h2>Manuel Quintián</h2>
-<p>+34 685 97 86 48</p>
+<h2>Manuel <br>Quintián</h2>
+<p>685978648</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34685978648"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34685978648" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container g">
+<div class="container efbst">
 <div class="gradient">
 <div class="content">
 <h2>Cesar</h2>
-<p>+34 638 86 35 01</p>
+<p>638863501</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34638863501"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34638863501" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container g">
+<div class="container efbst">
 <div class="gradient">
 <div class="content">
-<h2>Juan Pablo</h2>
-<p>+34 604 01 73 10</p>
+<h2>Juan <br>Pablo</h2>
+<p>604017310</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34604017310"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34604017310" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container g">
+<div class="container efbst">
 <div class="gradient">
 <div class="content">
 <h2>Yaiza</h2>
-<p>+34 622 61 39 63</p>
+<p>622613963</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34622613963"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34622613963" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container e">
-<div class="gradient">
-<div class="content">
-<h2>Maria Angeles</h2>
-<p>+34 659 57 12 88</p>
-<div class="icons">
-<a href="tel:+34659571288"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34659571288" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container e">
-<div class="gradient">
-<div class="content">
-<h2>Miguel</h2>
-<p>+34 608 38 71 68</p>
-<div class="icons">
-<a href="tel:+34608387168"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34608387168" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container g">
+<div class="container efbst">
 <div class="gradient">
 <div class="content">
 <h2>Gabriel</h2>
-<p>+34 665 84 94 19</p>
+<p>665849419</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34665849419"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34665849419" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container g">
+<div class="container efbst">
 <div class="gradient">
 <div class="content">
 <h2>Mauro</h2>
-<p>+34 607 19 44 19</p>
+<p>607194419</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34607194419"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34607194419" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container g">
+<div class="container efbst">
 <div class="gradient">
 <div class="content">
 <h2>Guillermo</h2>
-<p>+34 617 12 62 11</p>
+<p>617126211</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34617126211"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34617126211" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container f">
+<div class="container efbsm">
 <div class="gradient">
 <div class="content">
-<h2>Emilia Pereiro</h2>
-<p>+34 658 42 46 28</p>
+<h2>Emilia <br>Pereiro</h2>
+<p>658424628</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34658424628"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34658424628" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container f">
+<div class="container efbsm">
 <div class="gradient">
 <div class="content">
 <h2>Marian</h2>
-<p>+34 623 10 46 50</p>
+<p>623104650</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34623104650"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34623104650" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container f">
+<div class="container efbsm">
 <div class="gradient">
 <div class="content">
 <h2>Alejandra</h2>
-<p>+34 611 42 85 70</p>
+<p>611428570</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34611428570"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34611428570" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container f">
+<div class="container efbsm">
 <div class="gradient">
 <div class="content">
 <h2>Indalecio</h2>
-<p>+34 659 07 52 35</p>
+<p>659075235</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34659075235"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34659075235" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container e">
+<div class="container efbsm">
 <div class="gradient">
 <div class="content">
-<h2>Maria Angeles</h2>
-<p>+34 659 57 12 88</p>
+<h2>Dani <br>Marques</h2>
+<p>664500403</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34659571288"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34659571288" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container f">
+<div class="container efbsm">
 <div class="gradient">
 <div class="content">
-<h2>Dani Marques</h2>
-<p>+34 664 50 04 03</p>
+<h2>David <br>Regal</h2>
+<p>698164343</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34664500403"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34664500403" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container f">
-<div class="gradient">
-<div class="content">
-<h2>David Regal</h2>
-<p>+34 698 16 43 43</p>
-<div class="icons">
-<a href="tel:+34698164343"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34698164343" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container f">
+<div class="container efbsm">
 <div class="gradient">
 <div class="content">
 <h2>Loli</h2>
-<p>+34 669 07 98 62</p>
+<p>669079862</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34669079862"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34669079862" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container f">
+<div class="container efbsm">
 <div class="gradient">
 <div class="content">
 <h2>Manel</h2>
-<p>+34 633 77 19 79</p>
+<p>633771979</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34633771979"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34633771979" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container e">
+<div class="container seg">
 <div class="gradient">
 <div class="content">
-<h2>Juan M. Liliana</h2>
-<p>+34 654 35 87 64</p>
+<h2>Juan Marido <br>de Liliana</h2>
+<p>654358764</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34654358764"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34654358764" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container i">
+<div class="container res">
 <div class="gradient">
 <div class="content">
-<h2>Hospital Juan Cardona</h2>
-<p>+34 981 31 25 00</p>
+<h2>Hospital <br>Juan Cardona</h2>
+<p>981312500</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34981312500"><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
@@ -1391,10 +1023,15 @@ display: none;
 <div class="gradient">
 <div class="content">
 <h2>Nora</h2>
-<p>+34 631 07 52 08</p>
+<p>631075208</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34631075208"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34631075208" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
@@ -1403,25 +1040,17 @@ display: none;
 <div class="container a">
 <div class="gradient">
 <div class="content">
-<h2>Vero Breijo Freire</h2>
+<h2>Vero Breijo <br>Freire</h2>
+<p>638135644
 <p>18/03/1978</p>
-<p>+34 638 13 56 44</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34638135644"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34638135644" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container e">
-<div class="gradient">
-<div class="content">
-<h2>Maria Angeles</h2>
-<p>+34 659 57 12 88</p>
-<div class="icons">
-<a href="tel:+34659571288"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34659571288" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
@@ -1430,11 +1059,16 @@ display: none;
 <div class="container c">
 <div class="gradient">
 <div class="content">
-<h2>Miguel</h2>
-<p>+34 689 30 62 63</p>
+<h2>Miguel <br>Valdoviño</h2>
+<p>689306263</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34689306263"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34689306263" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
@@ -1444,10 +1078,15 @@ display: none;
 <div class="gradient">
 <div class="content">
 <h2>Jimmy</h2>
-<p>+34 722 38 27 70</p>
+<p>722382770</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34722382770"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34722382770" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
@@ -1457,49 +1096,69 @@ display: none;
 <div class="gradient">
 <div class="content">
 <h2>Jenny Paola</h2>
-<p>+34 632 03 40 64</p>
+<p>632034064</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34632034064"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34632034064" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container g">
+<div class="container efbst">
 <div class="gradient">
 <div class="content">
 <h2>Pol</h2>
-<p>+34 699 67 42 16</p>
+<p>699674216</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34699674216"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34699674216" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container g">
+<div class="container efbst">
 <div class="gradient">
 <div class="content">
 <h2>Leo</h2>
-<p>+34 663 17 06 93</p>
+<p>663170693</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34663170693"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34663170693" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container g">
+<div class="container efbst">
 <div class="gradient">
 <div class="content">
 <h2>Fabian</h2>
-<p>+34 696 11 12 28</p>
+<p>696111228</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34696111228"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34696111228" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
@@ -1509,103 +1168,125 @@ display: none;
 <div class="gradient">
 <div class="content">
 <h2>Placido</h2>
-<p>+34 615 66 89 85</p>
+<p>615668985</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34615668985"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34615668985" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container i">
+<div class="container res">
 <div class="gradient">
 <div class="content">
 <h2>Sergas</h2>
-<p>+34 630 30 64 18</p>
-<p>+34 981 33 40 00</p>
+<p>630306418</p>
+<p>981334000</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34630306418"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="tel:+34981334000"><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container e">
-<div class="gradient">
-<div class="content">
-<h2>Maria Angeles</h2>
-<p>+34 659 57 12 88</p>
-<div class="icons">
-<a href="tel:+34659571288"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34659571288" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container d">
+<div class="container fam">
 <div class="gradient">
 <div class="content">
 <h2>Tia Mary</h2>
-<p>+34 661 90 73 18</p>
+<p>661907318</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34661907318"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34661907318" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container i">
+<div class="container res">
 <div class="gradient">
 <div class="content">
-<h2>Ana Patricia</h2>
-<p>19/03/1980</p>
-<p>+34 622 57 22 13</p>
+<h2>Ana_Patricia</h2>
+<p>622572213</p>
+<p>19/06/1980</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34622572213"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34622572213" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container h">
+<div class="container app">
 <div class="gradient">
 <div class="content">
 <h2>Anet</h2>
-<p>+34 604 00 31 96</p>
+<p>604003196</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34604003196"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34604003196" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container d">
+<div class="container fam">
 <div class="gradient">
 <div class="content">
 <h2>Tio Guillin</h2>
-<p>+34 610 60 92 54</p>
+<p>610609254</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34610609254"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34610609254" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container d">
+<div class="container fam">
 <div class="gradient">
 <div class="content">
 <h2>Natalia Bravo</h2>
-<p>+34 661 90 73 17</p>
+<p>661907317</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34661907317"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34661907317" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
@@ -1615,36 +1296,51 @@ display: none;
 <div class="gradient">
 <div class="content">
 <h2>Felix</h2>
-<p>+34 610 48 94 01</p>
+<p>610489401</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34610489401"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34610489401" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container h">
+<div class="container app">
 <div class="gradient">
 <div class="content">
 <h2>Helga</h2>
-<p>+34 626 43 66 68</p>
+<p>626436668</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34626436668"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34626436668" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="container h">
+<div class="container app">
 <div class="gradient">
 <div class="content">
 <h2>Candela</h2>
-<p>+34 662 21 02 69</p>
+<p>662210269</p>
+<br>
+<p class="details">añadir detalles</p>
 <div class="icons">
-<a href="tel:+34662210269"><i class="fa fa-phone" aria-hidden="true"></i></a>
-<a href="https://wa.me/34662210269" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="tel: "><i class="fa fa-phone" aria-hidden="true"></i></a>
+<a href="https://wa.me/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+<a href="https://www.vacio.com/" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/vacio/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/vacio/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
