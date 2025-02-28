@@ -1,351 +1,595 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contactos Con Acceso Restringido</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #1f1f1f;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" type="image/png" href="https://raw.githubusercontent.com/Lophersson/omniweb/refs/heads/main/H_new_icon.png" />
+<link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/Lophersson/omniweb/refs/heads/main/H_new_icon.png" />
+<link rel="mask-icon" type="image/x-icon" href="https://raw.githubusercontent.com/Lophersson/omniweb/refs/heads/main/H_new_icon.png" color="#111" />
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Abel&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Ficha de contacto</title>
+<style>
+* {
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
 
-        .container {
-            display: none; /* Ocultar por defecto */
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            background-color: #1f1f1f;
-        }
+body {
+height: 100vh;
+width: 100vw;
+background: linear-gradient(to right bottom, black, rgb(88, 173, 243));
+font-family: 'Abel', sans-serif;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+overflow-x: hidden;
+}
 
-        .active {
-            display: flex; /* Mostrar contenedor activo */
-        }
+header {
+text-align: center;
+margin-top: 20px;
+color: white;
+}
 
-        /* Estilos de login */
-        .login-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            background: #1f1f1f;
-            box-shadow: 0 8px 16px rgba(82, 82, 82, 0.938);
-            max-width: 80%;
-            width: 360px;
-        }
+h1 {
+font-size: 2.5rem;
+margin-bottom: 20px;
+}
 
-        h2 {
-            text-align: center;
-            margin: 10px 0 20px;
-            font-size: 24px;
-            font-weight: 700;
-            color: #ffffff;
-            letter-spacing: 3px;
-            font-style: italic;
-        }
+.category-buttons {
+display: flex;
+gap: 5px;
+margin-bottom: 20px;
+}
 
-        .content-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
+.category-buttons button {
+background: linear-gradient(to top, rgba(28, 171, 238, 0.7), rgba(253, 252, 252, 0.21));
+border: none;
+color: white;
+padding: 6px 12px;
+cursor: pointer;
+font-size: 0.9rem;
+border-radius: 5px;
+}
 
-        .login-container img {
-            width: 240px;
-            height: 240px;
-            border-radius: 15px;
-            border: 1px solid #ccc;
-        }
+.category-buttons button:hover {
+background: linear-gradient(to top, rgba(28, 171, 238, 0.7), rgba(253, 252, 252, 0.21));
+transform: scale(1.05);
+}
 
-        .form-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 90%;
-            color: #ffffff;
-        }
+.main {
+width: 100%;
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 20px;
+padding-bottom: 30px;
+}
 
-        .form-container input {
-            margin: 4px 30px 4px 30px;
-            padding: 10px;
-            width: 80%;
-            border: 1px solid #ccc;
-            border-radius: 15px;
-            font-size: 16px;
-            background-color: #1f1f1f;
-            color: #ffffff;
-            font-style: italic;
-        }
+.container {
+height: 300px; /* Ajustamos la altura */
+width: 250px; /* Ajustamos el ancho */
+box-shadow: 0 10px 20px black;
+background-size: cover;
+background-image: url("");
+position: relative;
+display: none; /* Ocultamos las tarjetas al cargar */
+}
 
-        .botonera {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            width: 100%;
-            color: #ffffff;
-            color: #fff;
-            font-size: 16px;
-            cursor: pointer;
-            align-items: center;
-        }
+.gradient {
+height: 100%;
+width: 100%;
+top: 0;
+background: linear-gradient(to top, rgba(28, 171, 238, 0.7), rgba(253, 252, 252, 0.21));
+color: white;
+}
 
-        .btn-ok {
-            background-color: #28a745;
-            width: 110px;
-            border: none;
-            border-radius: 15px;
-            padding: 10px 40px 10px 40px;
-            margin: 10px;
-        }
+.content {
+padding: 20px;
+}
 
-        .btn-cancel {
-            background-color: #dc3545;
-            width: 110px;
-            border: none;
-            border-radius: 15px;
-            padding: 10px 40px 10px 40px;
-            margin: 10px;
-        }
+h2 {
+font-size: xx-large;
+letter-spacing: -1px;
+margin-bottom: 10px;
+text-align: left;
+}
 
-        /* Estilos de contactos */
-        body.contacts {
-            margin: 0;
-            padding: 10px;
-            font-family: Arial, sans-serif;
-            background-color: #1f1f1f;
-            color: #cccccc;
-        }
+p {
+font-size: medium;
+text-align: left;
+}
 
-        .contacts .container {
-            max-width: 100%;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+.details {
+font-style: italic;
+color: rgb(185, 206, 224);
+margin-top: 15px;
+}
 
-        .contacts h1 {
-            text-align: center;
-            color: #ec6816;
-            font-style: italic;
-            font-size: 30px;
-            margin: 24px 0;
-        }
+.icons {
+position: absolute;
+top: 20px;
+right: 20px;
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+}
 
-        .alphabet-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-bottom: 12px;
-        }
+.icons i {
+font-size: 25px;
+margin-bottom: 15px;
+color: rgb(202, 215, 226);
+transition: 0.3s;
+}
 
-        .letter {
-            background-color: #555555;
-            color: #acacac;
-            padding: 8px 10px;
-            margin: 2px;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.2s, background-color 0.2s, color 0.2s;
-            font-size: 30px;
-            font-weight: 900;
-            border-radius: 5px;
-            font-style: italic;
-        }
+.icons i:hover {
+color: white;
+}
 
-        .letter:hover {
-            background-color: #ffd700; 
-            color: #1e90ff; 
-            transform: scale(1.1); 
-        }
+footer {
+margin-top: 30px;
+color: white;
+font-size: 1rem;
+text-align: center;
+width: 100%;
+position: absolute;
+bottom: 10px;
+}
 
-        #contact-list {
-            display: flex; 
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 20px;
-            gap: 10px;
-        }
+.contact-card {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 10px;
+margin-top: 10px;
+}
 
-        .contact-card {
-            background-color: #4d4d4d;
-            color: #757575;
-            padding-left: 12px;
-            border-radius: 10px;
-            width: 360px;
-            text-align: left;
-            font-family: 'Tahoma', Courier, monospace;
-            font-style: italic;
-            font-weight: 900;
-            font-size: 16px;
-            line-height: 0.15;
-            transition: color 0.3s;
-            display: none; /* Ocultar las tarjetas inicialmente */
-        }
+.contact-card .container {
+margin: 10px;
+transition: transform 0.3s ease;
+}
 
-        .contact-card:hover {
-            background-color: #2b2b2b;
-            color: grey;
-        }
-    </style>
+.contact-card .container:hover {
+transform: scale(1.05);
+}
+
+.hidden {
+display: none;
+}
+</style>
 </head>
+
 <body>
-    <!-- Sección de Login -->
-    <div id="login" class="container active">
-        <div class="login-container">
-            <h2>Acceso Restringido</h2>
-            <div class="content-container">
-                <img src="https://kfscdn.api.np.km.playstation.net/6815296913124930757/1573311615669.png" alt="foto">
-                <div class="form-container">
-                    <input type="text" id="username" placeholder="Usuario">
-                    <input type="password" id="password" placeholder="Contraseña">
-                    <div style="display: flex; gap: 10px;">
-                        <div class="botonera">
-                        <button class="btn-ok" onclick="handleLogin()">✔</button>
-                        <button class="btn-cancel" onclick="handleCancel()">✖</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<header>
+<h1>Contactos Febrero 2025</h1>
+<div id="category-buttons" class="category-buttons">
+<button onclick="filterCards('all')">Todos</button>
+<button onclick="filterCards('b')">b</button>
+<button onclick="filterCards('c')">c</button>
+<button onclick="filterCards('d')">d</button>
+<button onclick="filterCards('e')">e</button>
+<button onclick="filterCards('f')">f</button>
+<button onclick="filterCards('h')">h</button>
+<button onclick="filterCards('z')">z</button>
+<!-- Añadir más botones según sea necesario -->
+</div>
+</header>
+
+<div class="main" id="contact-list">
+<!-- Tarjetas de contacto -->
+<div class="contact-card">
+<div class="container e">
+<div class="gradient">
+<div class="content">
+<h2>Anet <br> Beiro</h2>
+<p>12/05/1978</p>
+<p>Agente de viajes</p>
+<p>A Coruña</p>
+<p>+34 604 00 31 96</p>
+<br>
+<p class="details">I am a travel agent.</p>
+<div class="icons">
+<a href="tel:+34604003196">
+<i class="fa fa-phone" aria-hidden="true"></i>
+</a>
+<a href="https://wa.me/34604003196" target="_blank">
+<i class="fa fa-whatsapp" aria-hidden="true"></i>
+</a>
+<a href="https://www.atlantisbyanet.com/" target="_blank">
+<i class="fa fa-link" aria-hidden="true"></i>
+</a>
+<a href="https://www.instagram.com/atlantis_byanet/" target="_blank">
+<i class="fa fa-instagram" aria-hidden="true"></i>
+</a>
+<i class="fa fa-facebook-square" aria-hidden="true"></i>
+</div>
+</div>
+</div>
+</div>
+
+<div class="container f">
+<div class="gradient">
+<div class="content">
+<h2>Papa <br> Alfredo</h2>
+<p>09/09/1963</p>
+<p>Jubilado</p>
+<p>Ferrol</p>
+<p>696006166</p>
+<br>
+<p class="details">Químico</p>
+<div class="icons">
+<a href="tel:696006166">
+<i class="fa fa-phone" aria-hidden="true"></i>
+</a>
+<a href="https://web.whatsapp.com/" target="_blank">
+<i class="fa fa-whatsapp" aria-hidden="true"></i>
+</a>
+<a href="-" target="_blank">
+<i class="fa fa-link" aria-hidden="true"></i>
+</a>
+<a href="-" target="_blank">
+<i class="fa fa-instagram" aria-hidden="true"></i>
+</a>
+<i class="fa fa-facebook-square" aria-hidden="true"></i>
+</div>
+</div>
+</div>
+</div>
+
+<div class="container b">
+<div class="gradient">
+<div class="content">
+<h2>Vero <br> Breijo Freire</h2>
+<p>18/03/1978</p>
+<p>Administrativa</p>
+<p>Arteixo</p>
+<p>638135644</p>
+<br>
+<p class="details">Funcionaria del Concello de Arteixo.</p>
+<div class="icons">
+<a href="tel:638135644">
+<i class="fa fa-phone" aria-hidden="true"></i>
+</a>
+<a href="https://wa.me/638135644" target="_blank">
+<i class="fa fa-whatsapp" aria-hidden="true"></i>
+</a>
+<a href="-" target="_blank">
+<i class="fa fa-link" aria-hidden="true"></i>
+</a>
+<a href="https://www.instagram.com/" target="_blank">
+<i class="fa fa-instagram" aria-hidden="true"></i>
+</a>
+<i class="fa fa-facebook-square" aria-hidden="true"></i>
+</div>
+</div>
+</div>
+</div>
+
+<div class="container b">
+<div class="gradient">
+<div class="content">
+<h2>Nydia <br> Sanchez Tejo</h2>
+<p>12/04/1978</p>
+<p>Profesora</p>
+<p>Arteixo</p>
+<p>630319381</p>
+<br>
+<p class="details">Profesora en colegio de Arteixo.</p>
+<div class="icons">
+<a href="tel:630319381">
+<i class="fa fa-phone" aria-hidden="true"></i>
+</a>
+<a href="https://wa.me/630319381" target="_blank">
+<i class="fa fa-whatsapp" aria-hidden="true"></i>
+</a>
+<a href="-" target="_blank">
+<i class="fa fa-link" aria-hidden="true"></i>
+</a>
+<a href="https://www.instagram.com/" target="_blank">
+<i class="fa fa-instagram" aria-hidden="true"></i>
+</a>
+<i class="fa fa-facebook-square" aria-hidden="true"></i>
+</div>
+</div>
+</div>
+</div>
+
+<div class="container f">
+    <div class="gradient">
+      <div class="content">
+        <h2>Myriam <br> (Argentina)</h2>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p>+5491154866213</p>
+        <br>
+        <p class="details"></p>
+        <div class="icons">
+          <a href="tel:+5491154866213">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+          </a>
+          <a href="https://wa.me/+5491154866213" target="_blank">
+            <i class="fa fa-whatsapp" aria-hidden="true"></i>
+          </a>
+          <a href="-" target="_blank">
+            <i class="fa fa-link" aria-hidden="true"></i>
+          </a>
+          <a href="-" target="_blank">
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+          </a>
+          <i class="fa fa-facebook-square" aria-hidden="true"></i>
         </div>
+      </div>
     </div>
-
-    <!-- Sección de Contactos -->
-    <div id="contacts" class="container">
-        <h1>Directorio de Contactos</h1>
-        <div class="alphabet-buttons">
-            <button class="letter" data-letter="A">A</button>
-            <button class="letter" data-letter="B">B</button>
-            <button class="letter" data-letter="C">C</button>
-            <button class="letter" data-letter="D">D</button>
-            <button class="letter" data-letter="E">E</button>
-            <button class="letter" data-letter="F">F</button>
-            <button class="letter" data-letter="G">G</button>
-            <button class="letter" data-letter="H">H</button>
-            <button class="letter" data-letter="I">I</button>
-            <button class="letter" data-letter="J">J</button>
-            <button class="letter" data-letter="K">K</button>
-            <button class="letter" data-letter="L">L</button>
-            <button class="letter" data-letter="M">M</button>
-            <button class="letter" data-letter="N">N</button>
-            <button class="letter" data-letter="O">O</button>
-            <button class="letter" data-letter="P">P</button>
-            <button class="letter" data-letter="R">R</button>
-            <button class="letter" data-letter="S">S</button>
-            <button class="letter" data-letter="T">T</button>
-            <button class="letter" data-letter="U">U</button>
-            <button class="letter" data-letter="V">V</button>
-            <button class="letter" data-letter="W">W</button>
-            <button class="letter" data-letter="X">X</button>
-            <button class="letter" data-letter="Y">Y</button>
-            <button class="letter" data-letter="Z">Z</button>
+  </div>
+  
+  <div class="container b">
+    <div class="gradient">
+      <div class="content">
+        <h2>Marta Veiga</h2>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p>+34626140796</p>
+        <br>
+        <p class="details"></p>
+        <div class="icons">
+          <a href="tel:+34626140796">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+          </a>
+          <a href="https://wa.me/+34626140796" target="_blank">
+            <i class="fa fa-whatsapp" aria-hidden="true"></i>
+          </a>
+          <a href="-" target="_blank">
+            <i class="fa fa-link" aria-hidden="true"></i>
+          </a>
+          <a href="-" target="_blank">
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+          </a>
+          <i class="fa fa-facebook-square" aria-hidden="true"></i>
         </div>
-        <div id="contact-list"></div>
+      </div>
     </div>
+  </div>
+  
+  <!-- Repeat for each contact -->
+  
+  <div class="container z">
+    <div class="gradient">
+      <div class="content">
+        <h2>Ana Gomez Varela</h2>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p>+34628045725</p>
+        <br>
+        <p class="details"></p>
+        <div class="icons">
+          <a href="tel:+34628045725">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+          </a>
+          <a href="https://wa.me/+34628045725" target="_blank">
+            <i class="fa fa-whatsapp" aria-hidden="true"></i>
+          </a>
+          <a href="-" target="_blank">
+            <i class="fa fa-link" aria-hidden="true"></i>
+          </a>
+          <a href="-" target="_blank">
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+          </a>
+          <i class="fa fa-facebook-square" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container g">
+    <div class="gradient">
+      <div class="content">
+        <h2>Maria Rodriguez</h2>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p>+34626516029</p>
+        <br>
+        <p class="details"></p>
+        <div class="icons">
+          <a href="tel:+34626516029">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+          </a>
+          <a href="https://wa.me/+34626516029" target="_blank">
+            <i class="fa fa-whatsapp" aria-hidden="true"></i>
+          </a>
+          <a href="-" target="_blank">
+            <i class="fa fa-link" aria-hidden="true"></i>
+          </a>
+          <a href="-" target="_blank">
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+          </a>
+          <i class="fa fa-facebook-square" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container b">
+    <div class="gradient">
+      <div class="content">
+        <h2>Elena Blue Eyes</h2>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p>648664912</p>
+        <br>
+        <p class="details"></p>
+        <div class="icons">
+          <a href="tel:648664912">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+          </a>
+          <a href="https://wa.me/648664912" target="_blank">
+            <i class="fa fa-whatsapp" aria-hidden="true"></i>
+          </a>
+          <a href="-" target="_blank">
+            <i class="fa fa-link" aria-hidden="true"></i>
+          </a>
+          <a href="-" target="_blank">
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+          </a>
+          <i class="fa fa-facebook-square" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <script>
-    function showSection(sectionId) {
-        const sections = document.querySelectorAll('.container');
-        sections.forEach(section => section.classList.remove('active'));
-        document.getElementById(sectionId).classList.add('active');
-    }
+  <div class="container b">
+    <div class="gradient">
+      <div class="content">
+        <h2>Ana <br> Vela</h2>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p>678415937</p>
+        <br>
+        <p class="details"></p>
+        <div class="icons">
+          <a href="tel:678415937">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+          </a>
+          <a href="https://wa.me/678415937" target="_blank">
+            <i class="fa fa-whatsapp" aria-hidden="true"></i>
+          </a>
+          <a href="-" target="_blank">
+            <i class="fa fa-link" aria-hidden="true"></i>
+          </a>
+          <a href="-" target="_blank">
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+          </a>
+          <i class="fa fa-facebook-square" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container c">
+    <div class="gradient">
+      <div class="content">
+        <h2>Jimmy</h2>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p>+34722382770</p>
+        <br>
+        <p class="details"></p>
+        <div class="icons">
+          <a href="tel:+34722382770">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+          </a>
+          <a href="https://wa.me/+34722382770" target="_blank">
+            <i class="fa fa-whatsapp" aria-hidden="true"></i>
+          </a>
+          <a href="-" target="_blank">
+            <i class="fa fa-link" aria-hidden="true"></i>
+          </a>
+          <a href="-" target="_blank">
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+          </a>
+          <i class="fa fa-facebook-square" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container d">
+    <div class="gradient">
+      <div class="content">
+        <h2>Nora</h2>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p>+34631075208</p>
+        <br>
+        <p class="details"></p>
+        <div class="icons">
+          <a href="tel:+34631075208">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+          </a>
+          <a href="https://wa.me/+34631075208" target="_blank">
+            <i class="fa fa-whatsapp" aria-hidden="true"></i>
+          </a>
+          <a href="-" target="_blank">
+            <i class="fa fa-link" aria-hidden="true"></i>
+          </a>
+          <a href="-" target="_blank">
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+          </a>
+          <i class="fa fa-facebook-square" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container c">
+    <div class="gradient">
+      <div class="content">
+        <h2>Miguel <br> Valdoviño</h2>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p>689306263</p>
+        <br>
+        <p class="details"></p>
+        <div class="icons">
+          <a href="tel:689306263">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+          </a>
+          <a href="https://wa.me/689306263" target="_blank">
+            <i class="fa fa-whatsapp" aria-hidden="true"></i>
+          </a>
+          <a href="-" target="_blank">
+            <i class="fa fa-link" aria-hidden="true"></i>
+          </a>
+          <a href="-" target="_blank">
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+          </a>
+          <i class="fa fa-facebook-square" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    // Validar Login
-    function handleLogin() {
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
 
-        if (username === 'london' && password === '123456') {
-            alert('Usuario y password correctos! Bienvenido!');
-            
-            // Cambiar estilo para ocultar login
-            document.getElementById('login').style.display = 'none';
+<!-- Repetir la estructura anterior para el resto de los contactos -->
 
-            document.body.className = 'contacts';
-            showSection('contacts');
-            initializeAlphabetButtons();
-        } else {
-            alert('Usuario o password incorrectos!');
-        }
-    }
+</div>
+</div>
 
-    // Cancelar Login
-    function handleCancel() {
-        document.getElementById('username').value = '';
-        document.getElementById('password').value = '';
-        alert('¡Hasta luego!');
-    }
+<script>
+// Filtra las tarjetas por categoría
+function filterCards(category) {
+const allCards = document.querySelectorAll('.contact-card .container');
+allCards.forEach(card => {
+if (category === 'all') {
+card.style.display = 'block';  // Muestra todas las tarjetas
+} else {
+if (card.classList.contains(category)) {
+card.style.display = 'block';  // Muestra las tarjetas de esa categoría
+} else {
+card.style.display = 'none';  // Oculta las tarjetas que no pertenecen a la categoría
+}
+}
+});
+}
 
-    // Inicializar botones de letras
-    function initializeAlphabetButtons() {
-        const letterButtons = document.querySelectorAll('.letter');
-        letterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const letter = button.getAttribute('data-letter');
-                displayContacts(letter);
-            });
-        });
-    }
-
-    // Mostrar contactos
-    const rawContacts = [
-    ['Alicia', 'Abanca', '981564829'],
-    ['Barbara', 'BBVA', '881548263'],
-    ['Carla', 'CaixaBank', '981654321'],
-    ['Diana', 'Dia', '881234567'],
-    ['Elena', 'Endesa', '678123456'],
-    ['Felicia', 'Ferrovial', '749856321'],
-    ['Gabriela', 'Gas Natural', '681745923'],
-    ['Helena', 'Hipercor', '981345678'],
-    ['Irene', 'Iberdrola', '769812345'],
-    ['Juana', 'Just Eat', '678945123'],
-    ['Laura', 'La Caixa', '881765432'],
-    ['Manuela', 'Mapfre', '681234567'],
-    ['Natalia', 'Naturgy', '981876543'],
-    ['Olga', 'OHL', '678912345'],
-    ['Patricia', 'Primark', '769834512'],
-    ['Raquel', 'Renfe', '681987654'],
-    ['Sara', 'Santander', '881543267'],
-    ['Teresa', 'Telefónica', '981432678'],
-    ['Ursula', 'Unicaja', '749812345'],
-    ['Valeria', 'Vodafone', '678654321'],
-    ['Yolanda', 'Yoigo', '769123456'],
-    ['Zaira', 'Zara', '681234876'],
-    ['Karla', 'Kutxabank', '681943257'],
-    ['Wendy', 'Wallapop', '769812654'],
-    ['Katherina', 'Ucraniana', '673913081'],
-    ['Ximena', 'Xunta Galicia', '881654329']
-];
-
-    function displayContacts(letter = '') {
-        const contactListDiv = document.getElementById('contact-list');
-        contactListDiv.innerHTML = ''; // Limpiar contenido
-
-        rawContacts.forEach(contact => {
-            if (contact[0].toUpperCase().startsWith(letter.toUpperCase()) || letter === '') {
-                const contactCard = document.createElement('div');
-                contactCard.classList.add('contact-card');
-                contactCard.style.display = 'block';
-
-                contact.forEach(item => {
-                    const p = document.createElement('p');
-                    if (item.toLowerCase() === 'pass') {
-                        p.innerHTML = `<span style="color: yellow;">${item}</span>`;
-                    } else {
-                        p.textContent = item;
-                    }
-                    contactCard.appendChild(p);
-                });
-
-                contactListDiv.appendChild(contactCard);
-            }
-        });
-    }
+// Inicializar para que no se muestren las tarjetas al cargar
+window.onload = function() {
+filterCards('all'); // Opcional: mostrar todas las tarjetas al inicio, si lo prefieres
+};
 </script>
 </body>
+
 </html>
